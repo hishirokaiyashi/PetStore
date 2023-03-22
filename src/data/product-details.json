@@ -1,0 +1,149 @@
+[{
+  "_id": {
+    "$oid": "638ef7834ad755f6d56987c5"
+  },
+  "category": {
+    "$oid": "638d7edc9505100828e91935"
+  },
+  "product": {
+    "$oid": "638d80259505100828e91949"
+  },
+  "description": "Thành phần chứa Canxi, Photpho và Vitamin D, Vitamin C và Taurine. Có hai hương vị chính là cá ngừ và hải sản. Đặc biệt, trong công thức có chứa chất Flutd và một lượng Natri vừa đủ. Công dụng: hỗ trợ chắc khỏe xương và răng, tăng cường hệ thống miễn dịch, cải thiện chức năng của thị giác nhờ Taurine, Flutd giúp ngăn ngừa bệnh đường tiết niệu và bàng quang trên mèo",
+  "numOfRate": 4,
+  "numOfProductsReview": 7,
+  "numOfProductsLove": 13,
+  "numOfProductsInStock": 2000,
+  "createdAt": {
+    "$date": "2022-12-06T08:04:19.537Z"
+  },
+  "updatedAt": {
+    "$date": "2022-12-09T04:45:52.253Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a1d8cfbb0cc5730c9b0778"
+  },
+  "category": {
+    "$oid": "638d7ef19505100828e91937"
+  },
+  "product": {
+    "$oid": "63a1d8cebb0cc5730c9b0773"
+  },
+  "description": "Sản phẩm được sản xuất theo tiêu chuẩn bền, đẹp và đảm bảo an toàn cho thú cưng khi sử dụng, không gây kích ứng, không làm các bé khó chịu và đặc biệt là hoàn toàn phù hợp với điều kiện khí hậu tại các nước châu Á, mang lại cảm giác dễ chịu và an toàn cho thú cưng khi ở trong nhà lẫn lúc ra ngoài.",
+  "numOfRate": 0,
+  "numOfProductsLove": 0,
+  "numOfProductsInStock": 10,
+  "createdAt": {
+    "$date": "2022-12-20T15:46:23.986Z"
+  },
+  "updatedAt": {
+    "$date": "2022-12-20T15:46:23.986Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a1d92dbb0cc5730c9b078b"
+  },
+  "category": {
+    "$oid": "638d7f2c9505100828e9193b"
+  },
+  "product": {
+    "$oid": "63a1d92cbb0cc5730c9b0786"
+  },
+  "description": "Đồ chơi nhồi bông cho chó mèo mẫu ngẫu nhiên- Đồ chơi nhồi bông là sản phẩm đồ chơi bông được làm bằng chất liệu an toàn với thú cưng, - Chất liệu: nhồi bôngCác loại: Cá giả, đùi gà, bí Halloween, Vịt,....Lưu ý: Shop sẽ phát một trong các mẫu ngẫu nhiên trong hình ảnh. Khách hàng có thể inbox hoặc ghi chú trong đơn hàng cho shop biết bạn nuôi bé chó hay bé mèo để shop chọn loại",
+  "numOfRate": 0,
+  "numOfProductsLove": 0,
+  "numOfProductsInStock": 200,
+  "createdAt": {
+    "$date": "2022-12-20T15:47:57.966Z"
+  },
+  "updatedAt": {
+    "$date": "2022-12-20T15:47:57.966Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a1d994bb0cc5730c9b0798"
+  },
+  "category": {
+    "$oid": "638d7f3a9505100828e9193d"
+  },
+  "product": {
+    "$oid": "63a1d992bb0cc5730c9b0793"
+  },
+  "description": "Miếng ghép chuồng cho thú cưng sẽ cho bạn thoải mái sáng tạo ghép chuồng cho những chú chó, chú mèo nhà bạn.",
+  "numOfRate": 0,
+  "numOfProductsLove": 0,
+  "numOfProductsInStock": 5,
+  "createdAt": {
+    "$date": "2022-12-20T15:49:40.263Z"
+  },
+  "updatedAt": {
+    "$date": "2022-12-20T15:49:40.263Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a1da35bb0cc5730c9b07a5"
+  },
+  "category": {
+    "$oid": "638d7f479505100828e9193f"
+  },
+  "product": {
+    "$oid": "63a1da34bb0cc5730c9b07a0"
+  },
+  "description": "Khay đựng đồ ăn cho thú cưng",
+  "numOfRate": 0,
+  "numOfProductsLove": 0,
+  "numOfProductsInStock": 10,
+  "createdAt": {
+    "$date": "2022-12-20T15:52:21.476Z"
+  },
+  "updatedAt": {
+    "$date": "2022-12-20T15:52:21.476Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a1da8dbb0cc5730c9b07b2"
+  },
+  "category": {
+    "$oid": "638d7f549505100828e91941"
+  },
+  "product": {
+    "$oid": "63a1da8bbb0cc5730c9b07ad"
+  },
+  "description": "Khay đi vệ sinh cho chó",
+  "numOfRate": 0,
+  "numOfProductsLove": 0,
+  "numOfProductsInStock": 100,
+  "createdAt": {
+    "$date": "2022-12-20T15:53:49.247Z"
+  },
+  "updatedAt": {
+    "$date": "2022-12-20T15:53:49.247Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63a28818a5e9044c6798209d"
+  },
+  "category": {
+    "$oid": "638d7f479505100828e9193f"
+  },
+  "product": {
+    "$oid": "63a28816a5e9044c67982098"
+  },
+  "description": "Khay đựng đồ ăn cho thú cưng",
+  "numOfRate": 0,
+  "numOfProductsLove": 0,
+  "numOfProductsInStock": 12,
+  "createdAt": {
+    "$date": "2022-12-21T04:14:16.104Z"
+  },
+  "updatedAt": {
+    "$date": "2022-12-21T04:14:16.104Z"
+  },
+  "__v": 0
+}]

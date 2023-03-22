@@ -1,0 +1,79 @@
+[{
+  "_id": {
+    "$oid": "638d7edc9505100828e91935"
+  },
+  "icon": "game-icons:canned-fish",
+  "label": "Thức ăn",
+  "createdAt": {
+    "$date": "2022-12-05T05:17:16.983Z"
+  },
+  "updatedAt": {
+    "$date": "2022-12-05T05:17:16.983Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638d7ef19505100828e91937"
+  },
+  "icon": "fluent-emoji-high-contrast:womans-clothes",
+  "label": "Quần áo - phụ kiện",
+  "createdAt": {
+    "$date": "2022-12-05T05:17:37.816Z"
+  },
+  "updatedAt": {
+    "$date": "2022-12-05T05:17:37.816Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638d7f2c9505100828e9193b"
+  },
+  "icon": "bxs:tennis-ball",
+  "label": "Đồ chơi",
+  "createdAt": {
+    "$date": "2022-12-05T05:18:36.968Z"
+  },
+  "updatedAt": {
+    "$date": "2022-12-05T05:18:36.968Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638d7f3a9505100828e9193d"
+  },
+  "icon": "bi:house-door-fill",
+  "label": "Nhà - lồng",
+  "createdAt": {
+    "$date": "2022-12-05T05:18:50.459Z"
+  },
+  "updatedAt": {
+    "$date": "2022-12-05T05:18:50.459Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638d7f479505100828e9193f"
+  },
+  "icon": "game-icons:opened-food-can",
+  "label": "Dụng cụ ăn uống",
+  "createdAt": {
+    "$date": "2022-12-05T05:19:03.929Z"
+  },
+  "updatedAt": {
+    "$date": "2022-12-05T05:19:03.929Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638d7f549505100828e91941"
+  },
+  "icon": "el:broom",
+  "label": "Dụng cụ vệ sinh",
+  "createdAt": {
+    "$date": "2022-12-05T05:19:16.078Z"
+  },
+  "updatedAt": {
+    "$date": "2022-12-05T05:19:16.078Z"
+  },
+  "__v": 0
+}]

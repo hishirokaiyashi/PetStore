@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat-Regular.ttf);
+}
+
+html {
+  font-family: Montserrat, sans-serif;
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow: overlay;
+}
+
+:root {
+  /* Background color */
+  --primary-background-pink: #de135c;
+  --secondary-background-grey: #dde0e5;
+  --tertiary-background-blue: #428de5;
+
+  /* Text color */
+  --primary-text-black: #000000;
+  --secondary-text-grey: #868485;
+  --tertiary-text-white: #fff;
+  --other-text-pink: #de135c;
+
+  /* Linear color */
+  --linear-color: linear-gradient(
+    to right,
+    rgba(45, 139, 201, 0.8),
+    rgba(248, 212, 27, 0.4)
+  );
+
+  /* Text size */
+  --text-h1: 4.8rem;
+  --text-h2: 3.906rem;
+  --text-h3: 3.125rem;
+  --text-h4: 2.5rem;
+  --text-h5: 2rem;
+  --text-h6: 1.6rem;
+  --text-h7: 1.28rem;
+}
