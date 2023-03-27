@@ -1,0 +1,154 @@
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+    width: 100%;
+    height: 300px;
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+.banner{
+    width: 100%;
+    height: 300px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* product-container */
+.product-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.categories-container{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-around;
+    margin-left: 100px;
+}
+
+.list-products-container{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+:root {
+    --checkbox-size: 30px;
+  }
+.checkbox-custom {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+.checkbox-custom .input-wrap {
+    position: relative;
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
+  }
+.checkbox-custom .input-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    height: var(--checkbox-size);
+    width: var(--checkbox-size);
+    background-color: #e5e7eb;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: ease 0.2s;
+  }
+.checkbox-custom .input-checkbox:hover {
+    background-color: #d1d5db;
+  }
+.checkbox-custom .input-checkbox:checked {
+    background-color: #1dc071;
+    border-color: #fff;
+  }
+.checkbox-custom .input-checkbox:checked + .check-icon {
+    display: block;
+  }
+.checkbox-custom .check-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    display: none;
+    pointer-events: none;
+  }
+.checkbox-custom .check-icon svg {
+    height: 26px;
+    position: relative;
+  }
+.checkbox-custom .label {
+    color: #4c4c4c;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+  }
