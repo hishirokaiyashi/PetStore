@@ -44,23 +44,155 @@
     <!-- products start -->
     <div class="products-container">
         <div class="categories-container">
-            <h2>Categories</h2>
+            <h2 class="header-product-menu">Categories</h2>
+            <div class="divide"></div>
             <div class="checkbox-category">
-                <div class="checkbox-custom">
-                    <div class="input-wrap">
-                      <input type="checkbox" name="check" id="check" class="input-checkbox" />
+                <div class="checkbox-menu-product-item">
+                    <div class="input-menu">
+                      <input type="checkbox" name="input-check" id="check-all" class="input-checkbox" checked/>
                       <span class="check-icon">
                         <svg fill="currentColor"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512">
                         <path d="M493.3 128l-22.6 22.6-256 256L192 429.3l-22.6-22.6-128-128L18.7 256 64 210.7l22.6 22.6L192 338.7 425.4 105.4 448 82.7 493.3 128z"/>
                         </svg>
                       </span>
                     </div>
-                    <label class="label" for="check">Checkbox</label>
+                    <label class="label" for="check-all">All products</label>
+                </div>
+                <div class="checkbox-menu-product-item">
+                    <div class="input-menu">
+                      <input type="checkbox" name="input-check" id="0" class="input-checkbox" checked/>
+                      <span class="check-icon">
+                        <svg fill="currentColor"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512">
+                        <path d="M493.3 128l-22.6 22.6-256 256L192 429.3l-22.6-22.6-128-128L18.7 256 64 210.7l22.6 22.6L192 338.7 425.4 105.4 448 82.7 493.3 128z"/>
+                        </svg>
+                      </span>
+                    </div>
+                    <label class="label" for="0">Foods</label>
+                </div>
+                <div class="checkbox-menu-product-item">
+                  <div class="input-menu">
+                    <input type="checkbox" name="input-check" id="1" class="input-checkbox" checked/>
+                    <span class="check-icon">
+                      <svg fill="currentColor"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512">
+                      <path d="M493.3 128l-22.6 22.6-256 256L192 429.3l-22.6-22.6-128-128L18.7 256 64 210.7l22.6 22.6L192 338.7 425.4 105.4 448 82.7 493.3 128z"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <label class="label" for="1">Accessories</label>
+                </div>
+                <div class="checkbox-menu-product-item">
+                  <div class="input-menu">
+                    <input type="checkbox" name="input-check" id="2" class="input-checkbox" checked/>
+                    <span class="check-icon">
+                      <svg fill="currentColor"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512">
+                      <path d="M493.3 128l-22.6 22.6-256 256L192 429.3l-22.6-22.6-128-128L18.7 256 64 210.7l22.6 22.6L192 338.7 425.4 105.4 448 82.7 493.3 128z"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <label class="label" for="2">Toys</label>
+                </div>
+                <div class="checkbox-menu-product-item">
+                  <div class="input-menu">
+                    <input type="checkbox" name="input-check" id="3" class="input-checkbox" checked/>
+                    <span class="check-icon">
+                      <svg fill="currentColor"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512">
+                      <path d="M493.3 128l-22.6 22.6-256 256L192 429.3l-22.6-22.6-128-128L18.7 256 64 210.7l22.6 22.6L192 338.7 425.4 105.4 448 82.7 493.3 128z"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <label class="label" for="3">Cage</label>
+                </div>
+                <div class="checkbox-menu-product-item">
+                  <div class="input-menu">
+                    <input type="checkbox" name="input-check" id="4" class="input-checkbox" checked/>
+                    <span class="check-icon">
+                      <svg fill="currentColor"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512">
+                      <path d="M493.3 128l-22.6 22.6-256 256L192 429.3l-22.6-22.6-128-128L18.7 256 64 210.7l22.6 22.6L192 338.7 425.4 105.4 448 82.7 493.3 128z"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <label class="label" for="4">Eating utensils</label>
+                </div>
+                <div class="checkbox-menu-product-item">
+                  <div class="input-menu">
+                    <input type="checkbox" name="input-check" id="5" class="input-checkbox" checked/>
+                    <span class="check-icon">
+                      <svg fill="currentColor"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512">
+                      <path d="M493.3 128l-22.6 22.6-256 256L192 429.3l-22.6-22.6-128-128L18.7 256 64 210.7l22.6 22.6L192 338.7 425.4 105.4 448 82.7 493.3 128z"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <label class="label" for="5">Cleaning tools</label>
                 </div>
             </div>
         </div>
         <div class="list-products-container">
-
+          <div class="sort-product-container">
+            <div class="sort-product-item">
+              <select name="rate" id="sort-rate">
+                <option value="Rating" class="option-sort">Rating</option>
+                <option value="Excellent" class="option-sort">Excellent</option>
+                <option value="Good" class="option-sort">Good</option>
+                <option value="Fair" class="option-sort">Fair</option>
+                <option value="Uncertain" class="option-sort">Uncertain</option>
+                <option value="Poor" class="option-sort">Poor</option>
+              </select>
+            </div>
+            <div class="sort-product-item">
+              <select name="numofSold" id="sort-sold">
+                <option value="Sold" class="option-sort">Sold</option>
+                <option value="Decrease" class="option-sort">Decrease</option>
+                <option value="Increase" class="option-sort">Increase</option>
+              </select>
+            </div>
+            <div class="sort-product-item">
+              <select name="price" id="sort-price">
+                <option value="Price" class="option-sort">Price</option>
+                <option value="Decrease" class="option-sort">Decrease</option>
+                <option value="Increase" class="option-sort">Increase</option>
+              </select>
+            </div>
+          </div>
+          <div class="list-card-product">
+            <div class="card-product">
+              <div class="card-product-img-top">
+                <img src="../../assets/imgs/pet dog 1.png" alt="" class="card-product-img">
+                <span class="card-product-name">Hat thuc an cho meo</span>
+              </div>
+              <div class="card-product-bottom">
+                <div class="card-product-price">
+                  <span class="card-product-price-before-discount"><sup>$</sup>100</span>
+                  <b class="card-product-price-discount"><sup>$</sup>80</b>
+                </div>
+                <div class="card-product-rate-detail">
+                  <div class="rating-star">
+                    <span class="iconify" data-icon="material-symbols:star-rounded"></span>
+                    <span class="iconify" data-icon="material-symbols:star-rounded"></span>
+                    <span class="iconify" data-icon="material-symbols:star-rounded"></span>
+                    <span class="iconify" data-icon="material-symbols:star-rounded"></span>
+                    <span class="iconify" data-icon="material-symbols:star-rounded"></span>
+                  </div>
+                  <div class="rating-amount">
+                    <span class="rating-amount-number">5</span>
+                    <span class="rating-amount-text">/5</span>
+                  </div>
+                </div>
+                <div class="card-product-sold">
+                  <span class="card-product-sold-number">100</span>
+                  <span class="card-product-sold-text">Sold</span>
+                </div>
+              </div>
+              <div class="card-product-discount">
+                <img src="../../assets/imgs/Bookmark.png" alt="sale discount" class="product-discount-bookmark">
+                <span class="card-product-discount-text">-20%</span>
+              </div>
+              <div class="card-product-buy-now">
+                <button class="card-product-buy-now-btn">
+                  Buy now <iconify-icon icon="material-symbols:shopping-cart-rounded"></iconify-icon>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
     </div>
 
