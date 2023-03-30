@@ -14,6 +14,7 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
@@ -25,6 +26,8 @@ body {
   --primary-background-pink: #de135c;
   --secondary-background-grey: #dde0e5;
   --tertiary-background-blue: #428de5;
+  --other-background-black: #000;
+  --other-background-white: #fff;
 
   /* Text color */
   --primary-text-black: #000000;
