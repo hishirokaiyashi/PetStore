@@ -81,36 +81,33 @@ fetch("/src/data/products.json")
         "beforeend",
         `
         <div class="home-container-second-product" draggable="false">
-        <div class="productItem-container">
+          <div class="productItem-container">
             <div class="product-sale">
                - ${sale}%
             </div>
-                  <img src="${img}" class="product-img-item" alt="products-seller-1">
-                  <div class="item-info">
-                      <div class="item-info-first">
-                          <div class="item-price-container">
-                              <p class="item-title">
-                                  ${name}
-                              </p>
-                              <p class="item-price-before">
-                                  $ ${price}
-                              </p>
-                              <p class="item-price-after">
-                                  $ ${((100 - sale) / 100) * price}
-                              </p>
-                          </div>
-                          <div class="item-icon-container">
-                              <span class="iconify footer-container-fifth-item-icon"
-                                  data-icon="icon-park-outline:like"></span>
-                          </div>
-                      </div>
-                      <a class="quick-view-detail">
-                          <button>
-                              VIEW DETAIL
-                          </button>
-                      </a>
-                  </div>
-          </div>
+            <img src="${img}" class="product-img-item" alt="products-seller-1">
+              <div class="item-info-first">
+                <div class="item-price-container">
+                  <p class="item-title">
+                    ${name}
+                  </p>
+                  <p class="item-price-before">
+                    $ ${price}
+                  </p>
+                  <p class="item-price-after">
+                    $ ${((100 - sale) / 100) * price}
+                  </p>
+                </div>
+                <div class="item-icon-container">
+                    <span class="iconify footer-container-fifth-item-icon"
+                          data-icon="icon-park-outline:like">
+                    </span>
+                </div>
+              </div>
+                <a class="quick-view-detail">
+                  <button>VIEW DETAIL</button>
+                </a>
+            </div>
         </div>
         `
       );

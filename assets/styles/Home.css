@@ -407,7 +407,7 @@
   gap: 10px;
   width: 100%;
   display: flex;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0 0.5rem 0.5rem;
 }
 .home-container-second-product{
   width: 33.33%;
@@ -440,7 +440,7 @@
 }
 
 .product-img-item{
-  width: 380px;
+  width: 300px;
   object-fit: cover;
 }
 .home-container-second-product {
