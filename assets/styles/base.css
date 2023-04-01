@@ -41,7 +41,11 @@ body {
     rgba(45, 139, 201, 0.8),
     rgba(248, 212, 27, 0.4)
   );
-
+  --linear-color-second: linear-gradient(
+    to right,
+    rgba(66, 141, 229, 0.3),
+    rgba(255, 137, 179, 1)
+  );
   /* Text size */
   --text-h1: 4.8rem;
   --text-h2: 3.906rem;

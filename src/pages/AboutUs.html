@@ -1,51 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AboutUs</title>
-    <link rel="stylesheet" href="/assets/styles/base.css">
-    <link rel="stylesheet" href="/assets/styles/Header.css">
-    <link rel="stylesheet" href="/assets/styles/AboutUs.css">
+    <link rel="stylesheet" href="/assets/styles/base.css" />
+    <link rel="stylesheet" href="/assets/styles/AboutUs.css" />
+    <link rel="stylesheet" href="/assets/styles/Header.css" />
+    <link rel="stylesheet" href="/assets/styles/Footer.css" />
     <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
-</head>
-<body>
-    <header class="header-container">
+  </head>
+
+  <body>
+    <div class="AboutUs-container-biggest">
+      <header class="header-container">
         <div class="header-container-detail">
-            <div class="header-logo">
-                <a href="/"> PetStore </a>
+          <div class="header-logo">
+            <a href="/"> PetStore </a>
+          </div>
+          <div class="header-container-items">
+            <ul class="header-list">
+              <li class="header-list-detail header-list-detail-tab-active">
+                <a href="/src/pages/Home.html">Trang chủ</a>
+              </li>
+              <li class="header-list-detail">
+                <a href="/src/pages/Products.html">Sản phẩm</a>
+              </li>
+              <li class="header-list-detail">
+                <a href="/src/pages/AboutUs.html">Về chúng tôi</a>
+              </li>
+              <li class="header-list-detail">
+                <button class="header-button-login-mobile">Đăng nhập</button>
+              </li>
+            </ul>
+          </div>
+          <div class="header-container-menu-icon">
+            <span
+              class="iconify header-button-icon-first"
+              data-icon="material-symbols:menu"
+            ></span>
+          </div>
+          <div class="header-container-buttons">
+            <div class="header-container-button-list-icons">
+              <div class="header-container-button-icon">
+                <span
+                  class="iconify header-button-icon"
+                  data-icon="material-symbols:search"
+                ></span>
+              </div>
+              <div class="header-container-button-icon">
+                <a href="/src/pages/Carts.html" class="shopping-cart-link">
+                  <span
+                    class="iconify header-button-icon"
+                    data-icon="material-symbols:shopping-cart-outline"
+                  ></span>
+                </a>
+              </div>
             </div>
-            <div class="header-container-items">
-                <ul class="header-list">
-                    <li class="header-list-detail header-list-detail-tab-active">
-                        <a href="/src/pages/Home.html">Trang chủ</a>
-                    </li>
-                    <li class="header-list-detail">
-                        <a href="/src/pages/Products.html">Sản phẩm</a>
-                    </li>
-                    <li class="header-list-detail">
-                        <a href="/src/pages/AboutUs.html">Về chúng tôi</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="header-container-menu-icon">
-                <iconify-icon icon="material-symbols:menu"></iconify-icon>
-            </div>
-            <div class="header-container-buttons">
-                <div class="header-container-button-list-icons">
-                    <div class="header-container-button-icon">
-                        <span class="iconify header-button-icon" data-icon="material-symbols:search"></span>
-                    </div>
-                    <div class="header-container-button-icon">
-                        <span class="iconify header-button-icon" data-icon="material-symbols:shopping-cart-outline"></span>
-                    </div>
-                </div>
-                <button class="header-button-login">Đăng nhập</button>
-            </div>
+            <button class="header-button-login">Đăng nhập</button>
+          </div>
         </div>
-    </header>
-    <h1>đây là about us</h1>
-</body>
-<script src="/src/scripts/header.js"></script>
+      </header>
+      <div class="AboutUs-container">
+        <section class="AboutUs-container-first">
+          <div class="AboutUs-container-detail">
+            <div class="AboutUs-container-content">
+              <h2 class="AboutUs-Title">ABOUT US</h2>
+              <div class="AboutUs-banner-content">
+                <p>
+                  PetStore is a store that specializes in providing customers
+                  with products specifically for your pet.
+                </p>
+                <p>
+                  Not only that, we also constantly publish new articles with
+                  the desire to help PetStore customers have the necessary
+                  skills when caring for pets.
+                </p>
+                <p>
+                  At PetStore, the staff is well trained, always considerate and
+                  enthusiastic to help customers when coming to PetStore. We
+                  prioritize customer satisfaction first
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="AboutUs-container-second">
+          <div class="AboutUs-container-detail">
+            <div class="about-container-title">
+              <hr class="about-title-divide" />
+              <h2 class="AboutUs-member">EMPLOYEE AT PET STORE</h2>
+              <hr class="about-title-divide" />
+            </div>
+            <div class="AboutUs-member-img-container">
+              <div class="AboutUs-member-info">
+                <img
+                  src="/assets/images/Giao.jpg"
+                  alt="Giao"
+                  class="member-img"
+                />
+                <p>Ngoc Giao</p>
+                <span>Member</span>
+              </div>
+              <div class="AboutUs-member-info">
+                <img
+                  src="/assets/images/Hieu.jpg"
+                  alt="Hieu"
+                  class="member-img"
+                />
+                <p>Ngoc Hieu</p>
+                <span>Member</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer class="footer-container">
+        <div class="footer-container-detail">
+          <div class="footer-container-logo">
+            <a href="/"> PetStore </a>
+          </div>
+          <div class="footer-container-second">
+            <span class="footer-container-second-text">
+              Our mission is to keep pets healthy
+            </span>
+            <div class="footer-line-big"></div>
+            <div class="footer-container-second-icon">
+              <span
+                class="iconify footer-container-second-item-icon"
+                data-icon="ic:outline-facebook"
+              ></span>
+              <span
+                class="iconify footer-container-second-item-icon"
+                data-icon="mdi:instagram"
+              ></span>
+              <span
+                class="iconify footer-container-second-item-icon"
+                data-icon="mdi:twitter"
+              ></span>
+              <span
+                class="iconify footer-container-second-item-icon"
+                data-icon="ph:youtube-logo-fill"
+              ></span>
+            </div>
+          </div>
+          <div class="footer-container-third">
+            <span class="footer-container-third-text"> Links </span>
+            <div class="footer-line-big"></div>
+            <ul class="footer-container-third-list-links">
+              <li class="footer-container-third-link">
+                <a href="/src/pages/Home.html">HOME</a>
+              </li>
+              <div class="footer-line-small"></div>
+              <li class="footer-container-third-link">
+                <a href="/src/pages/Products.html">PRODUCT</a>
+              </li>
+              <div class="footer-line-small"></div>
+              <li class="footer-container-third-link">
+                <a href="/src/pages/AboutUs.html">ABOUT US</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-container-fourth">
+            <span class="footer-container-fourth-text"> Work Time </span>
+            <div class="footer-line-big"></div>
+            <ul class="footer-container-fourth-list-time">
+              <li class="footer-container-fourth-item">
+                <span class="footer-container-fourth-time-day">
+                  Monday -> Friday
+                </span>
+                <span class="footer-container-fourth-time">
+                  7h30 -> 21h00
+                </span>
+              </li>
+              <div class="footer-line-small"></div>
+              <li class="footer-container-fourth-item">
+                <span class="footer-container-fourth-time-day"> Saturday </span>
+                <span class="footer-container-fourth-time">
+                  7h30 -> 20h00
+                </span>
+              </li>
+              <div class="footer-line-small"></div>
+              <li class="footer-container-fourth-item">
+                <span class="footer-container-fourth-time-day"> Sunday </span>
+                <span class="footer-container-fourth-time"> Close </span>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-container-fifth">
+            <span class="footer-container-fifth-text"> Contact </span>
+            <div class="footer-line-big"></div>
+            <div class="footer-container-fifth-list-contact">
+              <div class="footer-container-fifth-item">
+                <span
+                  class="iconify footer-container-fifth-item-icon"
+                  data-icon="mdi:map-marker"
+                ></span>
+                <span class="footer-container-fifth-item-text">
+                  Address: Quarter 6, Linh Trung Ward, City. Thu Duc, HCM
+                </span>
+              </div>
+              <div class="footer-line-small"></div>
+              <div class="footer-container-fifth-item">
+                <span
+                  class="iconify footer-container-fifth-item-icon"
+                  data-icon="ic:baseline-phone-callback"
+                ></span>
+                <span class="footer-container-fifth-item-text">
+                  PhoneNumber: 123456
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-container-copyright">
+          <div class="footer-copyright-main">
+            <span>Copyright belongs to Pet Store</span>
+          </div>
+          <div class="footer-copyright-sub">
+            <p>© 2023 All rights reserved</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script src="/src/scripts/header.js"></script>
 </html>

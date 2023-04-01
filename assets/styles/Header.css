@@ -111,7 +111,10 @@
 .header-button-icon-first:nth-child(2){
   display:none;
 }
-
+.shopping-cart-link {
+  display: flex;
+  align-items: center;
+}
 @media screen and (max-width: 960px) {
 
   .header-button-login {
@@ -155,8 +158,8 @@
   .header-container-items {
     position: absolute;
     width: 100%;
-    height: calc(100vh - 80px);
-    top: 80px;
+    height: calc(100vh - 100px);
+    top: 100px;
     display: flex;
     justify-content: center;
     align-items: baseline;

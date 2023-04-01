@@ -7,55 +7,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .fixed-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background-color: #fff;
-            z-index: 999;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        *{
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        .home-container-second-detail {
+          /* display: flex; */
+          
+        }
+        .carousel {
+          display: flex;
+          gap:20px;
+          max-width: 100vw;
+          width: 100%;
+        }
+        .home-container-second-product {
+          width: 33.33%;
+
+          
+
+        }
+        img {
+           width: 100%;
         }
 
-        /* Add some padding to the section to prevent it from being hidden behind the fixed header */
-        #main {
-            padding-top: 100px;
-        }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>Page Title</h1>
-    </header>
+    
 
-    <section id="main">
-        <h2>Main Section</h2>
-        <p>This is the main section of the page.</p>
-    </section>
+    <div class="home-container-second-detail">
+        
+            <!-- <span id="left" class="prev-products">&#10094;</span> -->
+            <div class="carousel">
+                <div class="home-container-second-product" draggable="false">
+                    <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8&w=1000&q=80" class="product-img-item" alt="products-seller-1">
+                  </div>
+                  <div class="home-container-second-product" draggable="false">
+                    <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8&w=1000&q=80" class="product-img-item" alt="products-seller-1">
+                  </div>
+                  <div class="home-container-second-product" draggable="false">
+                    <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8&w=1000&q=80" class="product-img-item" alt="products-seller-1">
+                  </div>
+                  <div class="home-container-second-product" draggable="false">
+                    <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8&w=1000&q=80" class="product-img-item" alt="products-seller-1">
+                  </div><div class="home-container-second-product" draggable="false">
+                    <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8&w=1000&q=80" class="product-img-item" alt="products-seller-1">
+                  </div><div class="home-container-second-product" draggable="false">
+                    <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8&w=1000&q=80" class="product-img-item" alt="products-seller-1">
+                  </div>
+                  <!-- <div class="home-container-second-product" draggable="false">
+                    <img src="/assets/images/products-1.png" class="product-img-item" alt="products-seller-1">
+                  </div>
+                  <div class="home-container-second-product" draggable="false">
+                    <img src="/assets/images/products-1.png" class="product-img-item" alt="products-seller-1">
+                  </div>
+                  <div class="home-container-second-product" draggable="false">
+                    <img src="/assets/images/products-1.png" class="product-img-item" alt="products-seller-1">
+                  </div> -->
+            </div>
+            <!-- <span id="right" class="prev-products">&#10095;</span> -->
+    </div>
 
-    <script>
+    
 
-        // get header and section elements
-        const header = document.querySelector('header');
-        const section = document.querySelector('#main');
 
-        // get the section's top position
-        const sectionTop = section.offsetTop;
-
-        // add an event listener to the window object for scroll event
-        window.addEventListener('scroll', () => {
-            // check if the scroll position is greater than the section's top position
-            if (window.scrollY >= sectionTop) {
-                // add a class to the header element to make it fixed to the top of the page
-                header.classList.add('fixed-header');
-            } else {
-                // remove the class if the scroll position is less than the section's top position
-                header.classList.remove('fixed-header');
-            }
-        });
-
-    </script>
 </body>
 
 </html>
