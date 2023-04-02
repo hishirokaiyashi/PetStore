@@ -2,10 +2,7 @@
 /* Slideshow container */
 .slideshow-container {
     width: 100%;
-    height: 300px;
-    max-width: 1000px;
     position: relative;
-    margin: auto;
 }
 
 /* Hide the images by default */
@@ -15,7 +12,7 @@
 
 .banner{
     width: 100%;
-    height: 300px;
+    height: 400px
 }
 
 /* Next & previous buttons */
@@ -259,6 +256,7 @@
   color: #ccc;
   font-size: 14px;
   margin-top: 5px;
+  margin-bottom: 20px;
 }
 
 .card-product-discount{
@@ -280,27 +278,13 @@
 
 .card-product-discount-text{
   color: #de135c;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 700;
   position: absolute;
-  right: 8px;
-  top: 20px;
+  right: 13px;
+  top: 28px;
 }
-
-.card-product-buy-now{
-  align-items: center;
-  bottom: -5px;
-  display: flex;
-  height: 35px;
-  justify-content: space-between;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  width: 100%;
-  z-index: 10;
-}
-
+/* style card-product-buy-now-btn */
 .card-product-buy-now-btn{
   background-color: #de135c;
   border: 1px solid #de135c;
@@ -308,12 +292,20 @@
   color: #fff;
   cursor: pointer;
   font-size: 14px;
-  font-weight: 600;
-  height: 100%;
+  font-weight: 700;
+  height: 40px;
+  margin-top: 10px;
   outline: none;
-  padding: 0 10px;
   transition: all 0.3s ease 0s;
   width: 100%;
+  display: none;
+  position: absolute;
+  bottom: 0;
+}
+
+.card-product-buy-now-btn:hover{
+  background-color: #fff;
+  color: #de135c;
 }
 
 .card-product:hover .card-product-buy-now-btn{

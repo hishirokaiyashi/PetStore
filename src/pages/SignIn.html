@@ -17,7 +17,8 @@
         <div class="form-signin">
             <h1 class="form-heading">Welcome Back, Pet Store</h1>
             <p class="form-desc">Continue with Google or enter your details</p>
-            <a href="#" class="btn-login-google">
+            <!-- move to login with google -->
+            <a href="https://account.google.com" class="btn-login-google">
                 <img src="../../assets/imgs/google-logo.png" alt="" width="50px">
                 Sign in with Google
             </a>
@@ -26,25 +27,28 @@
                 <p class="text">or</p>
                 <div class="text-line"></div>
             </div>
-            <form class="form" autocomplete="off">
+            <form class="form" onsubmit="return checkValidation()">
                 <div class="form-group">
                     <label for="email">Email *</label>
                     <input type="text" name="email" id="email" placeholder="Email" class="form-input"/>
+                    <p class="text-danger" id="required-email"></p>
                 </div>
                 <div class="form-group">
                     <label for="password">Password *</label>
                     <input type="password" name="password" id="password" placeholder="password" class="form-input"/>
+                    <p class="text-danger" id="required-pw"></p>
                 </div>
                 <div class="form-meta">
                     <div class="form-remember">
                         <input type="checkbox" name="remember-account" id="remember-account"/>
                         <label for="remember-account">Remember for 30 days</label>
                     </div>
-                    <a href="#" class="form-link">Forgot Password</a>
+                    <a onclick="showPopupChangePw()" class="form-link">Forgot Password</a>
                 </div>
-                <button type="submit" class="form-btn">
+                <button type="submit" class="form-btn" onclick="checkValidation()">
                     Sign in
                 </button>
+
             </form>
             <div class="form-option">
                 Don&#x27;t have an account?
@@ -52,5 +56,78 @@
             </div>
         </div>
     </div>
+    <!-- popup change password -->
+    <form class="form-forgot-pw" onsubmit="return checkValidation()">
+        <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="text" name="email" id="email" placeholder="Email" class="form-input"/>
+            <p class="text-danger" id="required-email"></p>
+        </div>
+        <div class="form-group">
+            <label for="password">New Password *</label>
+            <input type="password" name="password" id="password" placeholder="password" class="form-input"/>
+            <p class="text-danger" id="required-pw"></p>
+        </div>
+        <div class="form-group">
+            <label for="password">Confirm Password *</label>
+            <input type="password" name="password" id="password" placeholder="password" class="form-input"/>
+            <p class="text-danger" id="required-pw"></p>
+        </div>
+        <button type="submit" class="form-btn" onclick="checkValidation()">
+            Sign in
+        </button>
+    </form>
+    <script>
+
+        //show popup change password
+        function showPopupChangePw() {
+            let popup = document.querySelector(".form-forgot-pw");
+            popup.style.display = "block";
+        }
+        // check validation, IF true => redirect to home page
+        function checkValidation() {
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let requiredEmail = document.getElementById("required-email");
+            let requiredPw = document.getElementById("required-pw");
+            //check required email and password
+            if (email == "") {
+                requiredEmail.innerHTML = "Email is required";
+            } else {
+                requiredEmail.innerHTML = "";
+            }
+            if (password == "") {
+                requiredPw.innerHTML = "Password is required";
+            } else {
+                requiredPw.innerHTML = "";
+            }
+            //check email format
+            if (email != "") {
+                let emailFormat = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                if (emailFormat.test(email) == false) {
+                    requiredEmail.innerHTML = "Email is not valid";
+                } else {
+                    requiredEmail.innerHTML = "";
+                }
+            }
+            //check password length
+            if (password != "") {
+                if (password.length < 6) {
+                    requiredPw.innerHTML = "Password must be at least 6 characters";
+                } else {
+                    requiredPw.innerHTML = "";
+                }
+            }
+            //check all validation
+            if (email != "" && password != "" && emailFormat.test(email) == true && password.length >= 6) {
+                console.log("true");
+                window.location.href = "./Home.html";
+                return true;
+            }
+            //prevent reload page
+            return false;
+
+        }
+    </script>
 </body>
 </html>
