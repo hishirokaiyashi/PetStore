@@ -80,7 +80,7 @@ fetch("/src/data/products.json")
       document.querySelector(".carousel").insertAdjacentHTML(
         "beforeend",
         `
-        <a href="/src/pages/Carts.html" class="home-container-second-product" draggable="false">
+        <a href=""/src/pages/Carts.html" class="home-container-second-product" draggable="false">
           <div class="productItem-container">
             <p class="product-sale">
                 -${sale}% 

@@ -1,5 +1,4 @@
 .home-container-biggest {
-  /* overflow: hidden; */
   min-height: 100vh;
   scroll-behavior: smooth;
 }
