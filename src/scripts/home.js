@@ -80,8 +80,8 @@ fetch("/src/data/products.json")
       document.querySelector(".carousel").insertAdjacentHTML(
         "beforeend",
         `
-        <a href=""/src/pages/Carts.html" class="home-container-second-product" draggable="false">
-          <div class="productItem-container">
+        <div class="home-container-second-product" draggable="false">
+          <a  class="productItem-container">
             <p class="product-sale">
                 -${sale}% 
             </p>
@@ -93,9 +93,13 @@ fetch("/src/data/products.json")
             <div class="item-info-first">
               <div class="item-price-container">
                 <p class="item-title">${name}</p>
-                <p class="item-price-before">$ ${price}</p>
+                <div class="item-price-before-container">
+                $ 
+                <p class="price-before">${price}</p>
+                </div>
                 <p class="item-price-after">
-                  $ ${((100 - sale) / 100) * price}
+                  $ 
+                  <p class="price-after">${((100 - sale) / 100) * price}</p>
                 </p>
               </div>
               <div class="item-icon-container">
@@ -106,85 +110,143 @@ fetch("/src/data/products.json")
                 </span>
               </div>
             </div>
-              <div class="quick-view-detail">
-                <button>VIEW DETAIL</button>
-              </div>
-          </div>
-        </a>
+            <div class="quick-view-detail">
+              <button onclick="addToCart(this)" class="btn-add-to-card">
+                Add To Card
+              </button>
+            </div>
+          </a>
+        </div>
         `
       );
     });
-    const carousel = document.querySelector(".carousel"),
-          firstImg = carousel.querySelectorAll(".productItem-container")[0],
-          arrowIcons = document.querySelectorAll(".prev-products");
-    let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
-    const showHideIcons = () => {
-      // showing and hiding prev/next icon according to carousel scroll left value
-      let scrollWidth = carousel.scrollWidth - carousel.clientWidth; // getting max scrollable width
-      arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
-      arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
-    }
 
+    const carousel = document.querySelector(".carousel"),
+      firstImg = carousel.querySelectorAll(".productItem-container")[0],
+      arrowIcons = document.querySelectorAll(".prev-products");
+    let isDragStart = false,
+      isDragging = false,
+      prevPageX,
+      prevScrollLeft,
+      positionDiff;
+    const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+    const firstImgWidth = firstImg.clientWidth;
+    // const showHideIcons = () => {
+    //   // showing and hiding prev/next icon according to carousel scroll left value
+    //   let scrollWidth = carousel.scrollWidth - carousel.clientWidth; // getting max scrollable width
+
+    //   arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
+    //   arrowIcons[1].style.display =
+    //   carousel.scrollLeft == scrollWidth ? "none" : "block";
+    // };
     arrowIcons.forEach(icon => {
-      icon.addEventListener("click", () => {
-        let firstImgWidth = firstImg.clientWidth + 10; // getting first img width & adding 14 margin value
-        // if clicked icon is left, reduce width value from the carousel scroll left else add to it
+      icon.addEventListener("click", (e) => {
+        e.preventDefault(); // Add this line to prevent the default behavior of the click event
+
         carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
-        setTimeout(() => showHideIcons(), 60); // calling showHideIcons after 60ms
-      });
+        arrowIcons[0].style.display = icon.id == "right" || carousel.scrollLeft > firstImgWidth ? "block" : "none";
+        if (icon.id == "right" && Math.ceil(carousel.scrollLeft) == maxScrollLeft - firstImgWidth ) {
+          arrowIcons[1].style.display = "none"
+        }
+        else if (icon.id == "left" && Math.ceil(carousel.scrollLeft) == maxScrollLeft) {
+          arrowIcons[1].style.display = "block"
+        }
+        else {
+          arrowIcons[1].style.display = Math.ceil(carousel.scrollLeft) == maxScrollLeft ? "none" : "block";
+        }
+        console.log("carousel.scrollLeft",Math.ceil(carousel.scrollLeft));
+        console.log("maxScrollLeft",maxScrollLeft)
+        console.log("firstImgWidth",firstImgWidth)
+      }
+      );
     });
 
-    const autoSlide = () => {
-      // if there is no image left to scroll then return from here
-      if (carousel.scrollLeft - (carousel.scrollWidth - carousel.clientWidth) > -1 || carousel.scrollLeft <= 0) return;
+    // drag
+    // const autoSlide = () => {
+    //   // if there is no image left to scroll then return from here
+    //   if (
+    //     carousel.scrollLeft - (carousel.scrollWidth - carousel.clientWidth) >
+    //       -1 ||
+    //     carousel.scrollLeft <= 0
+    //   )
+    //   {
+    //     return;
+    //   }
 
-      positionDiff = Math.abs(positionDiff); // making positionDiff value to positive
-      let firstImgWidth = firstImg.clientWidth + 10;
-      // getting difference value that needs to add or reduce from carousel left to take middle img center
-      let valDifference = firstImgWidth - positionDiff;
+    //   positionDiff = Math.abs(positionDiff); // making positionDiff value to positive
+    //   let firstImgWidth = firstImg.clientWidth + 10;
+    //   // getting difference value that needs to add or reduce from carousel left to take middle img center
+    //   let valDifference = firstImgWidth - positionDiff;
 
-      if (carousel.scrollLeft > prevScrollLeft) { // if user is scrolling to the right
-        return carousel.scrollLeft += positionDiff > firstImgWidth / 4 ? valDifference : -positionDiff;
-      }
-      // if user is scrolling to the left
-      carousel.scrollLeft -= positionDiff > firstImgWidth / 4 ? valDifference : -positionDiff;
-    }
+    //   if (carousel.scrollLeft > prevScrollLeft) {
+    //     // if user is scrolling to the right
+    //     return (carousel.scrollLeft +=
+    //       positionDiff > firstImgWidth / 4 ? valDifference : -positionDiff);
+    //   }
+    //   // if user is scrolling to the left
+    //   carousel.scrollLeft -=
+    //     positionDiff > firstImgWidth / 4 ? valDifference : -positionDiff;
 
-    const dragStart = (e) => {
-      e.stopPropagation();
-      // updatating global variables value on mouse down event
-      isDragStart = true;
-      prevPageX = e.pageX || e.touches[0].pageX;
-      prevScrollLeft = carousel.scrollLeft;
-    }
+    // };
 
-    const dragging = (e) => {
-      e.stopPropagation();
-      // scrolling images/carousel to left according to mouse pointer
-      if (!isDragStart) return;
-      e.preventDefault();
-      isDragging = true;
-      carousel.classList.add("dragging");
-      positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
-      carousel.scrollLeft = prevScrollLeft - positionDiff;
-      showHideIcons();
-    }
+    // const dragStart = (e) => {
+    //   e.stopPropagation();
+    //   // updatating global variables value on mouse down event
+    //   isDragStart = true;
+    //   prevPageX = e.pageX || e.touches[0].pageX;
+    //   prevScrollLeft = carousel.scrollLeft;
+    // };
 
-    const dragStop = (e) => {
-      e.stopPropagation();
-      isDragStart = false;
-      carousel.classList.remove("dragging");
-      if (!isDragging) return;
-      isDragging = false;
-      autoSlide();
-    }
+    // const dragging = (e) => {
+    //   e.stopPropagation();
+    //   // scrolling images/carousel to left according to mouse pointer
+    //   if (!isDragStart) return;
+    //   e.preventDefault();
+    //   isDragging = true;
+    //   carousel.classList.add("dragging");
+    //   positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+    //   carousel.scrollLeft = prevScrollLeft - positionDiff;
+    //   showHideIcons();
+    // };
 
-    carousel.addEventListener("mousedown", dragStart,true);
-    carousel.addEventListener("touchstart", dragStart,true);
+    // const dragStop = (e) => {
+    //   e.stopPropagation();
+    //   isDragStart = false;
+    //   carousel.classList.remove("dragging");
+    //   if (!isDragging) return;
+    //   isDragging = false;
+    //   autoSlide();
+    // };
 
-    document.addEventListener("mousemove", dragging,true);
-    carousel.addEventListener("touchmove", dragging,true);
+    // carousel.addEventListener("mousedown", dragStart, true);
+    // carousel.addEventListener("touchstart", dragStart, true);
 
-    document.addEventListener("mouseup", dragStop,true);
-    carousel.addEventListener("touchend", dragStop,true);
-});
+    // document.addEventListener("mousemove", dragging, true);
+    // carousel.addEventListener("touchmove", dragging, true);
+
+    // document.addEventListener("mouseup", dragStop, true);
+    // carousel.addEventListener("touchend", dragStop, true);
+  });
+
+// Add to card
+
+let listCart = [];
+
+function addToCart(x) {
+  // console.log(x.parentElement)
+  // let btn = x.parentElement.parentElement;
+  // let img = btn.children[1].src;
+  // let name = btn.children[2].children[0].children[0];
+  let container = document.querySelector('.productItem-container');
+  let img = container.querySelector('.product-img-item').src;
+  let name = container.querySelector('.item-title').innerHTML;
+  let price = container.querySelector('.price-after').innerHTML;
+  let amount = 1;
+  let item = { img, name, price, amount };
+  listCart.push(item)
+  //check item duplicate
+  //save session
+  sessionStorage.setItem("listCart",JSON.stringify(listCart))
+  console.log(listCart)
+  document.getElementById("number-cart").innerText = listCart.length;
+}
