@@ -1,552 +1,533 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="/assets/styles/base.css">
-    <link rel="stylesheet" href="/assets/styles/Home.css">
-    <link rel="stylesheet" href="/assets/styles/Header.css">
-    <link rel="stylesheet" href="/assets/styles/Footer.css">
+    <link rel="stylesheet" href="/assets/styles/base.css" />
+    <link rel="stylesheet" href="/assets/styles/Home.css" />
+    <link rel="stylesheet" href="/assets/styles/Header.css" />
+    <link rel="stylesheet" href="/assets/styles/Footer.css" />
     <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="home-container-biggest">
-        <header class="header-container">
-            <div class="header-container-detail">
-                <div class="header-logo">
-                    <a href="/"> PetStore </a>
-                </div>
-                <div class="header-container-items">
-                    <ul class="header-list">
-                        <li class="header-list-detail header-list-detail-tab-active">
-                            <a href="/src/pages/Home.html">Trang chủ</a>
-                        </li>
-                        <li class="header-list-detail">
-                            <a href="/src/pages/Products.html">Sản phẩm</a>
-                        </li>
-                        <li class="header-list-detail">
-                            <a href="/src/pages/AboutUs.html">Về chúng tôi</a>
-                        </li>
-                        <li class="header-list-detail">
-                            <button class="header-button-login-mobile">Đăng nhập</button>
-                        </li>
-                    </ul>
-                </div>
-                <div class="header-container-menu-icon">
-                    <span class="iconify header-button-icon-first" data-icon="material-symbols:menu"></span>
-                </div>
-                <div class="header-container-buttons">
-                    <div class="header-container-button-list-icons">
-                        <div class="header-container-button-icon">
-                            <span class="iconify header-button-icon" data-icon="material-symbols:search"></span>
-                        </div>
-                        <div class="header-container-button-icon">
-                            <span class="iconify header-button-icon"
-                                data-icon="material-symbols:shopping-cart-outline"></span>
-                        </div>
-                    </div>
-                    <button class="header-button-login">Đăng nhập</button>
-                </div>
+      <header class="header-container">
+        <div class="header-container-detail">
+          <div class="header-logo">
+            <a href="/src/pages/Home.html"> PetStore </a>
+          </div>
+          <div class="header-container-items">
+            <ul class="header-list">
+              <li class="header-list-detail header-list-detail-tab-active">
+                <a href="/src/pages/Home.html">Trang chủ</a>
+              </li>
+              <li class="header-list-detail">
+                <a href="/src/pages/Products.html">Sản phẩm</a>
+              </li>
+              <li class="header-list-detail">
+                <a href="/src/pages/AboutUs.html">Về chúng tôi</a>
+              </li>
+              <li class="header-list-detail">
+                <button class="header-button-login-mobile">Đăng nhập</button>
+              </li>
+            </ul>
+          </div>
+          <div class="header-container-menu-icon">
+            <span
+              class="iconify header-button-icon-first"
+              data-icon="material-symbols:menu"
+            ></span>
+          </div>
+          <div class="header-container-buttons">
+            <div class="header-container-button-list-icons">
+              <div class="header-container-button-icon">
+                <span
+                  class="iconify header-button-icon"
+                  data-icon="material-symbols:search"
+                ></span>
+              </div>
+              <div class="header-container-button-icon">
+                <a href="/src/pages/Carts.html" class="shopping-cart-link">
+                  <span
+                    class="iconify header-button-icon"
+                    data-icon="material-symbols:shopping-cart-outline"
+                  ></span>
+                </a>
+              </div>
             </div>
-        </header>
-        <section class="home-container">
-            <div class="slideshow-container">
-                <div class="slideshow-container-detail">
-                    <!-- Full-width images with number and caption text -->
-                    <div class="mySlides-home fade">
-                        <div class="numbertext-container">
-                            <h1 class="numbertext-detail">
-                                NEW PET'S PRODUCTS ARE HERE
-                            </h1>
-                            <button class="btn-shopnow">
-                                <a href="">SHOP NOW</a>
-                            </button>
-                        </div>
-                        <img src="/assets/images/slide-1.jpg">
-                    </div>
-                    <div class="mySlides-home fade">
-                        <div class="numbertext-container-second">
-                            <h1 class="numbertext-detail-second">
-                                Pet Store
-                            </h1>
-                            <div class="numbertext-detail-second-subtitle">
-                                <span>a professional pet care service</span>
-                            </div>
-                            <button class="btn-findout">
-                                <a href="">ABOUT US</a>
-                            </button>
-                        </div>
-                        <img src="/assets/images/slide-4.jpg">
-                        <!-- <div class="text">Caption Three</div> -->
-                    </div>
-                    <div class="mySlides-home fade">
-                        <!-- <div class="numbertext-container">3 / 3</div> -->
-                        <div class="numbertext-container">
-                            <h1 class="numbertext-detail-third">
-                                A SAFE PLACE
-                            </h1>
-                            <div class="numbertext-detail-third-subtitle">
-                                <span>TO BUY GENUINE PET PRODUCTS</span>
-                            </div>
-                            <button class="btn-shopnow">
-                                <a href="">SHOP NOW</a>
-                            </button>
-                        </div>
-                        <img src="/assets/images/slide-3.jpg">
-                        <!-- <div class="text">Caption Three</div> -->
-                    </div>
-                    <!-- Next and previous buttons -->
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                    <!-- The dots/circles -->
-                    <div class="home-container-dot">
-                        <span class="dot" onclick="currentSlide(1)"></span>
-                        <span class="dot" onclick="currentSlide(2)"></span>
-                        <span class="dot" onclick="currentSlide(3)"></span>
-                    </div>
-                </div>
-                <br>
+            <button class="header-button-login">Đăng nhập</button>
+          </div>
+        </div>
+      </header>
+      <section class="home-container">
+        <div class="slideshow-container">
+          <div class="slideshow-container-detail">
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides-home fade">
+              <div class="numbertext-container">
+                <h1 class="numbertext-detail">NEW PET'S PRODUCTS ARE HERE</h1>
+                <button class="btn-shopnow">
+                  <a href="">SHOP NOW</a>
+                </button>
+              </div>
+              <img src="/assets/images/slide-1.jpg" />
             </div>
-            <div class="home-container-first">
-                <div class="home-container-first-detail">
-                    <div class="home-container-title">
-                        <hr class="home-title-divide">
-                        <h1 class="home-title-list-items">
-                            PRODUCTS OF PET STORE
-                        </h1>
-                        <hr class="home-title-divide">
-                    </div>
-                    <div class="home-container-list-items">
-                        <div class="home-container-item">
-                            <figure class="item-container-img-first">
-                                <img src="/assets/images/products-1.png" alt="products-1" class="item-img">
-                            </figure>
-                            <div class="content-container-first">
-                                <h3 class="category-title">
-                                    FOOD
-                                </h3>
-                                <p class="category-subtitle">
-                                    PET STORE SPECIALIZES IN PROVIDING QUALITY NUTS, PATE,... FOR CATS AND DOGS
-                                </p>
-                                <div class="btn-container">
-                                    <button class="btn-seemore">
-                                        <a href="" class="btn-seemore-content">
-                                            SEE MORE
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="home-container-item">
-                            <figure class="item-container-img-first">
-                                <img src="/assets/images/products-2.png" alt="products-2" class="item-img">
-                            </figure>
-                            <div class="content-container-first">
-                                <h3 class="category-title">
-                                    CLOTHES - ACCESSORIES
-                                </h3>
-                                <p class="category-subtitle">
-                                    PET STORE CONSTANTLY UPDATES HOT TREND CLOTHING AND ACCESSORIES FOR BABIES
-                                </p>
-                                <div class="btn-container">
-                                    <button class="btn-seemore">
-                                        <a href="" class="btn-seemore-content">
-                                            SEE MORE
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="home-container-item">
-                            <figure class="item-container-img-first">
-                                <img src="/assets/images/products-3.png" alt="products-3" class="item-img">
-                            </figure>
-                            <div class="content-container-first">
-                                <h3 class="category-title">
-                                    TOYS
-                                </h3>
-                                <p class="category-subtitle">
-                                    PET STORE SPECIALIZES IN PROVIDING PREMIUM AND QUALITY TOYS FOR DOGS AND CATS
-                                </p>
-                                <div class="btn-container">
-                                    <button class="btn-seemore">
-                                        <a href="" class="btn-seemore-content">
-                                            SEE MORE
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="home-container-item">
-                            <figure class="item-container-img-first">
-                                <img src="/assets/images/products-4.png" alt="products-4" class="item-img">
-                            </figure>
-                            <div class="content-container-first">
-                                <h3 class="category-title">
-                                    HOUSE - CAGE
-                                </h3>
-                                <p class="category-subtitle">
-                                    PET STORE SPECIALIZES IN PROVIDING PREMIUM AND QUALITY TOYS FOR DOGS AND CATS
-                                </p>
-                                <div class="btn-container">
-                                    <button class="btn-seemore">
-                                        <a href="" class="btn-seemore-content">
-                                            SEE MORE
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="home-container-item">
-                            <figure class="item-container-img-first">
-                                <img src="/assets/images/products-5.png" alt="products-5" class="item-img">
-                            </figure>
-                            <div class="content-container-first">
-                                <h3 class="category-title">
-                                    DINING SUBTANCES
-                                </h3>
-                                <p class="category-subtitle">
-                                    PET STORE SPECIALIZES IN PROVIDING PREMIUM AND QUALITY TOYS FOR DOGS AND CATS
-                                </p>
-                                <div class="btn-container">
-                                    <button class="btn-seemore">
-                                        <a href="" class="btn-seemore-content">
-                                            SEE MORE
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="home-container-item">
-                            <figure class="item-container-img-first">
-                                <img src="/assets/images/products-6.png" alt="products-6" class="item-img">
-                            </figure>
-                            <div class="content-container-first">
-                                <h3 class="category-title">
-                                    CLEANING TOOLS
-                                </h3>
-                                <p class="category-subtitle">
-                                    PET STORE SPECIALIZES IN PROVIDING PREMIUM AND QUALITY TOYS FOR DOGS AND CATS
-                                </p>
-                                <div class="btn-container">
-                                    <button class="btn-seemore">
-                                        <a href="" class="btn-seemore-content">
-                                            SEE MORE
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="mySlides-home fade">
+              <div class="numbertext-container-second">
+                <h1 class="numbertext-detail-second">Pet Store</h1>
+                <div class="numbertext-detail-second-subtitle">
+                  <span>a professional pet care service</span>
                 </div>
+                <button class="btn-findout">
+                  <a href="">ABOUT US</a>
+                </button>
+              </div>
+              <img src="/assets/images/slide-4.jpg" />
+              <!-- <div class="text">Caption Three</div> -->
             </div>
-            <div class="home-container-second">
-                <div class="home-container-second-detail">
-                    <div class="home-container-title">
-                        <hr class="home-title-divide">
-                        <h3 class="home-title-third">
-                            BEST SELLER PRODUCTS
-                        </h3>
-                        <hr class="home-title-divide">
-                    </div>
-                    <div class="home-container-second-list-products">
-                        <a href="" class="container-second-product">
-                            <div class="product-sale">
-                                -20%
-                            </div>
-                            <div class="productItem-container">
-                                <figure class="image-container">
-                                    <img src="/assets/images/products-seller-1.png" alt="products-seller-1">
-                                </figure>
-                                <div class="quick-view-detail">
-                                    VIEW DETAIL
-                                </div>
-                                <div class="item-info">
-                                    <div class="item-price-container">
-                                        <p class="item-title">
-                                            PRODUCT NAME
-                                        </p>
-                                        <p class="item-price-before">
-                                            $100
-                                        </p>
-                                    </div>
-                                    <div class="item-icon-container">
-                                        <span class="iconify footer-container-fifth-item-icon"
-                                            data-icon="icon-park-outline:like"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+            <div class="mySlides-home fade">
+              <!-- <div class="numbertext-container">3 / 3</div> -->
+              <div class="numbertext-container">
+                <h1 class="numbertext-detail-third">A SAFE PLACE</h1>
+                <div class="numbertext-detail-third-subtitle">
+                  <span>TO BUY GENUINE PET PRODUCTS</span>
                 </div>
+                <button class="btn-shopnow">
+                  <a href="">SHOP NOW</a>
+                </button>
+              </div>
+              <img src="/assets/images/slide-3.jpg" />
+              <!-- <div class="text">Caption Three</div> -->
             </div>
-            <div class="home-container-third">
-                <div class="home-container-third-detail">
-                    <div class="home-container-title">
-                        <hr class="home-title-divide">
-                        <h3 class="home-title-third">
-                            SALE POLICY
-                        </h3>
-                        <hr class="home-title-divide">
-                    </div>
-                    <div class="home-container-list-items-third">
-                        <div class="home-container-item-third">
-                            <img src="/assets/images/image-third-1.png" alt="image-third-1" class="item-img-third">
-                            <h4 class="img-third-subtitle">
-                                Freeship nationwide
-                            </h4>
-                        </div>
-                        <div class="home-container-item-third">
-                            <img src="/assets/images/image-third-2.png" alt="image-third-2" class="item-img-third">
-                            <h4 class="img-third-subtitle">
-                                Customer care hotline 24/7
-                            </h4>
-                        </div>
-                        <div class="home-container-item-third">
-                            <img src="/assets/images/image-third-3.png" alt="image-third-3" class="item-img-third">
-                            <h4 class="img-third-subtitle">
-                                Free exchange/return
-                            </h4>
-                        </div>
-                    </div>
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <!-- The dots/circles -->
+            <div class="home-container-dot">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+          </div>
+          <br />
+        </div>
+        <div class="home-container-first">
+          <div class="home-container-first-detail">
+            <div class="home-container-title">
+              <hr class="home-title-divide" />
+              <h1 class="home-title-list-items">PRODUCTS OF PET STORE</h1>
+              <hr class="home-title-divide" />
+            </div>
+            <div class="home-container-list-items">
+              <div class="home-container-item">
+                <figure class="item-container-img-first">
+                  <img
+                    src="/assets/images/products-1.png"
+                    alt="products-1"
+                    class="item-img"
+                  />
+                </figure>
+                <div class="content-container-first">
+                  <h3 class="category-title">FOOD</h3>
+                  <p class="category-subtitle">
+                    PET STORE SPECIALIZES IN PROVIDING QUALITY NUTS, PATE,...
+                    FOR CATS AND DOGS
+                  </p>
+                  <div class="btn-container">
+                    <button class="btn-seemore">
+                      <a href="" class="btn-seemore-content"> SEE MORE </a>
+                    </button>
+                  </div>
                 </div>
-            </div>
-            <div class="home-container-fourth">
-                <div class="home-container-fourth-detail">
-                    <div class="home-container-fourth-content">
-                        <h3 class="home-title-fourth">
-                            PET STORE
-                        </h3>
-                        <div class="home-subtitle-fourth">
-                            <p class="subtitle-fourth">
-                                Pet Store provides customers with products specifically for your pet.
-                            </p>
-                            <p class="subtitle-fourth">
-                                Not only that, we also constantly publish new articles with the desire to help PetStore
-                                customers have the necessary skills when caring for pets.
-                            </p>
-                            <p class="subtitle-fourth">
-                                At Pet Store, the staff is well trained, always considerate and enthusiastic to help
-                                customers
-                                when coming to PetStore. We prioritize customer satisfaction first.
-                            </p>
-                        </div>
-                    </div>
+              </div>
+              <div class="home-container-item">
+                <figure class="item-container-img-first">
+                  <img
+                    src="/assets/images/products-2.png"
+                    alt="products-2"
+                    class="item-img"
+                  />
+                </figure>
+                <div class="content-container-first">
+                  <h3 class="category-title">CLOTHES - ACCESSORIES</h3>
+                  <p class="category-subtitle">
+                    PET STORE CONSTANTLY UPDATES HOT TREND CLOTHING AND
+                    ACCESSORIES FOR BABIES
+                  </p>
+                  <div class="btn-container">
+                    <button class="btn-seemore">
+                      <a href="" class="btn-seemore-content"> SEE MORE </a>
+                    </button>
+                  </div>
                 </div>
+              </div>
+              <div class="home-container-item">
+                <figure class="item-container-img-first">
+                  <img
+                    src="/assets/images/products-3.png"
+                    alt="products-3"
+                    class="item-img"
+                  />
+                </figure>
+                <div class="content-container-first">
+                  <h3 class="category-title">TOYS</h3>
+                  <p class="category-subtitle">
+                    PET STORE SPECIALIZES IN PROVIDING PREMIUM AND QUALITY TOYS
+                    FOR DOGS AND CATS
+                  </p>
+                  <div class="btn-container">
+                    <button class="btn-seemore">
+                      <a href="" class="btn-seemore-content"> SEE MORE </a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="home-container-item">
+                <figure class="item-container-img-first">
+                  <img
+                    src="/assets/images/products-4.png"
+                    alt="products-4"
+                    class="item-img"
+                  />
+                </figure>
+                <div class="content-container-first">
+                  <h3 class="category-title">HOUSE - CAGE</h3>
+                  <p class="category-subtitle">
+                    PET STORE SPECIALIZES IN PROVIDING PREMIUM AND QUALITY TOYS
+                    FOR DOGS AND CATS
+                  </p>
+                  <div class="btn-container">
+                    <button class="btn-seemore">
+                      <a href="" class="btn-seemore-content"> SEE MORE </a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="home-container-item">
+                <figure class="item-container-img-first">
+                  <img
+                    src="/assets/images/products-5.png"
+                    alt="products-5"
+                    class="item-img"
+                  />
+                </figure>
+                <div class="content-container-first">
+                  <h3 class="category-title">DINING SUBTANCES</h3>
+                  <p class="category-subtitle">
+                    PET STORE SPECIALIZES IN PROVIDING PREMIUM AND QUALITY TOYS
+                    FOR DOGS AND CATS
+                  </p>
+                  <div class="btn-container">
+                    <button class="btn-seemore">
+                      <a href="" class="btn-seemore-content"> SEE MORE </a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="home-container-item">
+                <figure class="item-container-img-first">
+                  <img
+                    src="/assets/images/products-6.png"
+                    alt="products-6"
+                    class="item-img"
+                  />
+                </figure>
+                <div class="content-container-first">
+                  <h3 class="category-title">CLEANING TOOLS</h3>
+                  <p class="category-subtitle">
+                    PET STORE SPECIALIZES IN PROVIDING PREMIUM AND QUALITY TOYS
+                    FOR DOGS AND CATS
+                  </p>
+                  <div class="btn-container">
+                    <button class="btn-seemore">
+                      <a href="" class="btn-seemore-content"> SEE MORE </a>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+        <div class="home-container-second">
+          <div class="home-container-second-detail">
+            <span id="left" class="prev-products">&#10094;</span>
+            <div class="carousel">
+              
+            </div>
+            <span id="right" class="prev-products">&#10095;</span>
+          </div>
+        </div>
+        <div class="home-container-third">
+          <div class="home-container-third-detail">
+            <div class="home-container-title">
+              <hr class="home-title-divide" />
+              <h3 class="home-title-third">SALE POLICY</h3>
+              <hr class="home-title-divide" />
+            </div>
+            <div class="home-container-list-items-third">
+              <div class="home-container-item-third">
+                <img
+                  src="/assets/images/image-third-1.png"
+                  alt="image-third-1"
+                  class="item-img-third"
+                />
+                <h4 class="img-third-subtitle">Freeship nationwide</h4>
+              </div>
+              <div class="home-container-item-third">
+                <img
+                  src="/assets/images/image-third-2.png"
+                  alt="image-third-2"
+                  class="item-img-third"
+                />
+                <h4 class="img-third-subtitle">Customer care hotline 24/7</h4>
+              </div>
+              <div class="home-container-item-third">
+                <img
+                  src="/assets/images/image-third-3.png"
+                  alt="image-third-3"
+                  class="item-img-third"
+                />
+                <h4 class="img-third-subtitle">Free exchange/return</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="home-container-fourth">
+          <div class="home-container-fourth-detail">
+            <div class="home-container-fourth-content">
+              <h3 class="home-title-fourth">PET STORE</h3>
+              <div class="home-subtitle-fourth">
+                <p class="subtitle-fourth">
+                  Pet Store provides customers with products specifically for
+                  your pet.
+                </p>
+                <p class="subtitle-fourth">
+                  Not only that, we also constantly publish new articles with
+                  the desire to help PetStore customers have the necessary
+                  skills when caring for pets.
+                </p>
+                <p class="subtitle-fourth">
+                  At Pet Store, the staff is well trained, always considerate
+                  and enthusiastic to help customers when coming to PetStore. We
+                  prioritize customer satisfaction first.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-            <div class="home-container-fifth">
-                <div class="home-container-fifth-detail">
-                    <div class="home-container-fifth-content">
-                        <div class="home-title-fifth-container">
-                            <div class="home-container-title">
-                                <hr class="home-title-divide">
-                                <h3 class="home-title-fifth">
-                                    SPECIAL OFFERS FOR MEMBER CUSTOMERS
-                                </h3>
-                                <hr class="home-title-divide">
-                            </div>
-                        </div>
-                        <div class="home-container-list-discounts">
-                            <div class="home-container-discounts-first">
-                                <div class="home-container-discount">
-                                    <span class="discount-name">
-                                        PET089
-                                    </span>
-                                    <span class="discount-subname">
-                                        *for orders from 980k
-                                    </span>
-                                    <span class="discount-value">
-                                        DISCOUNT
-                                        <br />
-                                        100K
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="home-container-discounts-second">
-                                <div class="home-container-discounts-second-left">
-                                    <div class="home-container-discount">
-                                        <span class="discount-name">
-                                            PET111
-                                        </span>
-                                        <span class="discount-subname">
-                                            *for orders from 1110k
-                                        </span>
-                                        <span class="discount-value">
-                                            DISCOUNT
-                                            <br />
-                                            150K
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="home-container-discounts-second-right">
-                                    <div class="home-container-discount">
-                                        <span class="discount-name">
-                                            PET020
-                                        </span>
-                                        <span class="discount-subname">
-                                            *for orders from 2000k
-                                        </span>
-                                        <span class="discount-value">
-                                            DISCOUNT
-                                            <br />
-                                            20%
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="home-container-fifth">
+          <div class="home-container-fifth-detail">
+            <div class="home-container-fifth-content">
+              <div class="home-title-fifth-container">
+                <div class="home-container-title">
+                  <hr class="home-title-divide" />
+                  <h3 class="home-title-fifth">
+                    SPECIAL OFFERS FOR MEMBER CUSTOMERS
+                  </h3>
+                  <hr class="home-title-divide" />
                 </div>
-            </div>
-            <div class="home-container-sixth">
-                <div class="home-container-sixth-detail">
-                    <div class="home-container-sixth-content">
-                        <div class="home-container-title">
-                            <hr class="home-title-divide">
-                            <h3 class="home-title-sixth">
-                                REGISTER MEMBER AT PET STORE
-                            </h3>
-                            <hr class="home-title-divide">
-                        </div>
-                        <div class="home-container-sixth-form">
-                            <div class="home-sixth-form-left">
-                                <label for="sixth-form-input-first" class="sixth-form-label">
-                                    NAME OF CUSTOMER
-                                </label>
-                                <input id="sixth-form-input-first" type="text" class="sixth-form-input"
-                                    placeholder="NAME OF CUSTOMER">
-                            </div>
-                            <div class="home-sixth-form-right">
-                                <label for="sixth-form-input-second" class="sixth-form-label">
-                                    PHONE NUMBER
-                                </label>
-                                <input id="sixth-form-input-second" type="text" class="sixth-form-input"
-                                    placeholder="PHONE NUMBER">
-                            </div>
-                        </div>
-                        <div class="home-container-sixth-btn">
-                            <button class="home-sixth-btn-submit">
-                                <span class="btn-submit">
-                                    SIGN UP
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <footer class="footer-container">
-            <div class="footer-container-detail">
-                <div class="footer-container-logo">
-                    <a href="/"> PetStore </a>
-                </div>
-                <div class="footer-container-second">
-                    <span class="footer-container-second-text">
-                        Our mission is to keep pets healthy
+              </div>
+              <div class="home-container-list-discounts">
+                <div class="home-container-discounts-first">
+                  <div class="home-container-discount">
+                    <span class="discount-name"> PET089 </span>
+                    <span class="discount-subname">
+                      *for orders from 980k
                     </span>
-                    <div class="footer-line-big"></div>
-                    <div class="footer-container-second-icon">
-                        <span class="iconify footer-container-second-item-icon"
-                            data-icon="material-symbols:menu"></span>
-                        <span class="iconify footer-container-second-item-icon" data-icon="mdi:instagram"></span>
-                        <span class="iconify footer-container-second-item-icon" data-icon="mdi:twitter"></span>
-                        <span class="iconify footer-container-second-item-icon" data-icon="ph:youtube-logo-fill"></span>
+                    <span class="discount-value">
+                      DISCOUNT
+                      <br />
+                      100K
+                    </span>
+                  </div>
+                </div>
+                <div class="home-container-discounts-second">
+                  <div class="home-container-discounts-second-left">
+                    <div class="home-container-discount">
+                      <span class="discount-name"> PET111 </span>
+                      <span class="discount-subname">
+                        *for orders from 1110k
+                      </span>
+                      <span class="discount-value">
+                        DISCOUNT
+                        <br />
+                        150K
+                      </span>
                     </div>
-                </div>
-                <div class="footer-container-third">
-                    <span class="footer-container-third-text">
-                        Links
-                    </span>
-                    <div class="footer-line-big"></div>
-                    <ul class="footer-container-third-list-links">
-                        <li class="footer-container-third-link">
-                            <a href="/src/pages/Home.html">HOME</a>
-                        </li>
-                        <div class="footer-line-small"></div>
-                        <li class="footer-container-third-link">
-                            <a href="/src/pages/Products.html">PRODUCT</a>
-                        </li>
-                        <div class="footer-line-small"></div>
-                        <li class="footer-container-third-link">
-                            <a href="/src/pages/AboutUs.html">ABOUT US</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-container-fourth">
-                    <span class="footer-container-fourth-text">
-                        Work Time
-                    </span>
-                    <div class="footer-line-big"></div>
-                    <ul class="footer-container-fourth-list-time">
-                        <li class="footer-container-fourth-item">
-                            <span class="footer-container-fourth-time-day">
-                                Monday -> Friday
-                            </span>
-                            <span class="footer-container-fourth-time">
-                                7h30 -> 21h00
-                            </span>
-                        </li>
-                        <div class="footer-line-small"></div>
-                        <li class="footer-container-fourth-item">
-                            <span class="footer-container-fourth-time-day">
-                                Saturday
-                            </span>
-                            <span class="footer-container-fourth-time">
-                                7h30 -> 20h00
-                            </span>
-                        </li>
-                        <div class="footer-line-small"></div>
-                        <li class="footer-container-fourth-item">
-                            <span class="footer-container-fourth-time-day">
-                                Sunday
-                            </span>
-                            <span class="footer-container-fourth-time">
-                                Close
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-container-fifth">
-                    <span class="footer-container-fifth-text">
-                        Contact
-                    </span>
-                    <div class="footer-line-big"></div>
-                    <div class="footer-container-fifth-list-contact">
-                        <div class="footer-container-fifth-item">
-                            <span class="iconify footer-container-fifth-item-icon" data-icon="mdi:map-marker"></span>
-                            <span class="footer-container-fifth-item-text">
-                                Address: Quarter 6, Linh Trung Ward, City. Thu Duc, HCM
-                            </span>
-                        </div>
-                        <div class="footer-line-small"></div>
-                        <div class="footer-container-fifth-item">
-                            <span class="iconify footer-container-fifth-item-icon"
-                                data-icon="ic:baseline-phone-callback"></span>
-                            <span class="footer-container-fifth-item-text">
-                                PhoneNumber: 123456
-                            </span>
-                        </div>
+                  </div>
+                  <div class="home-container-discounts-second-right">
+                    <div class="home-container-discount">
+                      <span class="discount-name"> PET020 </span>
+                      <span class="discount-subname">
+                        *for orders from 2000k
+                      </span>
+                      <span class="discount-value">
+                        DISCOUNT
+                        <br />
+                        20%
+                      </span>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="footer-container-copyright">
-                <div class="footer-copyright-main">
-                    <span>Copyright belongs to Pet Store</span>
+          </div>
+        </div>
+        <div class="home-container-sixth">
+          <div class="home-container-sixth-detail">
+            <div class="home-container-sixth-content">
+              <div class="home-container-title">
+                <hr class="home-title-divide" />
+                <h3 class="home-title-sixth">REGISTER MEMBER AT PET STORE</h3>
+                <hr class="home-title-divide" />
+              </div>
+              <div class="home-container-sixth-form">
+                <div class="home-sixth-form-left">
+                  <label for="sixth-form-input-first" class="sixth-form-label">
+                    NAME OF CUSTOMER
+                  </label>
+                  <input
+                    id="sixth-form-input-first"
+                    type="text"
+                    class="sixth-form-input"
+                    placeholder="NAME OF CUSTOMER"
+                  />
                 </div>
-                <div class="footer-copyright-sub">
-                    <p>© 2023 All rights reserved</p>
+                <div class="home-sixth-form-right">
+                  <label for="sixth-form-input-second" class="sixth-form-label">
+                    PHONE NUMBER
+                  </label>
+                  <input
+                    id="sixth-form-input-second"
+                    type="text"
+                    class="sixth-form-input"
+                    placeholder="PHONE NUMBER"
+                  />
                 </div>
+              </div>
+              <div class="home-container-sixth-btn">
+                <button class="home-sixth-btn-submit">
+                  <span class="btn-submit"> SIGN UP </span>
+                </button>
+              </div>
             </div>
-        </footer>
+          </div>
+        </div>
+      </section>
+      <footer class="footer-container">
+        <div class="footer-container-detail">
+          <div class="footer-container-logo">
+            <a href="/"> PetStore </a>
+          </div>
+          <div class="footer-container-second">
+            <span class="footer-container-second-text">
+              Our mission is to keep pets healthy
+            </span>
+            <div class="footer-line-big"></div>
+            <div class="footer-container-second-icon">
+              <span
+                class="iconify footer-container-second-item-icon"
+                data-icon="ic:outline-facebook"
+              ></span>
+              <span
+                class="iconify footer-container-second-item-icon"
+                data-icon="mdi:instagram"
+              ></span>
+              <span
+                class="iconify footer-container-second-item-icon"
+                data-icon="mdi:twitter"
+              ></span>
+              <span
+                class="iconify footer-container-second-item-icon"
+                data-icon="ph:youtube-logo-fill"
+              ></span>
+            </div>
+          </div>
+          <div class="footer-container-third">
+            <span class="footer-container-third-text"> Links </span>
+            <div class="footer-line-big"></div>
+            <ul class="footer-container-third-list-links">
+              <li class="footer-container-third-link">
+                <a href="/src/pages/Home.html">HOME</a>
+              </li>
+              <div class="footer-line-small"></div>
+              <li class="footer-container-third-link">
+                <a href="/src/pages/Products.html">PRODUCT</a>
+              </li>
+              <div class="footer-line-small"></div>
+              <li class="footer-container-third-link">
+                <a href="/src/pages/AboutUs.html">ABOUT US</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-container-fourth">
+            <span class="footer-container-fourth-text"> Work Time </span>
+            <div class="footer-line-big"></div>
+            <ul class="footer-container-fourth-list-time">
+              <li class="footer-container-fourth-item">
+                <span class="footer-container-fourth-time-day">
+                  Monday -> Friday
+                </span>
+                <span class="footer-container-fourth-time">
+                  7h30 -> 21h00
+                </span>
+              </li>
+              <div class="footer-line-small"></div>
+              <li class="footer-container-fourth-item">
+                <span class="footer-container-fourth-time-day"> Saturday </span>
+                <span class="footer-container-fourth-time">
+                  7h30 -> 20h00
+                </span>
+              </li>
+              <div class="footer-line-small"></div>
+              <li class="footer-container-fourth-item">
+                <span class="footer-container-fourth-time-day"> Sunday </span>
+                <span class="footer-container-fourth-time"> Close </span>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-container-fifth">
+            <span class="footer-container-fifth-text"> Contact </span>
+            <div class="footer-line-big"></div>
+            <div class="footer-container-fifth-list-contact">
+              <div class="footer-container-fifth-item">
+                <span
+                  class="iconify footer-container-fifth-item-icon"
+                  data-icon="mdi:map-marker"
+                ></span>
+                <span class="footer-container-fifth-item-text">
+                  Address: Quarter 6, Linh Trung Ward, City. Thu Duc, HCM
+                </span>
+              </div>
+              <div class="footer-line-small"></div>
+              <div class="footer-container-fifth-item">
+                <span
+                  class="iconify footer-container-fifth-item-icon"
+                  data-icon="ic:baseline-phone-callback"
+                ></span>
+                <span class="footer-container-fifth-item-text">
+                  PhoneNumber: 123456
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-container-copyright">
+          <div class="footer-copyright-main">
+            <span>Copyright belongs to Pet Store</span>
+          </div>
+          <div class="footer-copyright-sub">
+            <p>© 2023 All rights reserved</p>
+          </div>
+        </div>
+      </footer>
     </div>
-</body>
+  </body>
 
-<script src="/src/scripts/header.js"></script>
-<script src="/src/scripts/home.js"></script>
-
+  <script src="/src/scripts/header.js"></script>
+  <script src="/src/scripts/home.js"></script>
 </html>

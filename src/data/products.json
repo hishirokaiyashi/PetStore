@@ -1,14 +1,13 @@
+
 [
   {
-    "_id": {
-      "$oid": "638d80259505100828e91949"
-    },
+    "_id": "638d80259505100828e91949",
     "name": "Hạt thức ăn cho mèo",
     "price": "119000",
     "sale": 10,
     "rate": 5,
     "numOfProductsSold": 171,
-    "img": "https://i.postimg.cc/g0VFn1kb/p1.jpg",
+    "img": "/assets/images/products-1.png",
     "category": {
       "$oid": "638d7edc9505100828e91935"
     },
@@ -22,16 +21,14 @@
     "numOfProductsInStock": 2000
   },
   {
-    "_id": {
-      "$oid": "63a1d8cebb0cc5730c9b0773"
-    },
+    "_id": "63a1d8cebb0cc5730c9b0773",
     "name": "Quần áo cho thú cưng họa tiết khủng long",
     "price": "300000",
     "sale": 20,
     "rate": 0,
     "numOfProductsSold": 0,
     "numOfProductsInStock": 10,
-    "img": "https://firebasestorage.googleapis.com/v0/b/petcare-ac6c0.appspot.com/o/images%2F1671551146139-25.png?alt=media&token=3ec9b82d-729c-4360-a428-a2c824d8dc7c",
+    "img": "/assets/images/products-1.png",
     "category": {
       "$oid": "638d7ef19505100828e91937"
     },
@@ -44,16 +41,14 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "63a1d92cbb0cc5730c9b0786"
-    },
+    "_id": "63a1d92cbb0cc5730c9b0786",
     "name": "Đồ chơi thú cưng",
     "price": "100000",
     "sale": 10,
     "rate": 0,
     "numOfProductsSold": 0,
     "numOfProductsInStock": 200,
-    "img": "https://firebasestorage.googleapis.com/v0/b/petcare-ac6c0.appspot.com/o/images%2F1671551231865-e40390b8ab2f23e8d2c511e3d3862bf4.jpg?alt=media&token=3e7a0835-349d-4f5c-9a44-022499ac4f2d",
+    "img": "/assets/images/products-1.png",
     "category": {
       "$oid": "638d7f2c9505100828e9193b"
     },
@@ -66,16 +61,14 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "63a1d992bb0cc5730c9b0793"
-    },
+    "_id":"63a1d992bb0cc5730c9b0793",
     "name": "Nhà lồng cho chó",
     "price": "100000",
     "sale": 20,
     "rate": 0,
     "numOfProductsSold": 0,
     "numOfProductsInStock": 5,
-    "img": "https://firebasestorage.googleapis.com/v0/b/petcare-ac6c0.appspot.com/o/images%2F1671551349479-mieng-ghep-chuong-cho-thu-cung.jpg?alt=media&token=13cfe63c-f3ab-4775-bd16-29ab7736dbe1",
+    "img": "/assets/images/products-1.png",
     "category": {
       "$oid": "638d7f3a9505100828e9193d"
     },
@@ -88,16 +81,14 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "63a1da34bb0cc5730c9b07a0"
-    },
+    "_id": "63a1da34bb0cc5730c9b07a0",
     "name": "Khay đựng đồ ăn cho thú cưng",
     "price": "100000",
     "sale": 10,
     "rate": 0,
     "numOfProductsSold": 0,
     "numOfProductsInStock": 10,
-    "img": "https://firebasestorage.googleapis.com/v0/b/petcare-ac6c0.appspot.com/o/images%2F1671551507839-7be1d5044470dafbd14500a0f088ce9a.jpg?alt=media&token=0b62400b-2a31-4664-82d7-e3fe807c0533",
+    "img": "/assets/images/products-1.png",
     "category": {
       "$oid": "638d7f479505100828e9193f"
     },
@@ -110,16 +101,14 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "63a1da8bbb0cc5730c9b07ad"
-    },
+    "_id":"63a1da8bbb0cc5730c9b07ad",
     "name": "Khay đi vệ sinh cho chó",
     "price": "200000",
     "sale": 20,
     "rate": 0,
     "numOfProductsSold": 0,
     "numOfProductsInStock": 100,
-    "img": "https://firebasestorage.googleapis.com/v0/b/petcare-ac6c0.appspot.com/o/images%2F1671551611259-123001_w600-e1562907355600.jpg?alt=media&token=fec6956f-f821-45ef-bf50-b2401e685f79",
+    "img": "/assets/images/products-1.png",
     "category": {
       "$oid": "638d7f549505100828e91941"
     },
@@ -132,16 +121,14 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "63a28816a5e9044c67982098"
-    },
+    "_id":"63a28816a5e9044c67982098",
     "name": "Khay đựng đồ ăn cho thú cưng",
     "price": "100000",
     "sale": 10,
     "rate": 0,
     "numOfProductsSold": 0,
     "numOfProductsInStock": 12,
-    "img": "https://firebasestorage.googleapis.com/v0/b/petcare-ac6c0.appspot.com/o/images%2F1671596044170-7be1d5044470dafbd14500a0f088ce9a.jpg?alt=media&token=5b1ada6f-dc88-410c-bd9d-2445ee7d4886",
+    "img": "/assets/images/products-1.png",
     "category": {
       "$oid": "638d7f479505100828e9193f"
     },

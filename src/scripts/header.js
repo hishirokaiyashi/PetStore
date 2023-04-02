@@ -7,7 +7,7 @@ const headerList = document.querySelector('.header-container-items');
 const iconMenuIconDetail = document.querySelectorAll('.header-container-menu-icon svg')
 const icon = document.querySelector('.header-button-icon-first');
 const listLi = document.querySelectorAll('.header-list-detail')
-const homeContainer=document.querySelector('body')
+const homeContainer = document.querySelector('body')
 menuIcon.addEventListener('click', () => {
     const menu = document.querySelector('[data-icon="material-symbols:menu"]');
     const close = document.querySelector('[data-icon="mdi:alpha-x"]');
@@ -26,16 +26,34 @@ menuIcon.addEventListener('click', () => {
         homeContainer.classList.add('body-overflow')
     }
 });
-
-listLi.forEach((item) => {
-    item.addEventListener('click', () => {
-        listLi.forEach((item) => {
-            item.classList.remove('header-list-detail-tab-active')
-        })
-        item.classList.add('header-list-detail-tab-active');
+const currentUrl = window.location.href;
+// listLi.forEach((item) => {
+//     console.log(item)
+//     item.addEventListener('click', () => {
+//         listLi.forEach((item) => {
+//             item.classList.remove('header-list-detail-tab-active')
+//         })
+//         item.classList.add('header-list-detail-tab-active');
+//     })
+//     if (item.href === currentUrl) {
+//         item.classList.add(' header-list-detail-tab-active');
+//     } else {
+//         item.classList.remove('header-list-detail-tab-active');
+// )
+window.onload = () => {
+    listLi.forEach((item)=>{
+        item.classList.remove("header-list-detail-tab-active");
     })
-})
-
+    if(currentUrl.includes("Home.html")){
+        listLi[0].classList.add("header-list-detail-tab-active");
+    } 
+    if(currentUrl.includes("Products.html")){
+        listLi[1].classList.add("header-list-detail-tab-active");
+    }
+    if(currentUrl.includes("AboutUs.html")){
+        listLi[2].classList.add("header-list-detail-tab-active");
+    }
+};
 // change when scroll
 const changeBackground = () => {
     if (window.scrollY >= 66) {

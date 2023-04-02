@@ -1,0 +1,90 @@
+.Checkout-container {
+  width: 100%;
+  margin-top: 108px;
+}
+.Checkout-container-first
+{
+    width: 100%;
+    background: var(--linear-color-second);
+}
+.Checkout-container-first-detail{
+    max-width: 1280px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.Checkout-container-first-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 2rem;
+    color: var(--other-background-white);
+    font-weight: 700;
+}
+.Checkout-button-icon{
+    margin-right: 1rem;
+    color:var(--other-text-pink);
+    font-size: 2.5rem;
+
+}
+.Checkout-Title{
+    padding-left: 1rem;
+    border-left: 1px solid var(--other-background-white);
+}
+/* second */
+.Checkout-container-second{
+    width: 100%;
+}
+.Checkout-container-second-detail{
+    max-width: 1280px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 10px;
+    width: 100%;
+}
+.Checkout-payment-user-title {
+    display: flex;
+    align-items: center;
+}
+.Checkout-payment-user-container {
+    width: 60%;
+    margin-top: 1.5rem;
+}
+/* form */
+.Checkout-payment-user-form{
+    display: flex;
+    flex-direction: column;
+}
+.Checkout-payment-user-form input,
+.Checkout-payment-user-form select,
+.Checkout-payment-user-form textarea{
+    border: 1px solid var(--other-background-black);
+    border-radius: 10px;
+    display: block;
+    margin: 1rem 0rem;
+    padding: 1rem;
+    width: 100%;
+}
+.Checkout-payment-btn-container{
+    text-align: end;
+}
+.Checkout-payment-btn {
+    border: none;
+    border-radius: 10px;
+    padding: 1rem 3.5rem;
+    background-color: var(--primary-background-pink);
+    color: var(--tertiary-text-white);
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.Checkout-payment-btn:hover{
+    background-color: 1px solid var(--other-background-white);
+    border: 1px solid var(--primary-background-pink);
+    border-radius: 10px;
+    color: var(--other-text-pink);
+}
