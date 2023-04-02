@@ -55,3 +55,8 @@ body {
   --text-h6: 1.6rem;
   --text-h7: 1.28rem;
 }
+
+.text-danger{
+  color: red;
+  font-size: small;
+}
