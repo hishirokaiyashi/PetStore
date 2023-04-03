@@ -1,13 +1,7 @@
 [{
-  "_id": {
-    "$oid": "638ef7834ad755f6d56987c5"
-  },
-  "category": {
-    "$oid": "638d7edc9505100828e91935"
-  },
-  "product": {
-    "$oid": "638d80259505100828e91949"
-  },
+  "_id":"638ef7834ad755f6d56987c5",
+  "category":"638d7edc9505100828e91935",
+  "product":"638d80259505100828e91949",
   "description": "Thành phần chứa Canxi, Photpho và Vitamin D, Vitamin C và Taurine. Có hai hương vị chính là cá ngừ và hải sản. Đặc biệt, trong công thức có chứa chất Flutd và một lượng Natri vừa đủ. Công dụng: hỗ trợ chắc khỏe xương và răng, tăng cường hệ thống miễn dịch, cải thiện chức năng của thị giác nhờ Taurine, Flutd giúp ngăn ngừa bệnh đường tiết niệu và bàng quang trên mèo",
   "numOfRate": 4,
   "numOfProductsReview": 7,

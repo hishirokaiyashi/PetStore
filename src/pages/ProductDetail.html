@@ -7,6 +7,9 @@
     <title>ProductDetail</title>
     <link rel="stylesheet" href="/assets/styles/base.css">
     <link rel="stylesheet" href="/assets/styles/ProductDetail.css">
+    <link rel="stylesheet" href="/assets/styles/header.css">
+    <link rel="stylesheet" href="/assets/styles/footer.css">
+    <link rel="stylesheet" href="/assets/styles/Products.css">
     <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
 </head>
 <body>
@@ -19,9 +22,9 @@
                 &nbsp; &gt; &nbsp;
                 <a class="product-detail-link-span" href="">Product</a>
                 &nbsp; &gt; &nbsp;
-                <a class="product-detail-link-span" href="">Category</a>
+                <a class="product-detail-link-span" href="" class="link-category">Category</a>
                 &nbsp; &gt; &nbsp;
-                <a class="product-detail-link-span" href="">Product Name</a>
+                <a class="product-detail-link-span" href="" class="product-name">Product Name</a>
             </p>
         </div>
         <div class="product-detail-description-container">
@@ -30,7 +33,7 @@
             </div>
             <div class="product-detail-description">
                 <div class="product-name">
-                    <h1>Product Name</h1>
+                    Product Name
                 </div>
                 <div class="product-rating">
                     <div class="product-rating-star">
@@ -41,11 +44,7 @@
                         <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
                     </div>
                     <div class="product-rating-number">
-                        <p>4.5</p>
-                    </div>
-                    <h2>|</h2>
-                    <div class="product-rating-review">
-                        <p>1,000 reviews</p>
+                        4.5
                     </div>
                 </div>
                 <div class="product-sold">
@@ -98,15 +97,15 @@
                 <table class="product-detail-information-content">
                     <tr>
                         <td class="product-detail-information-overview-text">Name: </td>
-                        <td class="product-detail-information-overview-value">Product Name</td>
+                        <td class="product-detail-information-overview-product-name">Product Name</td>
                     </tr>
                     <tr>
                         <td class="product-detail-information-overview-text">Category: </td>
-                        <td class="product-detail-information-overview-value">Category Name</td>
+                        <td class="product-detail-information-overview-product-category">Category Name</td>
                     </tr>
                     <tr>
                         <td class="product-detail-information-overview-text">Stock: </td>
-                        <td class="product-detail-information-overview-value">2000</td>
+                        <td class="product-detail-information-overview-product-stock">2000</td>
                     </tr>
                     <tr>
                         <td class="product-detail-information-overview-text">Depart from: </td>
@@ -117,13 +116,13 @@
             <div class="divide"></div>
             <div class="product-detail-information-description">
                 <p class="product-detail-information-title">Description</p>
-                <p class="product-detail-information-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis tempora facere laudantium, nam adipisci perspiciatis libero tempore. Nulla id reprehenderit non. Quis cumque neque ducimus dicta sapiente a iste optio?</p>
+                <p class="product-detail-information-overview-product-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis tempora facere laudantium, nam adipisci perspiciatis libero tempore. Nulla id reprehenderit non. Quis cumque neque ducimus dicta sapiente a iste optio?</p>
             </div>
             <div class="divide"></div>
-            <div class="product-detail-information-guide">
+            <!-- <div class="product-detail-information-guide">
                 <p class="product-detail-information-title">Guide</p>
                 <p class="product-detail-information-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis tempora facere laudantium, nam adipisci perspiciatis libero tempore. Nulla id reprehenderit non. Quis cumque neque ducimus dicta sapiente a iste optio?</p>
-            </div>
+            </div> -->
         </div>
         <div class="product-detail-review">
             <div class="product-detail-review-heading">
@@ -139,7 +138,7 @@
                         <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
                     </div>
                     <div class="product-detail-rating-number">
-                        <p>4.5 | </p>
+                        4.5 | 
                     </div>
                     <div class="product-detail-rating-review">
                         <p> 1,000 reviews</p>
@@ -197,11 +196,15 @@
             </div>
             <div class="divide"></div>
         </div>
+
         <!-- related product -->
         <div class="related-product-container">
             <h2>Related products</h2>
+            <div class="related-product"></div>
         </div>
     </div>
     <!-- footer -->
 </body>
+<script src="../scripts/product-detail.js"></script>
+<script src="../scripts/products.js"></script>
 </html>

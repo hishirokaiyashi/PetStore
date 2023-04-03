@@ -1,3 +1,6 @@
+body{
+    background-color: #dfdfdf;
+}
 
 .product-detail{
     margin-top: 20px;
@@ -30,18 +33,22 @@
     width: 50%;
 }
 
+.product-img{
+    width: 80%;
+}
+
 .product-detail-description{
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
 }
 
 .product-name{
     color: var(--primary-background-pink);
     font-weight: 600;
     margin-bottom: 10px;
+    font-size: 2rem;
 }
 
 .product-rating{
@@ -232,6 +239,8 @@
 
 .product-detail-infomation{
     margin-top: 15px;
+    background-color: #fff;
+    padding: 15px;
 }
 
 .product-detail-infomation-heading{
@@ -248,12 +257,14 @@
 }
 
 .product-detail-information-content{
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-bottom: 10px;
 }
 
 .product-detail-review{
     margin-top: 15px;
+    background-color: #fff;
+    padding: 15px;
 }
 
 .product-detail-review-heading{
@@ -281,12 +292,12 @@
 }
 
 .product-detail-rating-number{
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-left: 10px;
 }
 
 .product-detail-rating-review{
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-left: 10px;
 }
 
@@ -304,7 +315,7 @@
     background-color: var(--secondary-background-grey);
     border: 1 px solid var(--primary-background-pink);
     color: var(--primary-background-pink);
-    font-size: 1.3rem;
+    font-size: 1rem;
     padding: 5px;
     border-radius: 5px;
 }
@@ -326,7 +337,7 @@
 }
 
 .user-name{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 10px;
 }
@@ -339,12 +350,12 @@
 }
 
 .review-date{
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-bottom: 10px;
 }
 
 .review-content{
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-bottom: 10px;
 }
 
@@ -358,7 +369,7 @@
     background-color: var(--secondary-background-grey);
     border: 1 px solid var(--primary-background-pink);
     color: var(--primary-background-pink);
-    font-size: 1.3rem;
+    font-size: 1rem;
     padding: 5px;
     border-radius: 5px;
     width: 10%;
@@ -373,7 +384,7 @@
     background-color: var(--secondary-background-grey);
     border: 1 px solid var(--primary-background-pink);
     color: var(--primary-background-pink);
-    font-size: 1.3rem;
+    font-size: 1rem;
     padding: 5px;
     border-radius: 5px;
     width: 10%;
@@ -390,4 +401,16 @@
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
+}
+
+.related-product-container{
+    margin-top: 15px;
+    background-color: #fff;
+    padding: 15px;
+}
+
+.related-product{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 15px;
 }
