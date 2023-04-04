@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="/assets/styles/Footer.css" />
     <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
   </head>
-
-  <body>
+  <body onload="showCart()">
     <div class="Carts-container-biggest">
       <header class="header-container">
         <div class="header-container-detail">
@@ -55,6 +54,7 @@
                     class="iconify header-button-icon"
                     data-icon="material-symbols:shopping-cart-outline"
                   ></span>
+                  <span class="badge" id="number-cart">0</span>
                 </a>
               </div>
             </div>
@@ -82,6 +82,7 @@
                   type="checkbox"
                   id="Carts-checkbox-all"
                   class="shopping-cart-checkbox"
+                  onchange="handleCheckBoxAll()"
                 />
                 <span class="Cart-product-title-top">Product</span>
               </div>
@@ -98,69 +99,40 @@
                 <span class="Cart-product-delete-top">Delete</span>
               </div>
             </div>
-            <div class="Carts-container-second-detail-middle">
-              <div class="Carts-container-middle-first">
-                <input
-                  type="checkbox"
-                  id="Carts-checkbox"
-                  class="shopping-cart-checkbox"
-                />
-                <img
-                  src="/assets/images/products-1.png"
-                  alt="products-1"
-                  class="Cart-img-product"
-                />
-                <span class="Cart-product-title-middle"
-                  >THỨC ĂN HẠT CHO CHÓ NGOẠI CỠ</span
-                >
-              </div>
-              <div class="Carts-container-middle-second">
-                <span class="Cart-product-price-middle">Price</span>
-              </div>
-              <div class="Carts-container-middle-third">
-                <button class="btn-decrease-number">-</button>
-                <input
-                  type="number"
-                  name="amount"
-                  min="1"
-                  max="9999999"
-                  type="number"
-                  disabled
-                  value="1"
-                  class="number-product"
-                />
-                <button class="btn-increase-number">+</button>
-              </div>
-              <div class="Carts-container-middle-fourth">
-                <span class="Cart-product-total-middle">Total</span>
-                <span class="Cart-product-delete-middle">
-                  <span
-                    class="iconify cart-btn-delete"
-                    data-icon="material-symbols:delete-outline"
-                  ></span>
-                </span>
-              </div>
+            <div id="showcart" class="Carts-container-second-detail-middle">
+              
             </div>
             <div class="Carts-container-second-detail-bottom">
               <div class="Carts-container-second-detail-bottom-left">
                 <input
-                  type="checkbox"
-                  id="Carts-checkbox-all"
-                  class="shopping-cart-checkbox"
+                  type="text"
+                  id="idCoupon"
+                  class="shopping-cart-coupon"
+                  placeholder="Coupon Code"
                 />
-                <span class="Cart-product-title-bottom">Select All</span>
+                <button onclick="applyCoupon()" class="btn-coupon">
+                  <label for="Carts-coupon">Apply Coupon</label>
+                </button>
               </div>
               <div class="Carts-container-second-detail-bottom-right">
-                <span class="total-price-lastes">
-                    Total payment:    0đ
-                </span>
-                <a href="" class="link-to-checkout">
-                    <button class="btn-container-checkout">
+                <div class="Cart-total-coupon-decrease">
+                  <p>Coupon: <span id="total-coupon">0</span></p>
+                </div>
+                <div class="total-price-lastes">
+                    <span>Total payment:</span>
+                    <span id="total-price">0</span>
+                    
+                </div>
+                <div class="Carts-alert-coupon">
+                  
+                </div>
+                <div class="link-to-checkout">
+                    <button onclick="handleBuyNow()" class="btn-container-checkout">
                         <span class="btn-checkout">
                             Buy Now
                         </span>
                     </button>
-                </a>
+                </div>
               </div>
             </div>
             <div class="Carts-container-second-detail-another">
@@ -323,5 +295,6 @@
       </footer>
     </div>
     <script src="/src/scripts/header.js"></script>
+    <script src="/src/scripts/carts.js"></script>
   </body>
 </html>

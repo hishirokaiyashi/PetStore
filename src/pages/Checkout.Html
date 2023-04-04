@@ -53,7 +53,9 @@
                 <span
                   class="iconify header-button-icon"
                   data-icon="material-symbols:shopping-cart-outline"
-                ></span>
+                >
+                </span>
+                <span class="badge" id="number-cart">0</span>
               </a>
             </div>
           </div>
@@ -90,96 +92,77 @@
                   placeholder="FullName"
                   name="fullName"
                   class="Checkout-payment-user-name"
+                  id="fullName"
+                  onchange="handleInput(this)"
+                  required
+                  maxlength="50"
                 />
-                <select>
-                  <option value="An Giang">An Giang</option>
-                  <option value="Bà Rịa-Vũng Tàu">Bà Rịa-Vũng Tàu</option>
-                  <option value="Bạc Liêu">Bạc Liêu</option>
-                  <option value="Bắc Kạn">Bắc Kạn</option>
-                  <option value="Bắc Giang">Bắc Giang</option>
-                  <option value="Bắc Ninh">Bắc Ninh</option>
-                  <option value="Bến Tre">Bến Tre</option>
-                  <option value="Bình Dương">Bình Dương</option>
-                  <option value="Bình Định">Bình Định</option>
-                  <option value="Bình Phước">Bình Phước</option>
-                  <option value="Bình Thuận">Bình Thuận</option>
-                  <option value="Cà Mau">Cà Mau</option>
-                  <option value="Cao Bằng">Cao Bằng</option>
-                  <option value="Cần Thơ">Cần Thơ</option>
-                  <option value="Đà Nẵng">Đà Nẵng</option>
-                  <option value="Đắk Lắk">Đắk Lắk</option>
-                  <option value="Đắk Nông">Đắk Nông</option>
-                  <option value="Điện Biên">Điện Biên</option>
-                  <option value="Đồng Nai">Đồng Nai</option>
-                  <option value="Đồng Tháp">Đồng Tháp</option>
-                  <option value="Gia Lai">Gia Lai</option>
-                  <option value="Hà Giang">Hà Giang</option>
-                  <option value="Hà Nam">Hà Nam</option>
-                  <option value="Hà Nội">Hà Nội</option>
-                  <option value="Hà Tĩnh">Hà Tĩnh</option>
-                  <option value="Hải Dương">Hải Dương</option>
-                  <option value="Hải Phòng">Hải Phòng</option>
-                  <option value="Hậu Giang">Hậu Giang</option>
-                  <option value="Hồ Chí Minh">Hồ Chí Minh</option>
-                  <option value="Hòa Bình">Hòa Bình</option>
-                  <option value="Hưng Yên">Hưng Yên</option>
-                  <option value="Khánh Hòa">Khánh Hòa</option>
-                  <option value="Kiên Giang">Kiên Giang</option>
-                  <option value="Kon Tum">Kon Tum</option>
-                  <option value="Lai Châu">Lai Châu</option>
-                  <option value="Lâm Đồng">Lâm Đồng</option>
-                  <option value="Lạng Sơn">Lạng Sơn</option>
-                  <option value="Lào Cai">Lào Cai</option>
-                  <option value="Long An">Long An</option>
-                  <option value="Nam Định">Nam Định</option>
-                  <option value="Nghệ An">Nghệ An</option>
-                  <option value="Ninh Bình">Ninh Bình</option>
-                  <option value="Ninh Thuận">Ninh Thuận</option>
-                  <option value="Phú Thọ">Phú Thọ</option>
-                  <option value="Phú Yên">Phú Yên</option>
-                  <option value="Quảng Bình">Quảng Bình</option>
-                  <option value="Quảng Nam">Quảng Nam</option>
-                  <option value="Quảng Ngãi">Quảng Ngãi</option>
-                  <option value="Quảng Ninh">Quảng Ninh</option>
-                  <option value="Quảng Trị">Quảng Trị</option>
-                  <option value="Sóc Trăng">Sóc Trăng</option>
-                  <option value="Sơn La">Sơn La</option>
-                  <option value="Tây Ninh">Tây Ninh</option>
-                  <option value="Thái Bình">Thái Bình</option>
-                  <option value="Thái Nguyên">Thái Nguyên</option>
-                  <option value="Thanh Hóa">Thanh Hóa</option>
-                  <option value="Thừa Thiên - Huế">Thừa Thiên - Huế</option>
-                  <option value="Tiền Giang">Tiền Giang</option>
-                  <option value="Trà Vinh">Trà Vinh</option>
-                  <option value="Tuyên Quang">Tuyên Quang</option>
-                  <option value="Vĩnh Long">Vĩnh Long</option>
-                  <option value="Vĩnh Phúc">Vĩnh Phúc</option>
-                  <option value="Yên Bái">Yên Bái</option>
+                <label for="fullName" class="label-warning" ></label>
+                <select onchange="handleInput(this)"  id="province-id"  required>
+                  <!-- <option value="An Giang">An Giang</option> -->
                 </select>
                 <textarea
                   placeholder="Address"
                   name="address"
                   id="Address"
+                  onchange="handleInput(this)"
+                  required
+                  minlength="10"
                 ></textarea>
+                <label for="Address" class="label-warning"></label>
                 <input
                   placeholder="Email"
                   name="email"
-                  type="text"
+                  type="email"
+                  id="email"
                   class="Checkout-payment-user-email"
+                  onchange="handleInput(this)"
+                  required
                 />
+                <label for="email" class="label-warning"></label>
                 <input
-                  type="text"
                   name="phoneNumber"
-                  type="text"
+                  type="tel"
+                  id="phoneNumber"
                   class="Checkout-payment-user-phoneNumber"
                   placeholder="Phone Number"
+                  onchange="handleInput(this)"
+                  required
                 />
+                <label for="phoneNumber" class="label-warning"></label>
                 <div class="Checkout-payment-btn-container">
-                    <button class="Checkout-payment-btn">
-                            Order
-                    </button>
+                  <button type="submit" class="Checkout-payment-btn">Order</button>
                 </div>
               </form>
+            </div>
+          </div>
+          <div class="Checkout-payment-product-container">
+            <div class="Checkout-payment-product-top">
+              Order (
+              <span id="Checkout-payment-length" class="Checkout-payment-length-product">1</span>
+              Products)
+            </div>
+            <div class="Checkout-payment-product-middle">
+
+            </div>
+
+            <div class="Checkout-payment-product-bottom">
+              <div class="Checkout-payment-product-bottom-left">
+                Total: 
+                <div id="total-fee" class="Checkout-payment-product-bottom-right"></div>
+              </div>
+              <div class="Checkout-payment-product-bottom-left">
+                Discount:
+                <div id="discount-fee" class="Checkout-payment-product-bottom-right"></div>
+              </div>
+              <div class="Checkout-payment-product-bottom-left">
+                Shipping fee:
+                <div id="shipping-fee" class="Checkout-payment-product-bottom-right">30.000 đ</div>
+              </div>
+              <div class="Checkout-payment-product-bottom-left">
+                <span>Total Price:</span>
+                <span id="total-price-fee"></span>
+              </div>
             </div>
           </div>
         </div>
@@ -289,5 +272,7 @@
       </div>
     </footer>
     <script src="/src/scripts/header.js"></script>
+
+    <script src="/src/scripts/checkout.js"></script>
   </body>
 </html>

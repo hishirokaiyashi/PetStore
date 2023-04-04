@@ -777,7 +777,10 @@
   color: var(--other-text-pink);
   border: 1px solid var(--primary-background-pink);
 }
-
+.item-price-after{
+  display:flex;
+  font-weight: 600;
+}
 /* products best seller */
 
 @media screen and (max-width: 960px) {
