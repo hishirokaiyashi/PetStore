@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/assets/styles/base.css">
     <link rel="stylesheet" href="/assets/styles/Products.css">
     <link rel="stylesheet" href="/assets/styles/Header.css" />
+    <link rel="stylesheet" href="/assets/styles/Footer.css" />
     <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
 </head>
 <body>
@@ -88,7 +89,7 @@
             <div class="checkbox-category">
                 <div class="checkbox-menu-product-item">
                     <div class="input-menu">
-                      <input type="checkbox" name="input-check" id="check-all" class="input-checkbox" checked/>
+                      <input value="all" type="checkbox" name="input-check" id="check-all" class="category" checked/>
                       <span class="check-icon">
                         <svg fill="currentColor"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512">
                         <path d="M493.3 128l-22.6 22.6-256 256L192 429.3l-22.6-22.6-128-128L18.7 256 64 210.7l22.6 22.6L192 338.7 425.4 105.4 448 82.7 493.3 128z"/>
@@ -99,7 +100,7 @@
                 </div>
                 <div class="checkbox-menu-product-item">
                     <div class="input-menu">
-                      <input type="checkbox" name="input-check" id="0" class="input-checkbox" checked/>
+                      <input value="foods" type="checkbox" name="input-check" id="check-foods" class="category" checked/>
                       <span class="check-icon">
                         <svg fill="currentColor"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512">
                         <path d="M493.3 128l-22.6 22.6-256 256L192 429.3l-22.6-22.6-128-128L18.7 256 64 210.7l22.6 22.6L192 338.7 425.4 105.4 448 82.7 493.3 128z"/>
@@ -110,7 +111,7 @@
                 </div>
                 <div class="checkbox-menu-product-item">
                   <div class="input-menu">
-                    <input type="checkbox" name="input-check" id="1" class="input-checkbox" checked/>
+                    <input value="accessories" type="checkbox" name="input-check" id="check-accessories" class="category" checked/>
                     <span class="check-icon">
                       <svg fill="currentColor"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512">
                       <path d="M493.3 128l-22.6 22.6-256 256L192 429.3l-22.6-22.6-128-128L18.7 256 64 210.7l22.6 22.6L192 338.7 425.4 105.4 448 82.7 493.3 128z"/>
@@ -121,7 +122,7 @@
                 </div>
                 <div class="checkbox-menu-product-item">
                   <div class="input-menu">
-                    <input type="checkbox" name="input-check" id="2" class="input-checkbox" checked/>
+                    <input value="toys" type="checkbox" name="input-check" id="check-toys" class="category" checked/>
                     <span class="check-icon">
                       <svg fill="currentColor"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512">
                       <path d="M493.3 128l-22.6 22.6-256 256L192 429.3l-22.6-22.6-128-128L18.7 256 64 210.7l22.6 22.6L192 338.7 425.4 105.4 448 82.7 493.3 128z"/>
@@ -132,7 +133,7 @@
                 </div>
                 <div class="checkbox-menu-product-item">
                   <div class="input-menu">
-                    <input type="checkbox" name="input-check" id="3" class="input-checkbox" checked/>
+                    <input value="cage" type="checkbox" name="input-check" id="check-cage" class="category" checked/>
                     <span class="check-icon">
                       <svg fill="currentColor"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512">
                       <path d="M493.3 128l-22.6 22.6-256 256L192 429.3l-22.6-22.6-128-128L18.7 256 64 210.7l22.6 22.6L192 338.7 425.4 105.4 448 82.7 493.3 128z"/>
@@ -143,7 +144,7 @@
                 </div>
                 <div class="checkbox-menu-product-item">
                   <div class="input-menu">
-                    <input type="checkbox" name="input-check" id="4" class="input-checkbox" checked/>
+                    <input value="eating utensils" type="checkbox" name="input-check" id="check-eating-utensils" class="category" checked/>
                     <span class="check-icon">
                       <svg fill="currentColor"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512">
                       <path d="M493.3 128l-22.6 22.6-256 256L192 429.3l-22.6-22.6-128-128L18.7 256 64 210.7l22.6 22.6L192 338.7 425.4 105.4 448 82.7 493.3 128z"/>
@@ -154,7 +155,7 @@
                 </div>
                 <div class="checkbox-menu-product-item">
                   <div class="input-menu">
-                    <input type="checkbox" name="input-check" id="5" class="input-checkbox" checked/>
+                    <input value="cleaning tools" type="checkbox" name="input-check" id="check-cleaning-tools" class="category" checked/>
                     <span class="check-icon">
                       <svg fill="currentColor"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512">
                       <path d="M493.3 128l-22.6 22.6-256 256L192 429.3l-22.6-22.6-128-128L18.7 256 64 210.7l22.6 22.6L192 338.7 425.4 105.4 448 82.7 493.3 128z"/>
@@ -167,8 +168,8 @@
         </div>
         <div class="list-products-container">
           <div class="sort-product-container">
-            <div class="sort-product-item">
-              <select name="rate" id="sort-rate">
+            <div >
+              <select class="sort-product-item" name="rate" id="sort-rate">
                 <option value="Rating" class="option-sort">Rating</option>
                 <option value="Excellent" class="option-sort">Excellent</option>
                 <option value="Good" class="option-sort">Good</option>
@@ -177,65 +178,137 @@
                 <option value="Poor" class="option-sort">Poor</option>
               </select>
             </div>
-            <div class="sort-product-item">
-              <select name="numofSold" id="sort-sold">
+            <div >
+              <select class="sort-product-item" name="numofSold" id="sort-sold">
                 <option value="Sold" class="option-sort">Sold</option>
                 <option value="Decrease" class="option-sort">Decrease</option>
                 <option value="Increase" class="option-sort">Increase</option>
               </select>
             </div>
-            <div class="sort-product-item">
-              <select name="price" id="sort-price">
+            <div >
+              <select class="sort-product-item" name="price" id="sort-price">
                 <option value="Price" class="option-sort">Price</option>
                 <option value="Decrease" class="option-sort">Decrease</option>
                 <option value="Increase" class="option-sort">Increase</option>
               </select>
             </div>
           </div>
-          <div class="products-center">
-            <!-- <div class="card-product">
-              <div class="card-product-img-top">
-                <img src="../../assets/imgs/pet dog 1.png" alt="" class="card-product-img">
-                <span class="card-product-name">Pate for cat</span>
-              </div>
-              <div class="card-product-bottom">
-                <div class="card-product-price">
-                  <span class="card-product-price-before-discount"><sup>$</sup>100</span>
-                  <b class="card-product-price-discount"><sup>$</sup>80</b>
-                </div>
-                <div class="card-product-rate-detail">
-                  <div class="rating-star">
-                    <span class="iconify" data-icon="material-symbols:star-rounded"></span>
-                    <span class="iconify" data-icon="material-symbols:star-rounded"></span>
-                    <span class="iconify" data-icon="material-symbols:star-rounded"></span>
-                    <span class="iconify" data-icon="material-symbols:star-rounded"></span>
-                    <span class="iconify" data-icon="material-symbols:star-rounded"></span>
-                  </div>
-                </div>
-                <div class="card-product-sold">
-                  <span class="card-product-sold-number">100</span>
-                  <span class="card-product-sold-text">Sold</span>
-                </div>
-              </div>
-              <div class="card-product-discount">
-                <img src="../../assets/imgs/Bookmark.png" alt="sale discount" class="product-discount-bookmark">
-                <span class="card-product-discount-text">-20%</span>
-              </div>
-              <div class="card-product-buy-now">
-                <button class="card-product-buy-now-btn">
-                  Buy now <iconify-icon icon="material-symbols:shopping-cart-rounded"></iconify-icon>
-                </button>
-              </div> -->
-            </div>
+          <div class="products-center"></div>
           </div>
         </div>
     </div>
 
 
     <!-- footer -->
-
+    <footer class="footer-container">
+      <div class="footer-container-detail">
+        <div class="footer-container-logo">
+          <a href="/"> PetStore </a>
+        </div>
+        <div class="footer-container-second">
+          <span class="footer-container-second-text">
+            Our mission is to keep pets healthy
+          </span>
+          <div class="footer-line-big"></div>
+          <div class="footer-container-second-icon">
+            <span
+              class="iconify footer-container-second-item-icon"
+              data-icon="ic:outline-facebook"
+            ></span>
+            <span
+              class="iconify footer-container-second-item-icon"
+              data-icon="mdi:instagram"
+            ></span>
+            <span
+              class="iconify footer-container-second-item-icon"
+              data-icon="mdi:twitter"
+            ></span>
+            <span
+              class="iconify footer-container-second-item-icon"
+              data-icon="ph:youtube-logo-fill"
+            ></span>
+          </div>
+        </div>
+        <div class="footer-container-third">
+          <span class="footer-container-third-text"> Links </span>
+          <div class="footer-line-big"></div>
+          <ul class="footer-container-third-list-links">
+            <li class="footer-container-third-link">
+              <a href="/src/pages/Home.html">HOME</a>
+            </li>
+            <div class="footer-line-small"></div>
+            <li class="footer-container-third-link">
+              <a href="/src/pages/Products.html">PRODUCT</a>
+            </li>
+            <div class="footer-line-small"></div>
+            <li class="footer-container-third-link">
+              <a href="/src/pages/AboutUs.html">ABOUT US</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-container-fourth">
+          <span class="footer-container-fourth-text"> Work Time </span>
+          <div class="footer-line-big"></div>
+          <ul class="footer-container-fourth-list-time">
+            <li class="footer-container-fourth-item">
+              <span class="footer-container-fourth-time-day">
+                Monday -> Friday
+              </span>
+              <span class="footer-container-fourth-time">
+                7h30 -> 21h00
+              </span>
+            </li>
+            <div class="footer-line-small"></div>
+            <li class="footer-container-fourth-item">
+              <span class="footer-container-fourth-time-day"> Saturday </span>
+              <span class="footer-container-fourth-time">
+                7h30 -> 20h00
+              </span>
+            </li>
+            <div class="footer-line-small"></div>
+            <li class="footer-container-fourth-item">
+              <span class="footer-container-fourth-time-day"> Sunday </span>
+              <span class="footer-container-fourth-time"> Close </span>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-container-fifth">
+          <span class="footer-container-fifth-text"> Contact </span>
+          <div class="footer-line-big"></div>
+          <div class="footer-container-fifth-list-contact">
+            <div class="footer-container-fifth-item">
+              <span
+                class="iconify footer-container-fifth-item-icon"
+                data-icon="mdi:map-marker"
+              ></span>
+              <span class="footer-container-fifth-item-text">
+                Address: Quarter 6, Linh Trung Ward, City. Thu Duc, HCM
+              </span>
+            </div>
+            <div class="footer-line-small"></div>
+            <div class="footer-container-fifth-item">
+              <span
+                class="iconify footer-container-fifth-item-icon"
+                data-icon="ic:baseline-phone-callback"
+              ></span>
+              <span class="footer-container-fifth-item-text">
+                PhoneNumber: 123456
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-container-copyright">
+        <div class="footer-copyright-main">
+          <span>Copyright belongs to Pet Store</span>
+        </div>
+        <div class="footer-copyright-sub">
+          <p>© 2023 All rights reserved</p>
+        </div>
+      </div>
+    </footer>
     <!-- javascript -->
-    <script src="../javascript/slideshow.js"></script>
+    <script src="../scripts/slideshow.js"></script>
     <script src="/src/scripts/products.js"></script>
 </body>
 <script src="/src/scripts/header.js"></script>

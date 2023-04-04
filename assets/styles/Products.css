@@ -1,8 +1,10 @@
 
+
 /* Slideshow container */
 .slideshow-container {
     width: 100%;
     position: relative;
+    margin-top: 108px;
 }
 
 /* Hide the images by default */
@@ -104,7 +106,7 @@
     /* width: var(--checkbox-size);
     height: var(--checkbox-size); */
   }
-.checkbox-menu-product-item .input-checkbox {
+.checkbox-menu-product-item .category {
     appearance: none;
     -webkit-appearance: none;
     height: var(--checkbox-size);
@@ -115,14 +117,14 @@
     cursor: pointer;
     transition: ease 0.2s;
   }
-.checkbox-menu-product-item .input-checkbox:hover {
+.checkbox-menu-product-item .category:hover {
     background-color: #d1d5db;
   }
-.checkbox-menu-product-item .input-checkbox:checked {
+.checkbox-menu-product-item .category:checked {
     background-color: var(--primary-background-pink);
     border-color: #fff;
   }
-.checkbox-menu-product-item .input-checkbox:checked + .check-icon {
+.checkbox-menu-product-item .category:checked + .check-icon {
     display: block;
   }
 .checkbox-menu-product-item .check-icon {
@@ -166,14 +168,14 @@
 .sort-product-item{
   margin-left: 20px;
   width: 100px;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #de135c;
 }
 
-.sort-product-item:hover{
-  color: #de135c;
-}
-
-.list-card-product{
+.products-center{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
