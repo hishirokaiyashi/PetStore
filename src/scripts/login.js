@@ -117,6 +117,23 @@ function checkLogin(email, password){
   }
 }
 
+
+//setLoggedInUser
+function setLoggedInUser(user){
+  localStorage.setItem("loggedInUser", JSON.stringify(user));
+}
+
+// Lấy thông tin người dùng đăng nhập hiện tại (nếu có)
+function getLoggedInUser() {
+  const user = localStorage.getItem("loggedInUser");
+  if (user) {
+    return JSON.parse(user);
+  }
+}
+
+// tạo 1 cái biến global để lưu trữ thông tin người dùng đăng nhập hiện tại 
+const loggedInUser = getLoggedInUser();
+
 //login handle 
 function loginHandle(){
   //remove error message
@@ -128,6 +145,18 @@ function loginHandle(){
   const password = loginPassword.value;
   if(validateLogin(email, password)){
     if(checkLogin(email, password)){
+
+      const user = getUserData(email);
+      setLoggedInUser(user);
+      const header = document.querySelector('header');
+      header.classList.add('user-authenticated');
+      const avatarImage = document.querySelector('.user-info .avatar img');
+      const usernameLink = document.querySelector('.user-info .username a');
+      // avatarImage.src = user.avatar;
+      // avatarImage.alt = user.name;
+      // usernameLink.textContent = user.name;
+      // usernameLink.href = '/profile'; // Link đến trang thông tin chi tiết của user
+
       window.location.href = "Home.html";
     }
   }
