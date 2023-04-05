@@ -64,3 +64,9 @@ const changeBackground = () => {
 }
 
 window.addEventListener("scroll", changeBackground)
+
+const btnLogin = document.querySelector('.header-button-login');
+btnLogin.addEventListener('click', () => {
+    console.log('click')
+    window.location.href = "SignIn.html";
+})
