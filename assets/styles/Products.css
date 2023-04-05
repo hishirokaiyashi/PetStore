@@ -59,7 +59,15 @@
 .active, .dot:hover {
   background-color: #717171;
 }
-
+.active-page {
+  background-color: var(--primary-background-pink);
+  color:var(--tertiary-text-white);
+  border-radius: 50%;
+}
+.products-pagination a {
+  padding:0 0.375rem;
+  text-decoration: none;
+}
 /* Fading animation */
 .fade {
   animation-name: fade;
@@ -211,6 +219,7 @@
   font-weight: 500;
   margin-top: 5px;
   padding: 0 5px;
+  font-size: 1rem;
 }
 
 .card-product-bottom{
@@ -227,13 +236,13 @@
 
 .card-product-price-before-discount{
   color: #ccc;
-  font-size: 20px;
+  font-size: 1rem;
   text-decoration: line-through;
 }
 
 .card-product-price-discount{
   color: red;
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: 700;
   padding: 0 0 0 20px;
 }
@@ -312,4 +321,8 @@
 
 .card-product:hover .card-product-buy-now-btn{
   display: block;
+}
+.products-pagination {
+  display:flex;
+  gap:0.375rem;
 }

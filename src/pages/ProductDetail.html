@@ -1,210 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProductDetail</title>
-    <link rel="stylesheet" href="/assets/styles/base.css">
-    <link rel="stylesheet" href="/assets/styles/ProductDetail.css">
-    <link rel="stylesheet" href="/assets/styles/header.css">
-    <link rel="stylesheet" href="/assets/styles/footer.css">
-    <link rel="stylesheet" href="/assets/styles/Products.css">
-    <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProductDetail</title>
+  <link rel="stylesheet" href="/assets/styles/base.css">
+  <link rel="stylesheet" href="/assets/styles/ProductDetail.css">
+  <link rel="stylesheet" href="/assets/styles/header.css">
+  <link rel="stylesheet" href="/assets/styles/footer.css">
+  <link rel="stylesheet" href="/assets/styles/Products.css">
+  <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
 </head>
+
 <body>
-    <!-- header -->
-    <!-- product detail -->
-    <div class="product-detail">
-        <div class="product-detail-link">
-            <p>
-                <a class="product-detail-link-span" href="">PetStore</a>
-                &nbsp; &gt; &nbsp;
-                <a class="product-detail-link-span" href="">Product</a>
-                &nbsp; &gt; &nbsp;
-                <a class="product-detail-link-span" href="" class="link-category">Category</a>
-                &nbsp; &gt; &nbsp;
-                <a class="product-detail-link-span" href="" class="product-name">Product Name</a>
-            </p>
+  <!-- header -->
+  <header class="header-container">
+    <div class="header-container-detail">
+      <div class="header-logo">
+        <a href="/src/pages/Home.html"> PetStore </a>
+      </div>
+      <div class="header-container-items">
+        <ul class="header-list">
+          <li class="header-list-detail header-list-detail-tab-active">
+            <a href="/src/pages/Home.html">Trang chủ</a>
+          </li>
+          <li class="header-list-detail">
+            <a href="/src/pages/Products.html">Sản phẩm</a>
+          </li>
+          <li class="header-list-detail">
+            <a href="/src/pages/AboutUs.html">Về chúng tôi</a>
+          </li>
+          <li class="header-list-detail">
+            <button class="header-button-login-mobile">Đăng nhập</button>
+          </li>
+        </ul>
+      </div>
+      <div class="header-container-menu-icon">
+        <span class="iconify header-button-icon-first" data-icon="material-symbols:menu"></span>
+      </div>
+      <div class="header-container-buttons">
+        <div class="header-container-button-list-icons">
+          <div class="header-container-button-icon">
+            <span class="iconify header-button-icon" data-icon="material-symbols:search"></span>
+          </div>
+          <div class="header-container-button-icon">
+            <a href="/src/pages/Carts.html" class="shopping-cart-link">
+              <span class="iconify header-button-icon" data-icon="material-symbols:shopping-cart-outline">
+              </span>
+              <span class="badge" id="number-cart">0</span>
+            </a>
+          </div>
         </div>
-        <div class="product-detail-description-container">
-            <div class="product-detail-img">
-                <img class="product-img" src="../../assets/imgs/pet dog 1.png" alt="Product name">
-            </div>
-            <div class="product-detail-description">
-                <div class="product-name">
-                    Product Name
-                </div>
-                <div class="product-rating">
-                    <div class="product-rating-star">
-                        <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
-                        <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
-                        <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
-                        <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
-                        <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
-                    </div>
-                    <div class="product-rating-number">
-                        4.5
-                    </div>
-                </div>
-                <div class="product-sold">
-                    <p class="product-sold-amount">1000 </p>
-                    <p class="product-sold-text"> sold</p>
-                </div>
-                <div class="product-price">
-                    <div class="product-price-detail">
-                        <p class="product-price-before-discount"><sup>$</sup>100</p>
-                        <p class="product-price-after-discount"><sup>$</sup>50</p>
-                    </div>
-                    
-                    <div class="product-discount">
-                        <p>50% off</p>
-                    </div>
-                </div>
-                <div class="product-shipping">
-                    <p>Free shipping</p>
-                </div>
-                <div class="product-order-amount">
-                    <div class="product-order-amount-text">
-                        <p>Quantity</p>
-                    </div>
-                    <div class="product-order-amount-input">
-                        <!-- decrease amount button -->
-                        <button class="product-order-amount-input-button-decrease" type="button">
-                            <span class="iconify" data-icon="mdi:minus" data-inline="false"></span>
-                        </button>
-                        <!-- amount input -->
-                        <input class="product-order-amount-input-text" type="text" value="1">
-                        <!-- increase amount button -->
-                        <button class="product-order-amount-input-button-increase" type="button">
-                            <span class="iconify" data-icon="mdi:plus" data-inline="false"></span>
-                        </button>
-                    </div>
-                </div>
-                <div class="product-order-button">
-                    <button class="product-order-button-add-to-cart" type="button">Add to cart</button>
-                    <button class="product-order-button-buy-now" type="button">Buy now</button>
-                </div>
-            </div>
+        <button class="header-button-login">Đăng nhập</button>
+      </div>
+    </div>
+  </header>
+  <!-- product detail -->
+  <div class="product-detail">
+    <div class="product-detail-link">
+      <p>
+        <a class="product-detail-link-span" href="">PetStore</a>
+        &nbsp; &gt; &nbsp;
+        <a class="product-detail-link-span" href="">Product</a>
+        &nbsp; &gt; &nbsp;
+        <a class="product-detail-link-span" href="" class="link-category">Category</a>
+        &nbsp; &gt; &nbsp;
+        <a class="product-detail-link-span" href="" class="product-name">Product Name</a>
+      </p>
+    </div>
+    <div class="product-detail-description-container">
+      <div class="product-detail-img">
+        <img class="product-img" src="../../assets/imgs/pet dog 1.png" alt="Product name">
+      </div>
+      <div class="product-detail-description">
+        <div class="product-name">
+          Product Name
         </div>
-        <div class="product-detail-infomation">
-            <div class="product-detail-infomation-heading">
-                <h2>Product Infomation</h2>
-            </div>
-            <div class="divide"></div>
-            <div class="product-detail-information-overview">
-                <p class="product-detail-information-title">Overview</p>
-                <table class="product-detail-information-content">
-                    <tr>
-                        <td class="product-detail-information-overview-text">Name: </td>
-                        <td class="product-detail-information-overview-product-name">Product Name</td>
-                    </tr>
-                    <tr>
-                        <td class="product-detail-information-overview-text">Category: </td>
-                        <td class="product-detail-information-overview-product-category">Category Name</td>
-                    </tr>
-                    <tr>
-                        <td class="product-detail-information-overview-text">Stock: </td>
-                        <td class="product-detail-information-overview-product-stock">2000</td>
-                    </tr>
-                    <tr>
-                        <td class="product-detail-information-overview-text">Depart from: </td>
-                        <td class="product-detail-information-overview-value">Vietnam</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="divide"></div>
-            <div class="product-detail-information-description">
-                <p class="product-detail-information-title">Description</p>
-                <p class="product-detail-information-overview-product-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis tempora facere laudantium, nam adipisci perspiciatis libero tempore. Nulla id reprehenderit non. Quis cumque neque ducimus dicta sapiente a iste optio?</p>
-            </div>
-            <div class="divide"></div>
-            <!-- <div class="product-detail-information-guide">
+        <div class="product-rating">
+          <div class="product-rating-star">
+            <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
+            <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
+            <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
+            <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
+            <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
+          </div>
+          <div class="product-rating-number">
+            4.5
+          </div>
+        </div>
+        <div class="product-sold">
+          <p class="product-sold-amount">1000 </p>
+          <p class="product-sold-text"> sold</p>
+        </div>
+        <div class="product-price">
+          <div class="product-price-detail">
+            <p class="product-price-before-discount">100</p>
+            <p class="product-price-after-discount">50</p>
+          </div>
+
+          <div class="product-discount">
+            <p>50% off</p>
+          </div>
+        </div>
+        <div class="product-shipping">
+          <p>Free shipping</p>
+        </div>
+        <div class="product-order-amount">
+          <div class="product-order-amount-text">
+            <p>Quantity</p>
+          </div>
+          <div class="product-order-amount-input">
+            <!-- decrease amount button -->
+            <button class="product-order-amount-input-button-decrease" type="button">
+              <span class="iconify" data-icon="mdi:minus" data-inline="false"></span>
+            </button>
+            <!-- amount input -->
+            <input class="product-order-amount-input-text" type="text" value="1">
+            <!-- increase amount button -->
+            <button class="product-order-amount-input-button-increase" type="button">
+              <span class="iconify" data-icon="mdi:plus" data-inline="false"></span>
+            </button>
+          </div>
+        </div>
+        <div class="product-order-button">
+          <button onclick="addToCart(this)" class="product-order-button-add-to-cart" type="button">Add to cart</button>
+          <button class="product-order-button-buy-now" type="button">Buy now</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-detail-infomation">
+      <div class="product-detail-infomation-heading">
+        <h2>Product Infomation</h2>
+      </div>
+      <div class="divide"></div>
+      <div class="product-detail-information-overview">
+        <p class="product-detail-information-title">Overview</p>
+        <table class="product-detail-information-content">
+          <tr>
+            <td class="product-detail-information-overview-text">Name: </td>
+            <td class="product-detail-information-overview-product-name">Product Name</td>
+          </tr>
+          <tr>
+            <td class="product-detail-information-overview-text">Category: </td>
+            <td class="product-detail-information-overview-product-category">Category Name</td>
+          </tr>
+          <tr>
+            <td class="product-detail-information-overview-text">Stock: </td>
+            <td class="product-detail-information-overview-product-stock">2000</td>
+          </tr>
+          <tr>
+            <td class="product-detail-information-overview-text">Depart from: </td>
+            <td class="product-detail-information-overview-value">Vietnam</td>
+          </tr>
+        </table>
+      </div>
+      <div class="divide"></div>
+      <div class="product-detail-information-description">
+        <p class="product-detail-information-title">Description</p>
+        <p class="product-detail-information-overview-product-description">Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Blanditiis tempora facere laudantium, nam adipisci perspiciatis libero tempore. Nulla id
+          reprehenderit non. Quis cumque neque ducimus dicta sapiente a iste optio?</p>
+      </div>
+      <div class="divide"></div>
+      <!-- <div class="product-detail-information-guide">
                 <p class="product-detail-information-title">Guide</p>
                 <p class="product-detail-information-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis tempora facere laudantium, nam adipisci perspiciatis libero tempore. Nulla id reprehenderit non. Quis cumque neque ducimus dicta sapiente a iste optio?</p>
             </div> -->
-        </div>
-        <div class="product-detail-review">
-            <div class="product-detail-review-heading">
-                <h2>Reviews</h2>
-            </div>
-            <div class="product-detail-rating">
-                <div class="product-detail-rating-star">
-                    <div class="group-star">
-                        <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
-                        <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
-                        <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
-                        <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
-                        <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
-                    </div>
-                    <div class="product-detail-rating-number">
-                        4.5 | 
-                    </div>
-                    <div class="product-detail-rating-review">
-                        <p> 1,000 reviews</p>
-                    </div>
-                </div>
-                
-                <div class="product-detail-rating-group">
-                    <button class="btn-product-detail-rating">All</button>
-                    <button class="btn-product-detail-rating">Excellent (5 <span class="iconify" data-icon="mdi:star" data-inline="false"></span>)</button>
-                    <button class="btn-product-detail-rating">Good (4 <span class="iconify" data-icon="mdi:star" data-inline="false"></span>)</button>
-                    <button class="btn-product-detail-rating">Fair (3 <span class="iconify" data-icon="mdi:star" data-inline="false"></span>)</button>
-                    <button class="btn-product-detail-rating">Uncertain (2 <span class="iconify" data-icon="mdi:star" data-inline="false"></span>)</button>
-                    <button class="btn-product-detail-rating">Poor (1 <span class="iconify" data-icon="mdi:star" data-inline="false"></span>)</button>
-                </div>
-            </div>
-            <div class="divide"></div>
-            <div class="product-detail-user-review">
-                <div class="product-detail-review-avatar">
-                    <img src="../../assets/imgs/pet dog 1.png" alt="" width="100px">
-                </div>
-                <div class="product-detail-review-content">
-                    <p class="user-name">User name</p>
-                    <p class="review-rating">
-                        <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
-                        <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
-                        <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
-                        <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
-                        <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
-                    </p>
-                    <p class="review-date">16:30 23-02-2023</p>
-                    <p class="review-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, et. Eos a nemo laboriosam voluptatibus quasi voluptate hic nisi cupiditate molestias, suscipit eligendi. Officiis quisquam sit, laboriosam maxime asperiores expedita?</p>
-                    <div class="product-detail-review-creact">
-                        <div class="group-btn-react">
-                            <button class="btn-product-detail-review-like">Like</button>
-                            <button class="btn-product-detail-review-reply">Reply</button>
-                        </div>
-                        
-                        <!-- comment -->
-                        <div class="product-detail-review-comment">
-                            <div class="product-detail-review-comment-avatar">
-                                <img src="../../assets/imgs/pet dog 1.png" alt="" width="100px">
-                            </div>
-                            <div class="product-detail-review-comment-content">
-                                <p class="user-name">User name</p>
-                                <p class="review-date">16:30 23-02-2023</p>
-                                <p class="review-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, et. Eos a nemo laboriosam voluptatibus quasi voluptate hic nisi cupiditate molestias, suscipit eligendi. Officiis quisquam sit, laboriosam maxime asperiores expedita?</p>
-                                <div class="product-detail-review-comment-creact">
-                                    <button class="btn-product-detail-review-like">Like</button>
-                                    <button class="btn-product-detail-review-reply">Reply</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="divide"></div>
+    </div>
+    <div class="product-detail-review">
+      <div class="product-detail-review-heading">
+        <h2>Reviews</h2>
+      </div>
+      <div class="product-detail-rating">
+        <div class="product-detail-rating-star">
+          <div class="group-star">
+            <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
+            <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
+            <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
+            <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
+            <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
+          </div>
+          <div class="product-detail-rating-number">
+            4.5 |
+          </div>
+          <div class="product-detail-rating-review">
+            <p> 1,000 reviews</p>
+          </div>
         </div>
 
-        <!-- related product -->
-        <div class="related-product-container">
-            <h2>Related products</h2>
-            <div class="related-product"></div>
+        <div class="product-detail-rating-group">
+          <button class="btn-product-detail-rating">All</button>
+          <button class="btn-product-detail-rating">Excellent (5 <span class="iconify" data-icon="mdi:star"
+              data-inline="false"></span>)</button>
+          <button class="btn-product-detail-rating">Good (4 <span class="iconify" data-icon="mdi:star"
+              data-inline="false"></span>)</button>
+          <button class="btn-product-detail-rating">Fair (3 <span class="iconify" data-icon="mdi:star"
+              data-inline="false"></span>)</button>
+          <button class="btn-product-detail-rating">Uncertain (2 <span class="iconify" data-icon="mdi:star"
+              data-inline="false"></span>)</button>
+          <button class="btn-product-detail-rating">Poor (1 <span class="iconify" data-icon="mdi:star"
+              data-inline="false"></span>)</button>
         </div>
+      </div>
+      <div class="divide"></div>
+      <div class="product-detail-user-review">
+        <div class="product-detail-review-avatar">
+          <img src="../../assets/imgs/pet dog 1.png" alt="" width="100px">
+        </div>
+        <div class="product-detail-review-content">
+          <p class="user-name">User name</p>
+          <p class="review-rating">
+            <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
+            <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
+            <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
+            <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
+            <span class="iconify" data-icon="mdi:star" data-inline="false"></span>
+          </p>
+          <p class="review-date">16:30 23-02-2023</p>
+          <p class="review-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, et. Eos a nemo
+            laboriosam voluptatibus quasi voluptate hic nisi cupiditate molestias, suscipit eligendi. Officiis quisquam
+            sit, laboriosam maxime asperiores expedita?</p>
+          <div class="product-detail-review-creact">
+            <div class="group-btn-react">
+              <button class="btn-product-detail-review-like">Like</button>
+              <button class="btn-product-detail-review-reply">Reply</button>
+            </div>
+
+            <!-- comment -->
+            <div class="product-detail-review-comment">
+              <div class="product-detail-review-comment-avatar">
+                <img src="../../assets/imgs/pet dog 1.png" alt="" width="100px">
+              </div>
+              <div class="product-detail-review-comment-content">
+                <p class="user-name">User name</p>
+                <p class="review-date">16:30 23-02-2023</p>
+                <p class="review-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, et. Eos a
+                  nemo laboriosam voluptatibus quasi voluptate hic nisi cupiditate molestias, suscipit eligendi.
+                  Officiis quisquam sit, laboriosam maxime asperiores expedita?</p>
+                <div class="product-detail-review-comment-creact">
+                  <button class="btn-product-detail-review-like">Like</button>
+                  <button class="btn-product-detail-review-reply">Reply</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="divide"></div>
     </div>
-    <!-- footer -->
+
+    <!-- related product -->
+    <div class="related-product-container">
+      <h2>Related products</h2>
+      <div class="related-product"></div>
+    </div>
+  </div>
+  <footer class="footer-container">
+    <div class="footer-container-detail">
+      <div class="footer-container-logo">
+        <a href="/"> PetStore </a>
+      </div>
+      <div class="footer-container-second">
+        <span class="footer-container-second-text">
+          Our mission is to keep pets healthy
+        </span>
+        <div class="footer-line-big"></div>
+        <div class="footer-container-second-icon">
+          <span class="iconify footer-container-second-item-icon" data-icon="ic:outline-facebook"></span>
+          <span class="iconify footer-container-second-item-icon" data-icon="mdi:instagram"></span>
+          <span class="iconify footer-container-second-item-icon" data-icon="mdi:twitter"></span>
+          <span class="iconify footer-container-second-item-icon" data-icon="ph:youtube-logo-fill"></span>
+        </div>
+      </div>
+      <div class="footer-container-third">
+        <span class="footer-container-third-text"> Links </span>
+        <div class="footer-line-big"></div>
+        <ul class="footer-container-third-list-links">
+          <li class="footer-container-third-link">
+            <a href="/src/pages/Home.html">HOME</a>
+          </li>
+          <div class="footer-line-small"></div>
+          <li class="footer-container-third-link">
+            <a href="/src/pages/Products.html">PRODUCT</a>
+          </li>
+          <div class="footer-line-small"></div>
+          <li class="footer-container-third-link">
+            <a href="/src/pages/AboutUs.html">ABOUT US</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-container-fourth">
+        <span class="footer-container-fourth-text"> Work Time </span>
+        <div class="footer-line-big"></div>
+        <ul class="footer-container-fourth-list-time">
+          <li class="footer-container-fourth-item">
+            <span class="footer-container-fourth-time-day">
+              Monday -> Friday
+            </span>
+            <span class="footer-container-fourth-time">
+              7h30 -> 21h00
+            </span>
+          </li>
+          <div class="footer-line-small"></div>
+          <li class="footer-container-fourth-item">
+            <span class="footer-container-fourth-time-day"> Saturday </span>
+            <span class="footer-container-fourth-time">
+              7h30 -> 20h00
+            </span>
+          </li>
+          <div class="footer-line-small"></div>
+          <li class="footer-container-fourth-item">
+            <span class="footer-container-fourth-time-day"> Sunday </span>
+            <span class="footer-container-fourth-time"> Close </span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-container-fifth">
+        <span class="footer-container-fifth-text"> Contact </span>
+        <div class="footer-line-big"></div>
+        <div class="footer-container-fifth-list-contact">
+          <div class="footer-container-fifth-item">
+            <span class="iconify footer-container-fifth-item-icon" data-icon="mdi:map-marker"></span>
+            <span class="footer-container-fifth-item-text">
+              Address: Quarter 6, Linh Trung Ward, City. Thu Duc, HCM
+            </span>
+          </div>
+          <div class="footer-line-small"></div>
+          <div class="footer-container-fifth-item">
+            <span class="iconify footer-container-fifth-item-icon" data-icon="ic:baseline-phone-callback"></span>
+            <span class="footer-container-fifth-item-text">
+              PhoneNumber: 123456
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-container-copyright">
+      <div class="footer-copyright-main">
+        <span>Copyright belongs to Pet Store</span>
+      </div>
+      <div class="footer-copyright-sub">
+        <p>© 2023 All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+  <!-- footer -->
+  <script src="../scripts/header.js"></script>
+  <!-- <script src="../scripts/products.js"></script> -->
+  <script src="../scripts/product-detail.js"></script>
+  <!-- <script src="../scripts/carts.js"></script> -->
 </body>
-<script src="../scripts/product-detail.js"></script>
-<script src="../scripts/products.js"></script>
+
 </html>

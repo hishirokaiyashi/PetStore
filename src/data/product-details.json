@@ -15,15 +15,9 @@
   },
   "__v": 0
 },{
-  "_id": {
-    "$oid": "63a1d8cfbb0cc5730c9b0778"
-  },
-  "category": {
-    "$oid": "638d7ef19505100828e91937"
-  },
-  "product": {
-    "$oid": "63a1d8cebb0cc5730c9b0773"
-  },
+  "_id": "63a1d8cfbb0cc5730c9b0778",
+  "category": "638d7ef19505100828e91937",
+  "product": "63a1d8cebb0cc5730c9b0773",
   "description": "Sản phẩm được sản xuất theo tiêu chuẩn bền, đẹp và đảm bảo an toàn cho thú cưng khi sử dụng, không gây kích ứng, không làm các bé khó chịu và đặc biệt là hoàn toàn phù hợp với điều kiện khí hậu tại các nước châu Á, mang lại cảm giác dễ chịu và an toàn cho thú cưng khi ở trong nhà lẫn lúc ra ngoài.",
   "numOfRate": 0,
   "numOfProductsLove": 0,
@@ -36,15 +30,9 @@
   },
   "__v": 0
 },{
-  "_id": {
-    "$oid": "63a1d92dbb0cc5730c9b078b"
-  },
-  "category": {
-    "$oid": "638d7f2c9505100828e9193b"
-  },
-  "product": {
-    "$oid": "63a1d92cbb0cc5730c9b0786"
-  },
+  "_id": "63a1d92dbb0cc5730c9b078b",
+  "category": "638d7f2c9505100828e9193b",
+  "product":"63a1d92cbb0cc5730c9b0786",
   "description": "Đồ chơi nhồi bông cho chó mèo mẫu ngẫu nhiên- Đồ chơi nhồi bông là sản phẩm đồ chơi bông được làm bằng chất liệu an toàn với thú cưng, - Chất liệu: nhồi bôngCác loại: Cá giả, đùi gà, bí Halloween, Vịt,....Lưu ý: Shop sẽ phát một trong các mẫu ngẫu nhiên trong hình ảnh. Khách hàng có thể inbox hoặc ghi chú trong đơn hàng cho shop biết bạn nuôi bé chó hay bé mèo để shop chọn loại",
   "numOfRate": 0,
   "numOfProductsLove": 0,
@@ -57,15 +45,9 @@
   },
   "__v": 0
 },{
-  "_id": {
-    "$oid": "63a1d994bb0cc5730c9b0798"
-  },
-  "category": {
-    "$oid": "638d7f3a9505100828e9193d"
-  },
-  "product": {
-    "$oid": "63a1d992bb0cc5730c9b0793"
-  },
+  "_id":"63a1d994bb0cc5730c9b0798",
+  "category": "638d7f3a9505100828e9193d",
+  "product":"63a1d992bb0cc5730c9b0793",
   "description": "Miếng ghép chuồng cho thú cưng sẽ cho bạn thoải mái sáng tạo ghép chuồng cho những chú chó, chú mèo nhà bạn.",
   "numOfRate": 0,
   "numOfProductsLove": 0,
@@ -78,15 +60,9 @@
   },
   "__v": 0
 },{
-  "_id": {
-    "$oid": "63a1da35bb0cc5730c9b07a5"
-  },
-  "category": {
-    "$oid": "638d7f479505100828e9193f"
-  },
-  "product": {
-    "$oid": "63a1da34bb0cc5730c9b07a0"
-  },
+  "_id":"63a1da35bb0cc5730c9b07a5",
+  "category": "638d7f479505100828e9193f",
+  "product":"63a1da34bb0cc5730c9b07a0",
   "description": "Khay đựng đồ ăn cho thú cưng",
   "numOfRate": 0,
   "numOfProductsLove": 0,
@@ -99,15 +75,9 @@
   },
   "__v": 0
 },{
-  "_id": {
-    "$oid": "63a1da8dbb0cc5730c9b07b2"
-  },
-  "category": {
-    "$oid": "638d7f549505100828e91941"
-  },
-  "product": {
-    "$oid": "63a1da8bbb0cc5730c9b07ad"
-  },
+  "_id":"63a1da8dbb0cc5730c9b07b2",
+  "category":"638d7f549505100828e91941",
+  "product":"63a1da8bbb0cc5730c9b07ad",
   "description": "Khay đi vệ sinh cho chó",
   "numOfRate": 0,
   "numOfProductsLove": 0,
@@ -120,15 +90,9 @@
   },
   "__v": 0
 },{
-  "_id": {
-    "$oid": "63a28818a5e9044c6798209d"
-  },
-  "category": {
-    "$oid": "638d7f479505100828e9193f"
-  },
-  "product": {
-    "$oid": "63a28816a5e9044c67982098"
-  },
+  "_id": "63a28818a5e9044c6798209d",
+  "category": "638d7f479505100828e9193f",
+  "product":"63a28816a5e9044c67982098",
   "description": "Khay đựng đồ ăn cho thú cưng",
   "numOfRate": 0,
   "numOfProductsLove": 0,
