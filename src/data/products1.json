@@ -1,0 +1,759 @@
+
+[
+  {
+    "_id":"638d80259505100828e91949",
+    "name": "Cat food granules",
+    "price": "120000",
+    "sale": 10,
+    "rate": 5,
+    "numOfProductsSold": 171,
+    "img": "https://i.postimg.cc/g0VFn1kb/p1.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-05T05:22:45.315Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-09T04:45:52.162Z"
+    },
+    "__v": 0,
+    "numOfProductsInStock": 2000
+  },
+  {
+    "_id": "63a1d8cebb0cc5730c9b0773",
+    "name": "Dinosaur pattern pet clothes",
+    "price": "300000",
+    "sale": 20,
+    "rate": 0,
+    "numOfProductsSold": 4,
+    "numOfProductsInStock": 100,
+    "img": "https://firebasestorage.googleapis.com/v0/b/petcare-ac6c0.appspot.com/o/images%2F1671551146139-25.png?alt=media&token=3ec9b82d-729c-4360-a428-a2c824d8dc7c",
+    "category": "accessories",
+    "createdAt": {
+      "$date": "2022-12-20T15:46:22.565Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:46:22.565Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": "63a1d92cbb0cc5730c9b0786",
+    "name": "Pet toys",
+    "price": "100000",
+    "sale": 10,
+    "rate": 0,
+    "numOfProductsSold": 3,
+    "numOfProductsInStock": 200,
+    "img": "https://firebasestorage.googleapis.com/v0/b/petcare-ac6c0.appspot.com/o/images%2F1671551231865-e40390b8ab2f23e8d2c511e3d3862bf4.jpg?alt=media&token=3e7a0835-349d-4f5c-9a44-022499ac4f2d",
+    "category":"toys",
+    "createdAt": {
+      "$date": "2022-12-20T15:47:56.535Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:47:56.535Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1d992bb0cc5730c9b0793",
+    "name": "Dog house",
+    "price": "100000",
+    "sale": 20,
+    "rate": 0,
+    "numOfProductsSold": 10,
+    "numOfProductsInStock": 115,
+    "img": "https://firebasestorage.googleapis.com/v0/b/petcare-ac6c0.appspot.com/o/images%2F1671551349479-mieng-ghep-chuong-cho-thu-cung.jpg?alt=media&token=13cfe63c-f3ab-4775-bd16-29ab7736dbe1",
+    "category": "cage",
+    "createdAt": {
+      "$date": "2022-12-20T15:49:38.837Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:49:38.837Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":  "63a1da34bb0cc5730c9b07a0",
+    "name": "Pet food tray",
+    "price": "100000",
+    "sale": 10,
+    "rate": 0,
+    "numOfProductsSold": 10,
+    "numOfProductsInStock": 10,
+    "img": "https://firebasestorage.googleapis.com/v0/b/petcare-ac6c0.appspot.com/o/images%2F1671551507839-7be1d5044470dafbd14500a0f088ce9a.jpg?alt=media&token=0b62400b-2a31-4664-82d7-e3fe807c0533",
+    "category":"eating utensils",
+    "createdAt": {
+      "$date": "2022-12-20T15:52:20.059Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:52:20.059Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5730c9b07aa",
+    "name": "Blue pineapple pattern sweatshirt WILL",
+    "price": "80000",
+    "sale": 3,
+    "rate": 0,
+    "numOfProductsSold": 7,
+    "numOfProductsInStock": 50,
+    "img": "https://www.petcity.vn/media/product/5006_z2908036798683_fb37b6c88d032ce154bac641635d82c4.jpg",
+    "category": "accessories",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a28816a5e9044c67982098",
+    "name": "Snack bowl 3062, 15x7cm",
+    "price": "680000",
+    "sale": 2,
+    "rate": 0,
+    "numOfProductsSold": 4,
+    "numOfProductsInStock": 12,
+    "img": "https://www.petcity.vn/media/product/4811_sp_96_bat_3062_03.jpg",
+    "category": "eating utensils",
+    "createdAt": {
+      "$date": "2022-12-21T04:14:14.661Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-21T04:14:14.661Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5730c9b07ae",
+    "name": "SmartHeart Creamy Dog Treats Chicken & Carrot 15gx4",
+    "price": "38000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 2,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/4517_e505278611284de487ba49065ace24ef_cb486f1f8ef24fe08a6c36918042ee69__1_.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5730c9b07af",
+    "name": "Yellow animal print jacket size XL",
+    "price": "70000",
+    "sale": 3,
+    "rate": 0,
+    "numOfProductsSold": 3,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/5021_z2908036814218_11ea7ba9f41964b5145d4bd29fd78e73.jpg",
+    "category": "accessories",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5730c9b07ag",
+    "name": "Small Green Melon Pet House",
+    "price": "200000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 3,
+    "numOfProductsInStock": 20,
+    "img": "https://www.petcity.vn/media/product/291_qua_dua_xanh.jpg",
+    "category": "cage",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5730c9b07ah",
+    "name": "ABC - The house of golden wings ABC",
+    "price": "400000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 3,
+    "numOfProductsInStock": 20,
+    "img": "https://www.petcity.vn/media/product/4641_nha_con_vit_nhung.jpg",
+    "category": "cage",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5730c9b07aj",
+    "name": "Mon ami - BELLA Automatic Round Brush",
+    "price": "68000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 3,
+    "numOfProductsInStock": 5,
+    "img": "https://www.petcity.vn/media/product/1879_1453801304_1__1_.jpg",
+    "category": "cleaning tools",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5730c9b07ak",
+    "name": "Charcoal - Antibacterial pad 45*60 50ps",
+    "price": "355000",
+    "sale": 2,
+    "rate": 0,
+    "numOfProductsSold": 10,
+    "numOfProductsInStock": 30,
+    "img": "https://www.petcity.vn/media/product/3396_absorb_plus_antibacterial_50pcs_petcity.jpg",
+    "category": "cleaning tools",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5730c9b07al",
+    "name": "Temptations - Chicken flavor cake for cats 85gr",
+    "price": "58000",
+    "sale": 2,
+    "rate": 0,
+    "numOfProductsSold": 10,
+    "numOfProductsInStock": 30,
+    "img": "https://www.petcity.vn/media/product/4146_lvc.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5730c9b07am",
+    "name": "PET - Plastic handle cat fishing rod toy",
+    "price": "60000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 10,
+    "numOfProductsInStock": 30,
+    "img": "https://www.petcity.vn/media/product/5380_can_cau_meo_1.jpg",
+    "category": "Pet toys",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5730c9b07an",
+    "name": "Tile-shaped scratching board",
+    "price": "80000",
+    "sale": 3,
+    "rate": 0,
+    "numOfProductsSold": 10,
+    "numOfProductsInStock": 30,
+    "img": "https://www.petcity.vn/media/product/4877_24dd9fc2f3135001e565a82d269efeee.jpg",
+    "category": "Pet toys",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5730c9b07an",
+    "name": "CTCBio - Cat claw sharpener",
+    "price": "10000",
+    "sale": 2,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/4229_up_pet.png",
+    "category": "Pet toys",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5730c9b07ab",
+    "name": "Whiskas - Cat Food-Sea Fish Flavor 3kg bag",
+    "price": "320000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/4460_fc3423682a376d70f487cd1de9326192.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5730c9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5730c9b07ac",
+    "name": "Sanicat - Sapeolite Lavender Sanitary Sand 10L",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/4980_screenshot_1.png",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5730c9b07aadav",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbbs0cc5730c9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1dasw8bbb0cc5730c9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5730c9b07serav",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5730fwefc9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0gwgwcc5730c9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0ceec5730c9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbfhdb0cc5730c9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1dasg8bbb0cc5730c9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cjrc5730c9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0ccdhd5730c9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bsgsrhndhbb0cc5730c9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0dhdhswcc5730c9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5dgdg730c9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8awqqadbbb0cc5730c9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0ccsfefgbge5730c9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8ddergbbb0cc5730c9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbhhrb0cc5730c9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cctkt5730c9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5730clhlk9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5730jlhklc9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id":"63a1da8bbb0cc5730jmgtykc9b07av",
+    "name": "SmartHeart - Nutritional food for big dogs with grilled beef flavor (3kg)",
+    "price": "350000",
+    "sale": 5,
+    "rate": 0,
+    "numOfProductsSold": 50,
+    "numOfProductsInStock": 100,
+    "img": "https://www.petcity.vn/media/product/3537_smartheart.jpg",
+    "category": "foods",
+    "createdAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "updatedAt": {
+      "$date": "2022-12-20T15:53:47.819Z"
+    },
+    "__v": 0
+  }
+]

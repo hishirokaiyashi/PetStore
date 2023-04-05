@@ -15,43 +15,57 @@
     <!-- header -->
     <header class="header-container">
       <div class="header-container-detail">
-          <div class="header-logo">
-              <a href="/"> PetStore </a>
+        <div class="header-logo">
+          <a href="/src/pages/Home.html"> PetStore </a>
+        </div>
+        <div class="header-container-items">
+          <ul class="header-list">
+            <li class="header-list-detail header-list-detail-tab-active">
+              <a href="/src/pages/Home.html">Trang chủ</a>
+            </li>
+            <li class="header-list-detail">
+              <a href="/src/pages/Products.html">Sản phẩm</a>
+            </li>
+            <li class="header-list-detail">
+              <a href="/src/pages/AboutUs.html">Về chúng tôi</a>
+            </li>
+            <li class="header-list-detail">
+              <button class="header-button-login-mobile">Đăng nhập</button>
+            </li>
+          </ul>
+        </div>
+        <div class="header-container-menu-icon">
+          <span
+            class="iconify header-button-icon-first"
+            data-icon="material-symbols:menu"
+          ></span>
+        </div>
+        <div class="header-container-buttons">
+          <div class="header-container-button-list-icons">
+            <div class="header-container-button-icon">
+              <span
+                class="iconify header-button-icon"
+                data-icon="material-symbols:search"
+              ></span>
+            </div>
+            <div class="header-container-button-icon">
+              <a href="/src/pages/Carts.html" class="shopping-cart-link">
+                <span
+                  class="iconify header-button-icon"
+                  data-icon="material-symbols:shopping-cart-outline"
+                >
+                </span>
+                <span class="badge" id="number-cart">0</span>
+              </a>
+            </div>
           </div>
-          <div class="header-container-items">
-              <ul class="header-list">
-                  <li class="header-list-detail header-list-detail-tab-active">
-                      <a href="/src/pages/Home.html">Trang chủ</a>
-                  </li>
-                  <li class="header-list-detail">
-                      <a href="/src/pages/Products.html">Sản phẩm</a>
-                  </li>
-                  <li class="header-list-detail">
-                      <a href="/src/pages/AboutUs.html">Về chúng tôi</a>
-                  </li>
-                  <li class="header-list-detail">
-                      <button class="header-button-login-mobile">Đăng nhập</button>
-                  </li>
-              </ul>
-          </div>
-          <div class="header-container-menu-icon">
-              <span class="iconify header-button-icon-first" data-icon="material-symbols:menu"></span>
-          </div>
-          <div class="header-container-buttons">
-              <div class="header-container-button-list-icons">
-                  <div class="header-container-button-icon">
-                      <span class="iconify header-button-icon" data-icon="material-symbols:search"></span>
-                  </div>
-                  <div class="header-container-button-icon">
-                      <span class="iconify header-button-icon"
-                          data-icon="material-symbols:shopping-cart-outline"></span>
-                  </div>
-              </div>
-              <button class="header-button-login">Đăng nhập</button>
-          </div>
+          <button class="header-button-login">Đăng nhập</button>
+        </div>
       </div>
-  </header>
+    </header>
+
     <!-- main content -->
+
     <!-- banner carousel start-->
     <div class="slideshow-container">
         <!-- Full-width images with number and caption text -->
@@ -72,7 +86,6 @@
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
     <br>
-      
     <!-- The dots/circles -->
     <div style="text-align:center">
         <span class="dot" onclick="currentSlide(1)"></span>
@@ -194,10 +207,14 @@
             </div>
           </div>
           <div class="products-center"></div>
+          <!-- <div style="display: flex; gap: 10px; justify-content: center; margin-top: 1rem; ">
+            <div style="border: '1px solid black'; border-radius:10px; cursor: pointer" id="first-page">Đầu</div>
+            <div class="products-pagination"></div>
+            <div style="border: '1px solid black'; border-radius:10px; cursor: pointer" id="last-page">Cuối</div>
+          </div> -->
           </div>
         </div>
     </div>
-
 
     <!-- footer -->
     <footer class="footer-container">
@@ -310,8 +327,7 @@
     <!-- javascript -->
     <script src="../scripts/slideshow.js"></script>
     <script src="/src/scripts/products.js"></script>
+    <script src="/src/scripts/header.js"></script>
 </body>
-<script src="/src/scripts/header.js"></script>
-<script src="/src/scripts/layout.js"></script>
-
+<!-- <script src="/src/scripts/layout.js"></script> -->
 </html>

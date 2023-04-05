@@ -2,7 +2,6 @@
 // Thao tác với Menu ở dạng mobile
 const headerContainer = document.querySelector('.header-container')
 const menuIcon = document.querySelector('.header-container-menu-icon');
-console.log(menuIcon)
 const headerList = document.querySelector('.header-container-items');
 const iconMenuIconDetail = document.querySelectorAll('.header-container-menu-icon svg')
 const icon = document.querySelector('.header-button-icon-first');
