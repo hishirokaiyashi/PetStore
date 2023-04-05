@@ -6,10 +6,7 @@
   padding: 0.25rem 0;
   transition: 0.4s;
   height: 108px;
-<<<<<<< HEAD
   background-color: var(--other-background-white);
-=======
->>>>>>> main
 }
 .header-active {
   background-color: var(--other-background-white);
@@ -235,8 +232,6 @@
     padding-right: 2rem;
   }
 }
-<<<<<<< HEAD
-=======
 
 #user-info {
   margin-left: auto;
@@ -262,4 +257,3 @@
   font-size: 18px;
   color: #333;
 }
->>>>>>> main
