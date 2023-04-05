@@ -1,13 +1,22 @@
+<<<<<<< HEAD
 // Define global variables for cart items list and checkout items list
 let listCart = [];
 let checkout = [];
 
 // Get cart items from localstorage
+=======
+// Add to card
+let listCart = [];
+//check session
+>>>>>>> main
 if (localStorage.getItem("listCart")) {
   listCart = JSON.parse(localStorage.getItem("listCart"));
 }
 
+<<<<<<< HEAD
 // Update cart quantity
+=======
+>>>>>>> main
 const updateAmountLengthCart = () => {
   let amount = 0;
   listCart.forEach((item) => {
@@ -16,27 +25,42 @@ const updateAmountLengthCart = () => {
   document.getElementById("number-cart").innerText = amount;
 }
 
+<<<<<<< HEAD
 // Call update quantity 
 updateAmountLengthCart();
 
 // Add to cart button
 const addToCart = (x, event) => {
   event.stopPropagation();
+=======
+function addToCart(x) {
+>>>>>>> main
   let btn = x.parentElement.parentElement;
   let img = btn.children[1].src;
   let name = btn.children[2].children[0].children[0].innerHTML;
   let price = btn.children[2].children[0].children[2].children[0].innerHTML;
   let id = x.parentElement.parentElement.parentElement.dataset.id;
+<<<<<<< HEAD
   price = removeDot(price);
   let amount = 1;
 
   // Check product name 
+=======
+  console.log(id)
+  price = removeDot(price);
+  let sale = btn.children[0].children[0].innerHTML;
+  let amount = 1;
+  //check name
+  //Check item
+  //check item duplicate
+>>>>>>> main
   if (checkNameProduct(name) >= 0) {
     updateAmountProduct(checkNameProduct(name));
   } else {
     let item = { id, img, name, price, amount };
     listCart.push(item);
   }
+<<<<<<< HEAD
 
   updateAmountLengthCart();
   // Save item to localStorage
@@ -44,6 +68,13 @@ const addToCart = (x, event) => {
 }
 
 // Update amount of product item in list cart
+=======
+  // document.getElementById("number-cart").innerText = listCart.length;
+  updateAmountLengthCart();
+  //save session
+  localStorage.setItem("listCart", JSON.stringify(listCart));
+}
+>>>>>>> main
 const updateAmountProduct = (location) => {
   listCart.forEach((item, index) => {
     if (index == location) {
@@ -52,8 +83,11 @@ const updateAmountProduct = (location) => {
     }
   });
 };
+<<<<<<< HEAD
 
 // Check name of product whether it is similar to any item in list cart
+=======
+>>>>>>> main
 const checkNameProduct = (name) => {
   let location = -1;
   listCart.forEach((item, index) => {
@@ -65,16 +99,28 @@ const checkNameProduct = (name) => {
   return location;
 };
 
+<<<<<<< HEAD
 // Increase the number of cart item
+=======
+>>>>>>> main
 const increaseAmountProduct = (item) => {
   let location = item.parentElement.children[0].value; //hidden
   let amount = item.parentElement.children[2]; //display
   let index = item.closest(('[data-id]')).dataset.id;
+<<<<<<< HEAD
+=======
+  // let totalPriceAll = document.getElementById("total-price");
+  // console.log(index)
+>>>>>>> main
   let updatedTotal = 0;
   let newAmountProduct = 0;
   listCart.forEach((element, index) => {
     if (index == location) {
+<<<<<<< HEAD
       // Update listCart
+=======
+      //Update listCart
+>>>>>>> main
       newAmountProduct = element.amount + 1;
       updatedTotal = newAmountProduct * element.price; //price
       element.amount += 1;
@@ -82,6 +128,7 @@ const increaseAmountProduct = (item) => {
     }
   })
   localStorage.setItem("listCart", JSON.stringify(listCart));
+<<<<<<< HEAD
   // Display value
   amount.value = newAmountProduct;
   // Total items
@@ -89,24 +136,41 @@ const increaseAmountProduct = (item) => {
 
   total.innerHTML = addDot(updatedTotal);
 
+=======
+  //show HTML
+  amount.value = newAmountProduct;
+  //total
+  let total = item.parentElement.parentElement.children[3].children[0]; //display total
+  total.innerHTML = addDot(updatedTotal);
+>>>>>>> main
   updateAmountLengthCart();
   checkout.map((item) => {
     if (item.id == index) {
       item.amount = newAmountProduct;
     }
   })
+<<<<<<< HEAD
 
   updateTotalPriceAll()
 };
 
 // Decrease the amount of product
+=======
+  // totalPriceAll.innerText = checkout.reduce((acc, cur) => acc + (cur.amount * cur.price), 0);
+  updateTotalPriceAll()
+};
+>>>>>>> main
 const decreaseAmountProduct = (item) => {
   let location = item.parentElement.children[0].value; //hidden
   let amount = item.parentElement.children[2]; //display
   let updatedTotal = 0;
   let newAmountProduct = 0;
   let index = item.closest(('[data-id]')).dataset.id;
+<<<<<<< HEAD
 
+=======
+  // let totalPriceAll = document.getElementById("total-price");
+>>>>>>> main
   listCart.forEach((item, index) => {
     if (index == location) {
       //Update listCart
@@ -121,9 +185,14 @@ const decreaseAmountProduct = (item) => {
       return;
     }
   })
+<<<<<<< HEAD
 
   localStorage.setItem("listCart", JSON.stringify(listCart));
   // Display value 
+=======
+  localStorage.setItem("listCart", JSON.stringify(listCart));
+  //show HTML
+>>>>>>> main
   amount.value = newAmountProduct;
   //total
   let total = item.parentElement.parentElement.children[3].children[0]; //display total
@@ -138,11 +207,19 @@ const decreaseAmountProduct = (item) => {
   updateTotalPriceAll()
 };
 
+<<<<<<< HEAD
 // Render items of cart 
 const showCart = () => {
   let cart = "";
   let listCart = JSON.parse(localStorage.getItem("listCart")) || [];
   listCart.forEach((item, index) => {
+=======
+function showCart() {
+  let cart = "";
+  let listCart = JSON.parse(localStorage.getItem("listCart")) || [];
+  listCart.forEach((item, index) => {
+    console.log(typeof item.price);
+>>>>>>> main
     // let total = parseInt(`${item.price}`) * parseInt(`${item.amount}`);
     let total = item.price * parseInt(`${item.amount}`);
     cart += `
@@ -198,20 +275,64 @@ const showCart = () => {
   }
 }
 
+<<<<<<< HEAD
 // Add dot to the price number => string
 const addDot = (price) => {
+=======
+function addDot(price) {
+>>>>>>> main
   const formattedPrice =
     price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " đ";
   return formattedPrice;
 }
 
+<<<<<<< HEAD
 // Remove dot to the price string => number
 const removeDot = (price) => {
+=======
+function removeDot(price) {
+>>>>>>> main
   const unFormattedPrice = price.replace(".", "").replace("đ", "").trim();
   return parseInt(unFormattedPrice);
 }
 
+<<<<<<< HEAD
 // Delete item button
+=======
+// document.getElementById("number-cart").innerHTML = listCart.length;
+updateAmountLengthCart();
+// coupon
+let appliedCoupon = {};
+
+const applyCoupon = () => {
+  let idCoupon = document.getElementById("idCoupon").value;
+  let checkCoupon = 0;
+  fetch("/src/data/coupon.json")
+    .then((response) => response.json())
+    .then((data) => {
+      data.forEach((item) => {
+        if (idCoupon == item.idCoupon) {
+          appliedCoupon = item;
+          if (item.value < 1) {
+            document.getElementById("total-coupon").innerHTML = (item.value * 100) + "%";
+            checkCoupon = 1;
+          } else {
+            document.getElementById("total-coupon").innerHTML = addDot(item.value);
+            checkCoupon = 1;
+          }
+          return;
+        }
+      });
+      if (checkCoupon == 0) {
+        alert("Coupon doesn't exist!");
+      }
+    })
+    .then(() => updateTotalPriceAll())
+  // console.log(appliedCoupon)
+  // updateTotalPriceAll();
+};
+
+>>>>>>> main
 const handleDelete = (item) => {
   let locationContainer = item.parentElement.parentElement.parentElement;
   let location = item.parentElement.parentElement
@@ -226,11 +347,16 @@ const handleDelete = (item) => {
   let index = item.closest(('[data-id]')).dataset.id;
   checkout = checkout.filter((item) => item.id !== index);
   let checkboxes = document.querySelectorAll(".shopping-cart-checkbox");
+<<<<<<< HEAD
   if (checkout.length == listCart.length && checkout.length != 0) {
+=======
+  if(checkout.length==listCart.length && checkout.length!=0){
+>>>>>>> main
     checkboxes.forEach((item) => {
       item.checked = true;
     })
     checkout = listCart;
+<<<<<<< HEAD
   } else if (listCart.length == 0) {
     checkboxes[0].checked = false;
   }
@@ -238,6 +364,13 @@ const handleDelete = (item) => {
 }
 
 // Update total price with coupon
+=======
+  }else if(listCart.length==0){
+    checkboxes[0].checked=false;
+  }
+  updateTotalPriceAll()
+}
+>>>>>>> main
 const updateTotalPriceAll = () => {
   let totalPriceAll = document.getElementById("total-price");
   let alertCoupon = document.querySelector(".Carts-alert-coupon");
@@ -261,7 +394,12 @@ const updateTotalPriceAll = () => {
   totalPriceAll.innerText = addDot(totalCheckout);
 }
 
+<<<<<<< HEAD
 // Handle checkbox click
+=======
+let checkout = [];
+
+>>>>>>> main
 const handleCheckBox = (item) => {
   let index = item.parentElement.parentElement.dataset.id;
   let checkboxes = document.querySelectorAll(".shopping-cart-checkbox")
@@ -280,8 +418,12 @@ const handleCheckBox = (item) => {
   updateTotalPriceAll()
 }
 
+<<<<<<< HEAD
 // Handle checkbox select all 
 const handleCheckBoxAll = () => {
+=======
+function handleCheckBoxAll() {
+>>>>>>> main
   let checkboxes = document.querySelectorAll(".shopping-cart-checkbox")
   if (checkboxes[0].checked) {
     checkboxes.forEach((item) => {
@@ -297,6 +439,7 @@ const handleCheckBoxAll = () => {
   }
   updateTotalPriceAll()
 }
+<<<<<<< HEAD
 
 // Handle buy now button
 const handleBuyNow = async () => {
@@ -427,6 +570,28 @@ const applyCoupon = () => {
 // View Detail Cart Of Other Products
 
 
+=======
+const handleBuyNow = async ()=>{
+    if(checkout.length>0){
+        const response= await fetch("/src/data/products.json")
+        let dataProduct = await response.json()
+        checkout.forEach((item)=>{
+            let amountData=dataProduct.find((product)=>product._id == item.id).numOfProductsInStock;
+            if(item.amount > amountData){
+                alert(`${item.name} chỉ còn ${amountData} trong kho`)
+            } else{
+                sessionStorage.setItem("checkout-product", JSON.stringify(checkout))
+                if(Object.keys(appliedCoupon).length!=0){
+                    sessionStorage.setItem("coupon-data",JSON.stringify(appliedCoupon))
+                }
+                window.location = "/src/pages/Checkout.html"
+            }
+        })
+    } else{
+        alert("please select product")
+    }
+}
+>>>>>>> main
 window.onload = () => {
   showCart();
 };

@@ -429,7 +429,10 @@ input[type="checkbox"]:checked:after {
   border:1px solid var(--secondary-background-grey);
   margin-top: 1.5rem;
   border-radius: 10px;
+<<<<<<< HEAD
   padding:0.5rem;
+=======
+>>>>>>> main
 }
 .Carts-list-items-container:first-child{
   margin-top: 0;

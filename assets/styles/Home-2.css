@@ -439,7 +439,11 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   /* height: 100%; */
+=======
+  height: 100%;
+>>>>>>> main
   text-decoration: none;
   color: var(--primary-text-black);
 }
@@ -476,7 +480,11 @@
   align-items: center;
 }
 .productItem-container {
+<<<<<<< HEAD
   /* height: 100%; */
+=======
+  height: 100%;
+>>>>>>> main
   width: 100%;
   overflow: hidden;
   position: relative;
