@@ -117,6 +117,7 @@ function checkLogin(email, password){
   }
 }
 
+
 //setLoggedInUser
 function setLoggedInUser(user){
   localStorage.setItem("loggedInUser", JSON.stringify(user));
@@ -144,6 +145,7 @@ function loginHandle(){
   const password = loginPassword.value;
   if(validateLogin(email, password)){
     if(checkLogin(email, password)){
+
       const user = getUserData(email);
       setLoggedInUser(user);
       const header = document.querySelector('header');
@@ -154,15 +156,11 @@ function loginHandle(){
       // avatarImage.alt = user.name;
       // usernameLink.textContent = user.name;
       // usernameLink.href = '/profile'; // Link đến trang thông tin chi tiết của user
+
       window.location.href = "Home.html";
     }
   }
 }
-
-
-
-
-
 
 loginButton.addEventListener("click", loginHandle);
 
