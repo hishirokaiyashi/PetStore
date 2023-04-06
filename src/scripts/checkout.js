@@ -103,6 +103,16 @@ if (dataProduct.length == 0) {
         email: "",
         phoneNumber: "",
     }
+
+    //if have loggedInUser, auto fill form 
+    let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser")) || null;
+    if (loggedInUser) {
+        document.getElementById("fullName").value = loggedInUser.lastName + " " + loggedInUser.firstName;
+        document.getElementById("province-id").value = loggedInUser.province;
+        document.getElementById("Address").value = loggedInUser.address;
+        document.getElementById("email").value = loggedInUser.email;
+        document.getElementById("phoneNumber").value = loggedInUser.phone;
+    }
     function handleInput(item) {
         // if(item.id=="fullName") {
         //     form.fullName=item.value;
