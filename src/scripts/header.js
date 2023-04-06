@@ -69,3 +69,16 @@ btnLogin.addEventListener('click', () => {
     console.log('click')
     window.location.href = "SignIn.html";
 })
+
+//display none login when have loggedInUser
+const loggedInUser = localStorage.getItem('loggedInUser');
+if (loggedInUser) {
+    btnLogin.style.display = 'none';
+}
+
+//show avatar when have loggedInUser
+const avatar = document.querySelector('.header-button-avatar');
+if (loggedInUser) {
+    avatar.src = JSON.parse(loggedInUser).avatar;
+    avatar.style.display = 'block';
+}
