@@ -29,13 +29,14 @@ if (productId) {
       if (product) {
         // console.log(product);
         // nếu sản phẩm tồn tại, hiển thị thông tin sản phẩm
+        
         const productImage = document.querySelector(".product-img");
         productImage.src = product.img;
         productImage.alt = product.name;
         const productName = document.querySelector(".product-name");
         productName.textContent = product.name;
         const productRating = document.querySelector(".product-rating-number");
-        productRating.textContent = product.rate + "/5";
+        productRating.textContent = "(" + product.rate + "/5)";
         const productSold = document.querySelector(".product-sold-amount");
         productSold.textContent = product.numOfProductsSold;
         const productPriceBeforeDiscount = document.querySelector(".product-price-before-discount");
@@ -43,7 +44,7 @@ if (productId) {
         const productPriceAfterDiscount = document.querySelector(".product-price-after-discount");
         productPriceAfterDiscount.textContent = addDot(((100 - product.sale) / 100) * product.price);
         const productDiscount = document.querySelector(".product-discount");
-        productDiscount.textContent = "-" + product.sale + "%";
+        productDiscount.textContent = "-" + product.sale + "% off";
         const productName2 = document.querySelector(".product-detail-information-overview-product-name");
         productName2.textContent = product.name;
         const productCategory = document.querySelector(".product-detail-information-overview-product-category");
@@ -66,40 +67,33 @@ if (productId) {
         const relatedProductsContainer = document.querySelector(".related-product");
         relatedProductsContainer.innerHTML = relatedProducts.map(product => {
           return `
-      <div class="card-product" data-id="${product._id}">
-                <div class="card-product-img-top">
-                    <img src="${product.img}" alt="" class="card-product-img">
-                    <span class="card-product-name">${product.name}</span>
+          <div data-id=${product._id} class="cart-product" draggable="false">
+            <div class="productItem-container">
+              <div class="product-sale">-<p>${product.sale}</p>% 
+              </div>
+              <img src="${product.img}" class="product-img-item" alt="${product.name}"/>
+              <div class="item-info-first">
+                <div class="item-price-container">
+                  <p class="item-title">${product.name}</p>
+                  <div class="item-price-before-container">
+                    <p class="price-before">${addDot(product.price)}</p>
+                  </div>
+                  <div class="item-price-after">
+                    <p class="price-after">${addDot(((100 - product.sale) / 100) * parseInt(product.price))}</p>
+                  </div>
                 </div>
-                <div class="card-product-bottom">
-                    <div class="card-product-price">
-                        <span class="card-product-price-before-discount">${product.price}</span>
-                        <b class="card-product-price-discount">${((100 - product.sale) / 100) * product.price}</b>
-                    </div>
-                    <div class="card-product-rate-detail">
-                        <div class="rating-star">
-                            <span class="iconify" data-icon="material-symbols:star-rounded"></span>
-                            <span class="iconify" data-icon="material-symbols:star-rounded"></span>
-                            <span class="iconify" data-icon="material-symbols:star-rounded"></span>
-                            <span class="iconify" data-icon="material-symbols:star-rounded"></span>
-                            <span class="iconify" data-icon="material-symbols:star-rounded"></span>
-                        </div>
-                    </div>
-                    <div class="card-product-sold">
-                        <span class="card-product-sold-number">${product.numOfProductsSold}</span>
-                        <span class="card-product-sold-text">Sold</span>
-                    </div>
+                <div class="item-icon-container">
+                  <span class="iconify footer-container-fifth-item-icon" data-icon="icon-park-outline:like">
+                  </span>
                 </div>
-                <div class="card-product-discount">
-                    <img src="../../assets/imgs/Bookmark.png" alt="sale discount" class="product-discount-bookmark">
-                    <span class="card-product-discount-text">-${product.sale}%</span>
-                </div>
-                <div class="card-product-buy-now">
-                    <button class="card-product-buy-now-btn">
-                        View detail <iconify-icon icon="material-symbols:shopping-cart-rounded"></iconify-icon>
-                    </button>
-                </div>
+              </div>
+              <div class="quick-view-detail">
+                <button onclick="addToCart(this, event)" class="btn-add-to-card">
+                  Add To Card
+                </button>
+              </div>
             </div>
+          </div>
       `
         }).join("");
 
@@ -151,7 +145,7 @@ const id = item.getAttribute("data-id");
   //     const dataOtherProducts = [];
   //     // while (dataOtherProducts.length < 4) {
   //     //   const randomIndex = Math.floor(Math.random().length);
-  //     //   const randomElement = data[randomIndex];
+  //     //   const randomproduct = data[randomIndex];
   //     //   if (!dataOtherProducts.includes(randomElement)) {
   //     //     dataOtherProducts.push(randomElement)
   //     //   }
@@ -299,3 +293,25 @@ const id = item.getAttribute("data-id");
     // updateAmountLengthCart();
     // //save session
     // localStorage.setItem("listCart", JSON.stringify(listCart));
+
+    function openDetails(evt, detailsName) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+    
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+    
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+    
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(detailsName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    document.getElementById("defaultOpen").click();
