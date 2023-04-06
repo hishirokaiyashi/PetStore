@@ -257,3 +257,8 @@
   font-size: 18px;
   color: #333;
 }
+
+.header-button-avatar{
+  border-radius: 50%;
+  width: 40px;
+}

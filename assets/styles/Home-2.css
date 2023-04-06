@@ -969,3 +969,8 @@
     width: 100%;
   }
 }
+
+.header-button-avatar{
+  border-radius: 50%;
+  width: 40px;
+}
