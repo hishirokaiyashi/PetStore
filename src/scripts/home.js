@@ -188,6 +188,24 @@ fetch("/src/data/products.json")
       });
     }
 
+    const cookiesNotification = document.getElementById('cookies-notification');
+    const acceptCookie = document.getElementById('accept-cookie');
+    
+    function acceptCookies() {
+      // set a cookie
+      document.cookie = "accepted_cookies=true; expires=Thu, 01 Jan 2024 00:00:00 UTC; path=/;";
+      
+      // hide the notification
+      cookiesNotification.style.display = "none";
+    }
+    acceptCookie.addEventListener('click', acceptCookies);
+
+    //check if cookie is set
+    if (document.cookie.indexOf("accepted_cookies=true") >= 0) {
+      // hide the notification
+      cookiesNotification.style.display = "none";
+    }
+    
     // drag
     // const autoSlide = () => {
     //   // if there is no image left to scroll then return from here

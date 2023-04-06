@@ -969,3 +969,35 @@
     width: 100%;
   }
 }
+
+.header-button-avatar{
+  border-radius: 50%;
+  width: 40px;
+}
+
+#cookies-notification {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  z-index: 999;
+}
+
+#accept-cookie {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#accept-cookie:hover {
+  background-color: #3e8e41;
+}
+

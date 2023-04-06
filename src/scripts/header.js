@@ -69,3 +69,53 @@ btnLogin.addEventListener('click', () => {
     console.log('click')
     window.location.href = "SignIn.html";
 })
+
+//display none login when have loggedInUser
+const loggedInUser = localStorage.getItem('loggedInUser');
+if (loggedInUser) {
+    btnLogin.style.display = 'none';
+}
+
+//show avatar when have loggedInUser
+const avatar = document.querySelector('.header-button-avatar');
+if (loggedInUser) {
+    avatar.src = JSON.parse(loggedInUser).avatar;
+    avatar.style.display = 'block';
+}
+
+//dropdown avatar
+
+function dropdownFunction(){
+    console.log('click')
+    document.getElementById("dropdownUser").classList.toggle("show");
+}
+
+avatar.addEventListener('click', dropdownFunction)
+
+//close dropdown when click outside
+window.onclick = function(event) {
+    if (!event.target.matches('.header-button-avatar')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+
+//logout
+const btnLogout = document.getElementById("logoutDropdown");
+btnLogout.addEventListener('click', () => {
+    localStorage.removeItem('loggedInUser');
+    window.location.href = "Home.html";
+})
+
+//profile
+const btnProfile = document.getElementById("profileDropdown");
+btnProfile.addEventListener('click', () => {
+    console.log('click')
+    window.location.pathname = "/src/pages/profile.html";
+})
