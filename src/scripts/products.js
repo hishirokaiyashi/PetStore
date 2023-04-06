@@ -139,45 +139,62 @@ const renderProducts = () => {
     let html = "";
     filteredProducts.forEach(product => {
         html += `
-            <div class="card-product" data-id="${product._id}">
-                <div class="card-product-img-top">
-                    <img src="${product.img}" alt="" class="card-product-img">
-                    <span class="card-product-name">${product.name}</span>
+        <div data-id=${product._id
+        } class="card-product" draggable="false">
+            <div data-id=${product._id} class="productItem-container">
+                <div class="product-sale">
+                -
+                <p>${product.sale}</p>
+                % 
                 </div>
-                <div class="card-product-bottom">
-                    <div class="card-product-price">
-                        <span class="card-product-price-before-discount">${addDot(product.price)}</span>
-                        <b class="card-product-price-discount">${addDot(((100 - product.sale) / 100) * product.price)}</b>
-                    </div>
-                    <div class="card-product-rate-detail">
-                        <div class="rating-star">
-                            <span class="iconify" data-icon="material-symbols:star-rounded"></span>
-                            <span class="iconify" data-icon="material-symbols:star-rounded"></span>
-                            <span class="iconify" data-icon="material-symbols:star-rounded"></span>
-                            <span class="iconify" data-icon="material-symbols:star-rounded"></span>
-                            <span class="iconify" data-icon="material-symbols:star-rounded"></span>
+                <img
+              src="${product.img}"
+              class="product-img-item"
+              alt="${product.name}"
+                 />
+                <div class="item-info-first">
+                    <div class="item-price-container">
+                    <p class="item-title">${product.name}</p>
+                    <div class="item-sold">
+                        <div class="item-rating">
+                            <span class="iconify" data-icon="mdi:star"></span>
+                            <span class="iconify" data-icon="mdi:star"></span>
+                            <span class="iconify" data-icon="mdi:star"></span>
+                            <span class="iconify" data-icon="mdi:star"></span>
+                            <span class="iconify" data-icon="mdi:star"></span>
                         </div>
+                        <p class="item-sold-number">${product.numOfProductsSold} sold</p>
                     </div>
-                    <div class="card-product-sold">
-                        <span class="card-product-sold-number">${product.numOfProductsSold}</span>
-                        <span class="card-product-sold-text">Sold</span>
+                    <div class="item-price-before-container">
+                        <p class="price-before">${addDot(product.price)}</p>
+                    </div>
+                    <div class="item-price-after">
+                        <p class="price-after">${addDot(
+                        ((100 - product.sale) / 100) * parseInt(product.price)
+                        )}</p>
                     </div>
                 </div>
-                <div class="card-product-discount">
-                    <img src="../../assets/imgs/Bookmark.png" alt="sale discount" class="product-discount-bookmark">
-                    <span class="card-product-discount-text">-${product.sale}%</span>
-                </div>
-                <div class="card-product-buy-now">
-                    <button class="card-product-buy-now-btn">
-                        View Detail <iconify-icon icon="material-symbols:shopping-cart-rounded"></iconify-icon>
-                    </button>
+              
+                <div class="item-icon-container">
+                    <span
+                        class="iconify footer-container-fifth-item-icon"
+                        data-icon="icon-park-outline:like"
+                    >
+                    </span>
                 </div>
             </div>
+            <div class="quick-view-detail">
+              <button onclick="addToCart(this, event)" class="btn-add-to-card">
+                Add To Card
+              </button>
+            </div>
+            </div>
+        </div>
         `;
     });
     productList.innerHTML = html;
     // click vào sản phẩm để xem chi tiết
-    const cardProduct = document.querySelectorAll(".card-product");
+    const cardProduct = document.querySelectorAll(".productItem-container");
     cardProduct.forEach(card => {
         card.addEventListener("click", () => {
             const id = card.getAttribute("data-id");
@@ -186,6 +203,7 @@ const renderProducts = () => {
     });
 
 }
+
 
 /*** PRODUCTS PAGINATION */
 
@@ -296,7 +314,7 @@ const renderProducts = () => {
 //     }
 
 //     for (const link in linksToShow) {
-//         const pageLink = document.createElement("a");
+//         const pageLink = document.createproduct("a");
 //         pageLink.href = "#";
 //         pageLink.textContent = linksToShow[link];
 

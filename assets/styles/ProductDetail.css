@@ -3,14 +3,17 @@ body{
 }
 
 .product-detail{
-    margin-top: 108px;
+    margin-top: 118px;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
 
 .product-detail-link{
-    margin: 15px 0;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    background: var(--linear-color-second);
 }
 
 .product-detail-link-span{
@@ -27,6 +30,7 @@ body{
     justify-content: space-between;
     margin-bottom: 10px;
     padding: 15px;
+
 }
 
 .product-detail-img{
@@ -34,7 +38,7 @@ body{
 }
 
 .product-img{
-    width: 80%;
+    width: 75%;
 }
 
 .product-detail-description{
@@ -42,30 +46,33 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .product-name{
     color: var(--primary-background-pink);
     font-weight: 600;
     margin-bottom: 10px;
-    font-size: 2rem;
+    font-size: 1.75rem;
 }
 
 .product-rating{
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
 }
 
 .product-rating-star{
     color: yellow;
     font-size: 1.5rem;
-    margin-right: 5px;
 }
 
 .product-rating-number{
     color: var(--secondary-text-grey);
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-right: 5px;
+    align-self: center;
 }
 
 .product-rating-review{
@@ -79,6 +86,7 @@ body{
     flex-direction: row;
     font-size: 1rem;
     margin-bottom: 10px;
+    align-self: center;
 }
 
 .product-sold-amount{
@@ -92,21 +100,15 @@ body{
 }
 
 .product-price{
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: row;
-    font-size: 2rem;
+    font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 10px;
     justify-content: space-between;
 }
 
-.product-price-detail{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 50%;
-}
 
 .product-price-before-discount{
     color: var(--secondary-text-grey);
@@ -120,16 +122,17 @@ body{
 }
 
 .product-discount{
-    width: 30%;
+    width: 20%;
     background-color: var(--primary-background-pink);
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
     margin-right: 5px;
     padding: 5px;
     border-radius: 15px;
     align-content: center;
     text-align: center;
+    margin-bottom: 3rem;
 }
 
 .product-shipping{
@@ -138,15 +141,16 @@ body{
 }
 
 .product-order-amount{
-    width: 50%;
+    width: 75%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 10px;
+    align-items: center;
 }
 
 .product-order-amount-text{
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
 }
 
@@ -154,14 +158,13 @@ body{
     width: 50%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 
 .product-order-amount-input-button-decrease{
     background-color: var(--secondary-background-grey);
     border: none;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
     padding: 5px 10px;
     border-radius: 5px;
@@ -200,6 +203,7 @@ body{
 }
 
 .product-order-button{
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -207,8 +211,8 @@ body{
 
 .product-order-button-add-to-cart{
     background-color: var(--secondary-background-grey);
-    border: 1 px solid var(--primary-background-pink);
-    color: #fff;
+    border: 1px solid var(--primary-background-pink);
+    color: var(--primary-background-pink);
     font-size: 1.5rem;
     font-weight: 600;
     padding: 10px 20px;
@@ -218,6 +222,7 @@ body{
 
 .product-order-button-add-to-cart:hover{
     background-color: var(--primary-background-pink);
+    color: #fff;
 }
 
 .product-order-button-buy-now{
@@ -237,7 +242,7 @@ body{
 
 .divide{
     background-color: initial;
-    border-top: 2px solid #de135c;
+    border-top: 1px solid #de135c;
 }
 
 .product-detail-infomation{
@@ -416,4 +421,80 @@ body{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     margin-top: 15px;
+}
+
+a.product-detail-link-span{
+    text-decoration: none;
+    color: #000;
+}
+
+.product-detail-link{
+    margin-top: 1rem;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: #fff;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    width: 30%;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--primary-background-pink);
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  border-bottom: 3px solid var(--primary-background-pink);
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  margin-top: 20px;
+}
+
+.cart-product{
+    width: 290px;
+    margin-right: 10px;
+}
+
+.productItem-container{
+    border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  /* height: 100%; */
+  text-decoration: none;
+  color: var(--primary-text-black);
+}
+
+.product-img-item{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
 }
