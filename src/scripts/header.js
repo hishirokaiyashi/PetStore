@@ -79,7 +79,7 @@ if (loggedInUser) {
 //show avatar when have loggedInUser
 const avatar = document.querySelector('.header-button-avatar');
 if (loggedInUser) {
-    avatar.src = JSON.parse(loggedInUser).avatar;
+    avatar.src="https://api.iconify.design/ic/baseline-account-circle.svg?color=%23de135c"
     avatar.style.display = 'block';
 }
 
