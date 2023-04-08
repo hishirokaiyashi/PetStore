@@ -61,6 +61,7 @@
 .header-list-detail a {
   text-decoration: none;
   color: var(--primary-text-black);
+  padding: 0.5rem 2rem;
 }
 .header-container-button-icon {
   display: flex;
@@ -262,6 +263,9 @@
   border-radius: 50%;
   width: 40px;
   cursor: pointer;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid var(--primary-background-pink);
 }
 
 .dropdown {

@@ -261,7 +261,43 @@ const id = item.getAttribute("data-id");
     }
     updateAmountLengthCart();
     localStorage.setItem("listCart", JSON.stringify(listCart));
+
+    // Add list cart to indexedDB
+  const currentUserID = JSON.parse(localStorage.getItem("loggedInUser")).id || null;;
+  if(currentUserID) {
+    updateCartDB(currentUserID, listCart)
   }
+  }
+
+// Update cart in users store with indexedDB according to user id
+  const updateCartDB =  (id, cart) => {
+  const request = indexedDB.open('PetStore');
+
+request.onsuccess = (event) => {
+  const db = event.target.result;
+
+  // Access the object store containing user data
+  const transaction = db.transaction(['users'], 'readwrite');
+  const objectStore = transaction.objectStore('users');
+
+  // Get the user object with the specified ID
+  const getRequest = objectStore.get(id);
+  getRequest.onsuccess = (event) => {
+    const user = event.target.result;
+
+    // Update the user's cart property
+    user.cart = cart;
+
+    // Put the updated user object back into the object store
+    const putRequest = objectStore.put(user);
+    putRequest.onsuccess = () => {
+      console.log('User cart updated successfully');
+      db.close();
+    };
+  };
+};
+  
+}
 
   // BuyNow
   const handleBuyNow = () => {

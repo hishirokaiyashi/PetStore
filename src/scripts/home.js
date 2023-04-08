@@ -7,9 +7,9 @@ function plusSlides(n) {
 }
 
 // Thumbnail image controls
-// function currentSlide(n) {
-//   showSlides(slideIndex = n);
-// }
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
 function showSlides(n) {
   let i;
@@ -190,11 +190,11 @@ fetch("/src/data/products.json")
 
     const cookiesNotification = document.getElementById('cookies-notification');
     const acceptCookie = document.getElementById('accept-cookie');
-    
+
     function acceptCookies() {
       // set a cookie
       document.cookie = "accepted_cookies=true; expires=Thu, 01 Jan 2024 00:00:00 UTC; path=/;";
-      
+
       // hide the notification
       cookiesNotification.style.display = "none";
     }
@@ -205,7 +205,7 @@ fetch("/src/data/products.json")
       // hide the notification
       cookiesNotification.style.display = "none";
     }
-    
+
     // drag
     // const autoSlide = () => {
     //   // if there is no image left to scroll then return from here

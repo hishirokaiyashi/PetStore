@@ -7,6 +7,8 @@ const iconMenuIconDetail = document.querySelectorAll('.header-container-menu-ico
 const icon = document.querySelector('.header-button-icon-first');
 const listLi = document.querySelectorAll('.header-list-detail')
 const homeContainer = document.querySelector('body')
+const avatar = document.querySelector(".header-button-avatar");
+
 menuIcon.addEventListener('click', () => {
     const menu = document.querySelector('[data-icon="material-symbols:menu"]');
     const close = document.querySelector('[data-icon="mdi:alpha-x"]');
@@ -25,31 +27,23 @@ menuIcon.addEventListener('click', () => {
         homeContainer.classList.add('body-overflow')
     }
 });
+
 const currentUrl = window.location.href;
-// listLi.forEach((item) => {
-//     console.log(item)
-//     item.addEventListener('click', () => {
-//         listLi.forEach((item) => {
-//             item.classList.remove('header-list-detail-tab-active')
-//         })
-//         item.classList.add('header-list-detail-tab-active');
-//     })
-//     if (item.href === currentUrl) {
-//         item.classList.add(' header-list-detail-tab-active');
-//     } else {
-//         item.classList.remove('header-list-detail-tab-active');
-// )
+
 window.onload = () => {
-    listLi.forEach((item)=>{
+    listLi.forEach((item) => {
         item.classList.remove("header-list-detail-tab-active");
     })
-    if(currentUrl.includes("Home.html")){
+
+    if (currentUrl.includes("Home.html")) {
         listLi[0].classList.add("header-list-detail-tab-active");
-    } 
-    if(currentUrl.includes("Products.html")){
+    }
+
+    if (["Products.html", "ProductDetail.html"].some((term) => currentUrl.includes(term))) {
         listLi[1].classList.add("header-list-detail-tab-active");
     }
-    if(currentUrl.includes("AboutUs.html")){
+
+    if (currentUrl.includes("AboutUs.html")) {
         listLi[2].classList.add("header-list-detail-tab-active");
     }
 };
@@ -71,21 +65,22 @@ btnLogin.addEventListener('click', () => {
 })
 
 //display none login when have loggedInUser
-const loggedInUser = localStorage.getItem('loggedInUser');
-if (loggedInUser) {
-    btnLogin.style.display = 'none';
-}
+const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+// if (loggedInUser) {
+//     btnLogin.style.display = 'none';
+// }
 
 //show avatar when have loggedInUser
-const avatar = document.querySelector('.header-button-avatar');
 if (loggedInUser) {
-    avatar.src="https://api.iconify.design/ic/baseline-account-circle.svg?color=%23de135c"
-    avatar.style.display = 'block';
+    btnLogin.style.display = 'none';
+    const userHeader = JSON.parse(localStorage.getItem("loggedInUser"));
+    avatar.src = userHeader.avatar ? userHeader.avatar : "/assets/images/avatar-default.jpg" ;
+} else{
+    avatar.style.display = 'none';
 }
-
 //dropdown avatar
 
-function dropdownFunction(){
+function dropdownFunction() {
     console.log('click')
     document.getElementById("dropdownUser").classList.toggle("show");
 }
@@ -93,7 +88,7 @@ function dropdownFunction(){
 avatar.addEventListener('click', dropdownFunction)
 
 //close dropdown when click outside
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (!event.target.matches('.header-button-avatar')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
         var i;
@@ -110,6 +105,7 @@ window.onclick = function(event) {
 const btnLogout = document.getElementById("logoutDropdown");
 btnLogout.addEventListener('click', () => {
     localStorage.removeItem('loggedInUser');
+    localStorage.removeItem('listCart');
     window.location.href = "Home.html";
 })
 
@@ -117,5 +113,7 @@ btnLogout.addEventListener('click', () => {
 const btnProfile = document.getElementById("profileDropdown");
 btnProfile.addEventListener('click', () => {
     console.log('click')
-    window.location.pathname = "/src/pages/profile.html";
+    window.location.href = "Profile.html";
+
+    // window.location.pathname = "/src/pages/Profile.html";
 })

@@ -1,283 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Checkout</title>
-    <link rel="stylesheet" href="/assets/styles/base.css" />
-    <link rel="stylesheet" href="/assets/styles/Checkout.css" />
-    <link rel="stylesheet" href="/assets/styles/Header.css" />
-    <link rel="stylesheet" href="/assets/styles/Footer.css" />
-    <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
-  </head>
 
-  <body>
-    <header class="header-container">
-      <div class="header-container-detail">
-        <div class="header-logo">
-          <a href="/src/pages/Home.html"> <img src="../../assets/images/PetStore_Logo.png" alt="" width="100px"> </a>
-        </div>
-        <div class="header-container-items">
-          <ul class="header-list">
-            <li class="header-list-detail header-list-detail-tab-active">
-              <a href="/src/pages/Home.html">Home</a>
-            </li>
-            <li class="header-list-detail">
-              <a href="/src/pages/Products.html">Product</a>
-            </li>
-            <li class="header-list-detail">
-              <a href="/src/pages/AboutUs.html">About us</a>
-            </li>
-            <li class="header-list-detail">
-              <button class="header-button-login-mobile">Login</button>
-            </li>
-          </ul>
-        </div>
-        <div class="header-container-menu-icon">
-          <span
-            class="iconify header-button-icon-first"
-            data-icon="material-symbols:menu"
-          ></span>
-        </div>
-        <div class="header-container-buttons">
-          <div class="header-container-button-list-icons">
-            <div class="header-container-button-icon">
-              <span
-                class="iconify header-button-icon"
-                data-icon="material-symbols:search"
-              ></span>
-            </div>
-            <div class="header-container-button-icon">
-              <a href="/src/pages/Carts.html" class="shopping-cart-link">
-                <span
-                  class="iconify header-button-icon"
-                  data-icon="material-symbols:shopping-cart-outline"
-                >
-                </span>
-                <span class="badge" id="number-cart">0</span>
-              </a>
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout</title>
+  <link rel="stylesheet" href="/assets/styles/base.css" />
+  <link rel="stylesheet" href="/assets/styles/Checkout.css" />
+  <link rel="stylesheet" href="/assets/styles/Header.css" />
+  <link rel="stylesheet" href="/assets/styles/Footer.css" />
+  <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
+</head>
+
+<body>
+  <header class="header-container">
+    <div class="header-container-detail">
+      <div class="header-logo">
+        <a href="/src/pages/Home.html"> <img src="../../assets/images/PetStore_Logo.png" alt="" width="100px"> </a>
+      </div>
+      <div class="header-container-items">
+        <ul class="header-list">
+          <li class="header-list-detail header-list-detail-tab-active">
+            <a href="/src/pages/Home.html">Home</a>
+          </li>
+          <li class="header-list-detail">
+            <a href="/src/pages/Products.html">Product</a>
+          </li>
+          <li class="header-list-detail">
+            <a href="/src/pages/AboutUs.html">About us</a>
+          </li>
+          <li class="header-list-detail">
+            <button class="header-button-login-mobile">Login</button>
+          </li>
+        </ul>
+      </div>
+      <div class="header-container-menu-icon">
+        <span class="iconify header-button-icon-first" data-icon="material-symbols:menu"></span>
+      </div>
+      <div class="header-container-buttons">
+        <div class="header-container-button-list-icons">
+          <div class="header-container-button-icon">
+            <span class="iconify header-button-icon" data-icon="material-symbols:search"></span>
           </div>
-          <button class="header-button-login" id="header-button-login">Login</button>
-          <img class="header-button-avatar" src="" alt="">
-          <div id="dropdownUser" class="dropdown-content">
-            <a href="" class="dropdown-btn" id="profileDropdown">Profile</a>
-            <a href="" class="dropdown-btn" id="logoutDropdown">Logout</a>
+          <div class="header-container-button-icon">
+            <a href="/src/pages/Carts.html" class="shopping-cart-link">
+              <span class="iconify header-button-icon" data-icon="material-symbols:shopping-cart-outline">
+              </span>
+              <span class="badge" id="number-cart">0</span>
+            </a>
           </div>
+        </div>
+        <button class="header-button-login" id="header-button-login">Login</button>
+        <img class="header-button-avatar" src="" alt="">
+        <div id="dropdownUser" class="dropdown-content">
+          <a href="/src/pages/Profile.html" class="dropdown-btn" id="profileDropdown">Profile</a>
+          <a href="" class="dropdown-btn" id="logoutDropdown">Logout</a>
         </div>
       </div>
-    </header>
-    <div class="Checkout-container">
-      <div class="Checkout-container-first">
-        <div class="Checkout-container-first-detail">
-          <div class="Checkout-container-first-content">
-            <span
-              class="iconify Checkout-button-icon"
-              data-icon="ri:shopping-basket-2-fill"
-            ></span>
-            <span class="Checkout-Title">Checkout</span>
-          </div>
+    </div>
+  </header>
+  <div class="Checkout-container">
+    <div class="Checkout-container-first">
+      <div class="Checkout-container-first-detail">
+        <div class="Checkout-container-first-content">
+          <span class="iconify Checkout-button-icon" data-icon="ri:shopping-basket-2-fill"></span>
+          <span class="Checkout-Title">Checkout</span>
         </div>
       </div>
-      <div class="Checkout-container-second">
-        <div class="Checkout-container-second-detail">
-          <div class="Checkout-payment-user-container">
-            <div class="Checkout-payment-user-title">
-              <span
-                class="iconify Checkout-button-icon"
-                data-icon="logos:google-maps"
-              ></span>
-              <h3>Payment - User Info</h3>
-            </div>
-            <div class="Checkout-payment-user-content">
-              <form action="" class="Checkout-payment-user-form">
-                <input
-                  type="text"
-                  placeholder="FullName"
-                  name="fullName"
-                  class="Checkout-payment-user-name"
-                  id="fullName"
-                  onchange="handleInput(this)"
-                  required
-                  maxlength="50"
-                />
-                <label for="fullName" class="label-warning" ></label>
-                <select onchange="handleInput(this)"  id="province-id"  required>
-                  <!-- <option value="An Giang">An Giang</option> -->
-                </select>
-                <textarea
-                  placeholder="Address"
-                  name="address"
-                  id="Address"
-                  onchange="handleInput(this)"
-                  required
-                  minlength="10"
-                ></textarea>
-                <label for="Address" class="label-warning"></label>
-                <input
-                  placeholder="Email"
-                  name="email"
-                  type="email"
-                  id="email"
-                  class="Checkout-payment-user-email"
-                  onchange="handleInput(this)"
-                  required
-                />
-                <label for="email" class="label-warning"></label>
-                <input
-                  name="phoneNumber"
-                  type="tel"
-                  id="phoneNumber"
-                  class="Checkout-payment-user-phoneNumber"
-                  placeholder="Phone Number"
-                  onchange="handleInput(this)"
-                  required
-                />
-                <label for="phoneNumber" class="label-warning"></label>
-                <div class="Checkout-payment-btn-container">
-                  <button type="submit" class="Checkout-payment-btn">Order</button>
-                </div>
-              </form>
-            </div>
+    </div>
+    <div class="Checkout-container-second">
+      <div class="Checkout-container-second-detail">
+        <div class="Checkout-payment-user-container">
+          <div class="Checkout-payment-user-title">
+            <span class="iconify Checkout-button-icon" data-icon="logos:google-maps"></span>
+            <h3>Payment - User Info</h3>
           </div>
-          <div class="Checkout-payment-product-container">
-            <div class="Checkout-payment-product-top">
-              Order (
-              <span id="Checkout-payment-length" class="Checkout-payment-length-product">1</span>
-              Products)
-            </div>
-            <div class="Checkout-payment-product-middle">
+          <div class="Checkout-payment-user-content">
+            <form action="" class="Checkout-payment-user-form">
+              <input type="text" placeholder="FullName" name="fullName" class="Checkout-payment-user-name" id="fullName"
+                onchange="handleInput(this)" required maxlength="50" />
+              <label for="fullName" class="label-warning"></label>
+              <select onchange="handleInput(this)" id="province-id" required>
+                <!-- <option value="An Giang">An Giang</option> -->
+              </select>
+              <textarea placeholder="Address" name="address" id="Address" onchange="handleInput(this)" required
+                minlength="10"></textarea>
+              <label for="Address" class="label-warning"></label>
+              <input placeholder="Email" name="email" type="email" id="email" class="Checkout-payment-user-email"
+                onchange="handleInput(this)" required />
+              <label for="email" class="label-warning"></label>
+              <input name="phoneNumber" type="tel" id="phoneNumber" class="Checkout-payment-user-phoneNumber"
+                placeholder="Phone Number" onchange="handleInput(this)" required />
+              <label for="phoneNumber" class="label-warning"></label>
+              <div class="Checkout-payment-btn-container">
+                <button type="submit" id="checkout-btn" class="Checkout-payment-btn">Order</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="Checkout-payment-product-container">
+          <div class="Checkout-payment-product-top">
+            Order (
+            <span id="Checkout-payment-length" class="Checkout-payment-length-product">1</span>
+            Products)
+          </div>
+          <div class="Checkout-payment-product-middle">
 
-            </div>
+          </div>
 
-            <div class="Checkout-payment-product-bottom">
-              <div class="Checkout-payment-product-bottom-left">
-                Total: 
-                <div id="total-fee" class="Checkout-payment-product-bottom-right"></div>
-              </div>
-              <div class="Checkout-payment-product-bottom-left">
-                Discount:
-                <div id="discount-fee" class="Checkout-payment-product-bottom-right"></div>
-              </div>
-              <div class="Checkout-payment-product-bottom-left">
-                Shipping fee:
-                <div id="shipping-fee" class="Checkout-payment-product-bottom-right">30.000 đ</div>
-              </div>
-              <div class="Checkout-payment-product-bottom-left">
-                <span>Total Price:</span>
-                <span id="total-price-fee"></span>
-              </div>
+          <div class="Checkout-payment-product-bottom">
+            <div class="Checkout-payment-product-bottom-left">
+              Total:
+              <div id="total-fee" class="Checkout-payment-product-bottom-right"></div>
+            </div>
+            <div class="Checkout-payment-product-bottom-left">
+              Discount:
+              <div id="discount-fee" class="Checkout-payment-product-bottom-right"></div>
+            </div>
+            <div class="Checkout-payment-product-bottom-left">
+              Shipping fee:
+              <div id="shipping-fee" class="Checkout-payment-product-bottom-right">30.000 đ</div>
+            </div>
+            <div class="Checkout-payment-product-bottom-left">
+              <span>Total Price:</span>
+              <span id="total-price-fee"></span>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <footer class="footer-container">
-      <div class="footer-container-detail">
-        <div class="footer-container-logo">
-          <a href="/"> <img src="../../assets/images/PetStore_Logo.png" alt="PetStore" width="200px"> </a>
+  </div>
+  <footer class="footer-container">
+    <div class="footer-container-detail">
+      <div class="footer-container-logo">
+        <a href="/"> <img src="../../assets/images/PetStore_Logo.png" alt="PetStore" width="200px"> </a>
+      </div>
+      <div class="footer-container-second">
+        <span class="footer-container-second-text">
+          Our mission is to keep pets healthy
+        </span>
+        <div class="footer-line-big"></div>
+        <div class="footer-container-second-icon">
+          <span class="iconify footer-container-second-item-icon" data-icon="ic:outline-facebook"></span>
+          <span class="iconify footer-container-second-item-icon" data-icon="mdi:instagram"></span>
+          <span class="iconify footer-container-second-item-icon" data-icon="mdi:twitter"></span>
+          <span class="iconify footer-container-second-item-icon" data-icon="ph:youtube-logo-fill"></span>
         </div>
-        <div class="footer-container-second">
-          <span class="footer-container-second-text">
-            Our mission is to keep pets healthy
-          </span>
-          <div class="footer-line-big"></div>
-          <div class="footer-container-second-icon">
-            <span
-              class="iconify footer-container-second-item-icon"
-              data-icon="ic:outline-facebook"
-            ></span>
-            <span
-              class="iconify footer-container-second-item-icon"
-              data-icon="mdi:instagram"
-            ></span>
-            <span
-              class="iconify footer-container-second-item-icon"
-              data-icon="mdi:twitter"
-            ></span>
-            <span
-              class="iconify footer-container-second-item-icon"
-              data-icon="ph:youtube-logo-fill"
-            ></span>
+      </div>
+      <div class="footer-container-third">
+        <span class="footer-container-third-text"> Links </span>
+        <div class="footer-line-big"></div>
+        <ul class="footer-container-third-list-links">
+          <li class="footer-container-third-link">
+            <a href="/src/pages/Home.html">HOME</a>
+          </li>
+          <div class="footer-line-small"></div>
+          <li class="footer-container-third-link">
+            <a href="/src/pages/Products.html">PRODUCT</a>
+          </li>
+          <div class="footer-line-small"></div>
+          <li class="footer-container-third-link">
+            <a href="/src/pages/AboutUs.html">ABOUT US</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-container-fourth">
+        <span class="footer-container-fourth-text"> Work Time </span>
+        <div class="footer-line-big"></div>
+        <ul class="footer-container-fourth-list-time">
+          <li class="footer-container-fourth-item">
+            <span class="footer-container-fourth-time-day">
+              Monday -> Friday
+            </span>
+            <span class="footer-container-fourth-time"> 7h30 -> 21h00 </span>
+          </li>
+          <div class="footer-line-small"></div>
+          <li class="footer-container-fourth-item">
+            <span class="footer-container-fourth-time-day"> Saturday </span>
+            <span class="footer-container-fourth-time"> 7h30 -> 20h00 </span>
+          </li>
+          <div class="footer-line-small"></div>
+          <li class="footer-container-fourth-item">
+            <span class="footer-container-fourth-time-day"> Sunday </span>
+            <span class="footer-container-fourth-time"> Close </span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-container-fifth">
+        <span class="footer-container-fifth-text"> Contact </span>
+        <div class="footer-line-big"></div>
+        <div class="footer-container-fifth-list-contact">
+          <div class="footer-container-fifth-item">
+            <span class="iconify footer-container-fifth-item-icon" data-icon="mdi:map-marker"></span>
+            <span class="footer-container-fifth-item-text">
+              Address: Quarter 6, Linh Trung Ward, City. Thu Duc, HCM
+            </span>
           </div>
-        </div>
-        <div class="footer-container-third">
-          <span class="footer-container-third-text"> Links </span>
-          <div class="footer-line-big"></div>
-          <ul class="footer-container-third-list-links">
-            <li class="footer-container-third-link">
-              <a href="/src/pages/Home.html">HOME</a>
-            </li>
-            <div class="footer-line-small"></div>
-            <li class="footer-container-third-link">
-              <a href="/src/pages/Products.html">PRODUCT</a>
-            </li>
-            <div class="footer-line-small"></div>
-            <li class="footer-container-third-link">
-              <a href="/src/pages/AboutUs.html">ABOUT US</a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer-container-fourth">
-          <span class="footer-container-fourth-text"> Work Time </span>
-          <div class="footer-line-big"></div>
-          <ul class="footer-container-fourth-list-time">
-            <li class="footer-container-fourth-item">
-              <span class="footer-container-fourth-time-day">
-                Monday -> Friday
-              </span>
-              <span class="footer-container-fourth-time"> 7h30 -> 21h00 </span>
-            </li>
-            <div class="footer-line-small"></div>
-            <li class="footer-container-fourth-item">
-              <span class="footer-container-fourth-time-day"> Saturday </span>
-              <span class="footer-container-fourth-time"> 7h30 -> 20h00 </span>
-            </li>
-            <div class="footer-line-small"></div>
-            <li class="footer-container-fourth-item">
-              <span class="footer-container-fourth-time-day"> Sunday </span>
-              <span class="footer-container-fourth-time"> Close </span>
-            </li>
-          </ul>
-        </div>
-        <div class="footer-container-fifth">
-          <span class="footer-container-fifth-text"> Contact </span>
-          <div class="footer-line-big"></div>
-          <div class="footer-container-fifth-list-contact">
-            <div class="footer-container-fifth-item">
-              <span
-                class="iconify footer-container-fifth-item-icon"
-                data-icon="mdi:map-marker"
-              ></span>
-              <span class="footer-container-fifth-item-text">
-                Address: Quarter 6, Linh Trung Ward, City. Thu Duc, HCM
-              </span>
-            </div>
-            <div class="footer-line-small"></div>
-            <div class="footer-container-fifth-item">
-              <span
-                class="iconify footer-container-fifth-item-icon"
-                data-icon="ic:baseline-phone-callback"
-              ></span>
-              <span class="footer-container-fifth-item-text">
-                PhoneNumber: 123456
-              </span>
-            </div>
+          <div class="footer-line-small"></div>
+          <div class="footer-container-fifth-item">
+            <span class="iconify footer-container-fifth-item-icon" data-icon="ic:baseline-phone-callback"></span>
+            <span class="footer-container-fifth-item-text">
+              PhoneNumber: 123456
+            </span>
           </div>
         </div>
       </div>
-      <div class="footer-container-copyright">
-        <div class="footer-copyright-main">
-          <span>Copyright belongs to Pet Store</span>
-        </div>
-        <div class="footer-copyright-sub">
-          <p>© 2023 All rights reserved</p>
-        </div>
+    </div>
+    <div class="footer-container-copyright">
+      <div class="footer-copyright-main">
+        <span>Copyright belongs to Pet Store</span>
       </div>
-    </footer>
-    <script src="/src/scripts/header.js"></script>
+      <div class="footer-copyright-sub">
+        <p>© 2023 All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/src/scripts/header.js"></script>
+  <script src="/src/scripts/checkout.js"></script>
+</body>
 
-    <script src="/src/scripts/checkout.js"></script>
-  </body>
 </html>

@@ -1,9 +1,15 @@
-// provinces
+// DbName in indexedDB
+const dbName = "PetStore";
 
+// Valiables
+const buttonCheckout = document.getElementById("checkout-btn");
 
-// carts
+// Carts
 let dataProduct = JSON.parse(sessionStorage.getItem("checkout-product")) || [];
 let dataCounpon = JSON.parse(sessionStorage.getItem("coupon-data")) || null;
+let listCart = JSON.parse(localStorage.getItem("listCart")) || [];
+
+
 if (dataProduct.length == 0) {
     document.body.remove();
 } else {
@@ -23,9 +29,8 @@ if (dataProduct.length == 0) {
 
     }
     fetchDataProvinces();
-    // Cart
-    let listCart = JSON.parse(localStorage.getItem("listCart")) || [];
-    console.log(listCart)
+
+    // Cart    
     const updateAmountLengthCart = () => {
         let amount = 0;
         listCart.forEach((item) => {
@@ -44,8 +49,8 @@ if (dataProduct.length == 0) {
         const unFormattedPrice = price.replace(".", "").replace("đ", "").trim();
         return parseInt(unFormattedPrice);
     }
-    // data
 
+    // data
     let dataCarts = ""
     dataProduct.forEach((item) => {
         dataCarts += `
@@ -107,12 +112,14 @@ if (dataProduct.length == 0) {
     //if have loggedInUser, auto fill form 
     let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser")) || null;
     if (loggedInUser) {
-        document.getElementById("fullName").value = loggedInUser.lastName + " " + loggedInUser.firstName;
+        document.getElementById("fullName").value = loggedInUser.fullname ? loggedInUser.fullname : "";
         document.getElementById("province-id").value = loggedInUser.province;
         document.getElementById("Address").value = loggedInUser.address;
         document.getElementById("email").value = loggedInUser.email;
-        document.getElementById("phoneNumber").value = loggedInUser.phone;
+        document.getElementById("phoneNumber").value = loggedInUser.phoneNumber;
     }
+
+    // Validate inputs
     function handleInput(item) {
         // if(item.id=="fullName") {
         //     form.fullName=item.value;
@@ -134,7 +141,7 @@ if (dataProduct.length == 0) {
                 form.province = item.value;
                 break;
             case "Address":
-                if (!regex.test(item.value)) {
+                if (item.value) {
                     form.fullName = item.value.trim();
                     document.querySelector("label[for='Address']").innerHTML = "";
                 } else {
@@ -162,3 +169,109 @@ if (dataProduct.length == 0) {
         }
     }
 }
+
+// Checkout orders save in db
+
+const removeDot = (price) => {
+    const unFormattedPrice = price.replace(".", "").replace("đ", "").trim();
+    return parseInt(unFormattedPrice);
+}
+
+const handleOrder = (e) => {
+    e.preventDefault();
+
+    const dbName = "PetStore";
+    const storeName = "orders";
+
+    const request = indexedDB.open(dbName, 1);
+
+    request.onupgradeneeded = (event) => {
+        const db = event.target.result;
+        const objectStore = db.createObjectStore(storeName, {
+            keyPath: "id",
+            autoIncrement: true,
+        });
+        objectStore.createIndex("customerEmail", "customerEmail", { unique: false });
+    };
+
+    request.onerror = function () {
+        console.log("Error opening database");
+    };
+
+    request.onsuccess = function (event) {
+        const db = event.target.result;
+
+        const transaction = db.transaction(storeName, "readwrite");
+        const objectStore = transaction.objectStore(storeName);
+
+        const order = {
+            customerId: loggedInUser.id,
+            customerName: document.getElementById("fullName").value.trim(),
+            customerAddress: document.getElementById("Address").value,
+            customerProvince: document.getElementById("province-id").value,
+            customerEmail: document.getElementById("email").value,
+            customerPhone: document.getElementById("phoneNumber").value,
+            items: dataProduct,
+            total: document.getElementById("total-price-fee").innerHTML,
+            timestamp: new Date().getTime(),
+            status: "Pending",
+            coupon: dataCounpon,
+        };
+
+        const addRequest = objectStore.add(order);
+
+        addRequest.onsuccess = () => {
+            console.log("Order added to IndexedDB", addRequest.result);
+            sessionStorage.removeItem("checkout-product");
+
+
+            const result = listCart.filter(obj1 => !dataProduct.some(obj2 => obj1.id === obj2.id));
+
+            listCart = result;
+            localStorage.setItem("listCart", JSON.stringify(result))
+            const currentUserID = JSON.parse(localStorage.getItem("loggedInUser")).id || null;
+            console.log(currentUserID)
+            if (currentUserID) {
+                updateCartDB(currentUserID, result)
+            }
+        }
+        addRequest.onerror = (event) =>
+            console.log(`Error adding order to IndexedDB: ${event.target.error}`);
+
+        transaction.oncomplete = () => db.close();
+    };
+};
+
+
+const updateCartDB = (id, cart) => {
+    const request = indexedDB.open('PetStore');
+    console.log(id, cart)
+
+    request.onsuccess = (event) => {
+        const db = event.target.result;
+
+        // Access the object store containing user data
+        const transaction = db.transaction(['users'], 'readwrite');
+        const objectStore = transaction.objectStore('users');
+
+        // Get the user object with the specified ID
+        const getRequest = objectStore.get(id);
+        getRequest.onsuccess = (event) => {
+            const user = event.target.result;
+
+            // Update the user's cart property
+            user.cart = cart;
+
+            // Put the updated user object back into the object store
+            const putRequest = objectStore.put(user);
+            putRequest.onsuccess = () => {
+                console.log('User cart updated successfully');
+                db.close();
+            };
+        };
+    };
+
+}
+
+
+buttonCheckout.addEventListener("click", handleOrder);

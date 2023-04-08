@@ -1,186 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Users</title>
-    <link rel="stylesheet" href="/assets/styles/base.css">
-    <link rel="stylesheet" href="/assets/styles/Users.css">
-    <link rel="stylesheet" href="/assets/styles/header.css">
-    <link rel="stylesheet" href="/assets/styles/footer.css">
-    <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Users</title>
+  <link rel="stylesheet" href="/assets/styles/base.css">
+  <link rel="stylesheet" href="/assets/styles/Profile.css">
+  <link rel="stylesheet" href="/assets/styles/header.css">
+  <link rel="stylesheet" href="/assets/styles/footer.css">
+  <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
 </head>
+
 <body>
-    <!-- header -->
-    <header class="header-container">
-      <div class="header-container-detail">
-        <div class="header-logo">
-          <a href="/src/pages/Home.html"> <img src="../../assets/images/PetStore_Logo.png" alt="" width="100px"> </a>
-        </div>
-        <div class="header-container-items">
-          <ul class="header-list">
-            <li class="header-list-detail header-list-detail-tab-active">
-              <a href="/src/pages/Home.html">Home</a>
-            </li>
-            <li class="header-list-detail">
-              <a href="/src/pages/Products.html">Product</a>
-            </li>
-            <li class="header-list-detail">
-              <a href="/src/pages/AboutUs.html">About us</a>
-            </li>
-            <li class="header-list-detail">
-              <button class="header-button-login-mobile">Login</button>
-            </li>
-          </ul>
-        </div>
-        <div class="header-container-menu-icon">
-          <span
-            class="iconify header-button-icon-first"
-            data-icon="material-symbols:menu"
-          ></span>
-        </div>
-        <div class="header-container-buttons">
-          <div class="header-container-button-list-icons">
-            <div class="header-container-button-icon">
-              <span
-                class="iconify header-button-icon"
-                data-icon="material-symbols:search"
-              ></span>
-            </div>
-            <div class="header-container-button-icon">
-              <a href="/src/pages/Carts.html" class="shopping-cart-link">
-                <span
-                  class="iconify header-button-icon"
-                  data-icon="material-symbols:shopping-cart-outline"
-                >
-                </span>
-                <span class="badge" id="number-cart">0</span>
-              </a>
-            </div>
+  <!-- header -->
+  <header class="header-container">
+    <div class="header-container-detail">
+      <div class="header-logo">
+        <a href="/src/pages/Home.html"> <img src="../../assets/images/PetStore_Logo.png" alt="" width="100px"> </a>
+      </div>
+      <div class="header-container-items">
+        <ul class="header-list">
+          <li class="header-list-detail header-list-detail-tab-active">
+            <a href="/src/pages/Home.html">Home</a>
+          </li>
+          <li class="header-list-detail">
+            <a href="/src/pages/Products.html">Product</a>
+          </li>
+          <li class="header-list-detail">
+            <a href="/src/pages/AboutUs.html">About us</a>
+          </li>
+          <li class="header-list-detail">
+            <button class="header-button-login-mobile">Login</button>
+          </li>
+        </ul>
+      </div>
+      <div class="header-container-menu-icon">
+        <span class="iconify header-button-icon-first" data-icon="material-symbols:menu"></span>
+      </div>
+      <div class="header-container-buttons">
+        <div class="header-container-button-list-icons">
+          <div class="header-container-button-icon">
+            <span class="iconify header-button-icon" data-icon="material-symbols:search"></span>
           </div>
-          <button class="header-button-login" id="header-button-login">Login</button>
-          <img class="header-button-avatar" src="" alt="">
-          <div id="dropdownUser" class="dropdown-content">
-            <a href="" class="dropdown-btn" id="profileDropdown">Profile</a>
-            <a href="" class="dropdown-btn" id="logoutDropdown">Logout</a>
+          <div class="header-container-button-icon">
+            <a href="/src/pages/Carts.html" class="shopping-cart-link">
+              <span class="iconify header-button-icon" data-icon="material-symbols:shopping-cart-outline">
+              </span>
+              <span class="badge" id="number-cart">0</span>
+            </a>
+          </div>
+        </div>
+        <button class="header-button-login" id="header-button-login">Login</button>
+        <img class="header-button-avatar" src="" alt="">
+        <div id="dropdownUser" class="dropdown-content">
+          <a href="/src/pages/Profile.html" class="dropdown-btn" id="profileDropdown">Profile</a>
+          <a href="" class="dropdown-btn" id="logoutDropdown">Logout</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- content -->
+  <div class="profile-container">
+    <div class="profile-container-detail">
+      <h1 class="profile-title">
+        Edit Profile User
+      </h1>
+      <div class="profile-tabs-container">
+        <div class="profile-tab-container-left">
+          <button id="edit-profile-detail" class="edit-profile tab-profile-active" data-target="tab-1">Edit Your
+            Profile</button>
+        </div>
+        <div class="profile-tab-container-middle">
+          <button id="edit-profile-password" class="edit-profile" data-target="tab-2">Change Your Password</button>
+        </div>
+        <div class="profile-tab-container-right">
+          <button id="view-orders-detail" class="edit-profile" data-target="tab-3">View Orders Detail</button>
+        </div>
+      </div>
+      <div class="profile-content" id="tab-1">
+        <div class="profile-avatar-container-left">
+          <img src="/assets/images/Giao.jpg" alt="Giao" class="profile-avatar">
+          <label for="file-input" class="label-edit-avatar">
+            <span class="iconify profile-btn-icon" data-icon="material-symbols:edit"></span>
+          </label>
+          <input class="file-input-change" id="file-input" type="file" />
+        </div>
+        <div class="profile-avatar-container-right">
+          <form action="" id="profile-form" class="profile-form-container">
+
+            <label for="profile-fullname-input" class="profile-label">Your Full Name</label>
+            <input type="text" id="profile-fullname-input" class="profile-input">
+
+            <!-- <label for="profile-password-input" class="profile-label">Your Password</label>
+                <input type="password" id="profile-password-input" class="profile-input"> -->
+
+            <label for="profile-address-input" class="profile-label">Your Address</label>
+            <textarea placeholder="Address" name="address" id="Address" required class="profile-input"
+              minlength="10"></textarea>
+            <label for="profile-email-input" class="profile-label">Your Email</label>
+            <input type="text" id="profile-email-input" class="profile-input">
+
+            <label for="profile-phoneNumber-input" class="profile-label">Your Phone Number</label>
+            <input type="text" id="profile-phoneNumber-input" class="profile-input">
+
+
+          </form>
+          <div class="profile-btn-container-submit">
+            <div class="profile-btn-submit-second" onclick="handleEditProfile()">Update Profile</div>
           </div>
         </div>
       </div>
-    </header>
-    <!-- content -->
-    <div class="biggest-user-container">
-        
+      <div class="profile-content profile-inActive-class" id="tab-2">
+        <form action="" class="profile-second-form">
+          <label for="profile-password-input" class="profile-label">Your Password</label>
+          <input type="password" id="profile-password-input" class="profile-input">
+
+          <label for="profile-password-input" class="profile-label">Your New Password</label>
+          <input type="password" id="profile-newpassword-input" class="profile-input">
+
+          <label for="profile-password-input" class="profile-label">Confirm New Password</label>
+          <input type="password" id="profile-confirm-newpassword-input" class="profile-input">
+        </form>
+        <div class="profile-btn-change-password">
+          <button class="profile-btn-submit" type="submit" onclick="handleChangePassword()">Change Password</button>
+        </div>
+      </div>
+      <div class="profile-content profile-inActive-class" id="tab-3">
+        <div class="profile-content-three-top">
+          <span class="iconify Profile-order-box" data-icon="mdi:box-clock"></span>
+          <h3 class="profile-content-three-title">Order History</h3>
+        </div>
+        <div class="profile-content-three-middle">
+          <!-- <div class="profile-content-three-middle-detail">
+            <div class="profile-content-three-middle-detail-top">
+              <div class="profile-content-three-middle-detail-top-left">
+                <span>Order</span>
+                <span>#123</span>
+              </div>
+              <div class="profile-content-three-middle-detail-top-right">
+                <span>Total: 99000 đ</span>
+              </div>
+            </div>
+            <div class="profile-content-three-middle-detail-middle">
+              <div class="profile-content-three-middle-detail-middle-first">
+                <span>Product</span>
+                <div class="product-container">
+                  <img src="/assets/images/avatar-default.jpg" alt="avatar-default" class="product-img">
+                  <div class="product-content-container">
+                    <p>Áo thú cưng</p>
+                    <p>Quanity: 1</p>
+                  </div>
+                </div>
+              </div>
+              <div class="profile-content-three-middle-detail-middle-second">
+                <span>Shipping Info</span>
+                <div class="product-detail-container">
+                  <p>Phường linh trung thủ đức</p>
+                  <p>0963606075</p>
+                </div>
+              </div>
+              <div class="profile-content-three-middle-detail-middle-third">
+                <span>Package Status</span>
+                <div class="product-status-container">
+                  <span class="iconify Profile-order-box" data-icon="carbon:pending-filled"></span>
+                  <span>pending</span>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
     </div>
-    <!-- footer -->
-    <footer class="footer-container">
-        <div class="footer-container-detail">
-          <div class="footer-container-logo">
-            <a href="/"> <img src="../../assets/images/PetStore_Logo.png" alt="PetStore" width="200px"> </a>
-          </div>
-          <div class="footer-container-second">
-            <span class="footer-container-second-text">
-              Our mission is to keep pets healthy
+  </div>
+  <!-- footer -->
+  <footer class="footer-container">
+    <div class="footer-container-detail">
+      <div class="footer-container-logo">
+        <a href="/"> <img src="../../assets/images/PetStore_Logo.png" alt="PetStore" width="200px"> </a>
+      </div>
+      <div class="footer-container-second">
+        <span class="footer-container-second-text">
+          Our mission is to keep pets healthy
+        </span>
+        <div class="footer-line-big"></div>
+        <div class="footer-container-second-icon">
+          <span class="iconify footer-container-second-item-icon" data-icon="ic:outline-facebook"></span>
+          <span class="iconify footer-container-second-item-icon" data-icon="mdi:instagram"></span>
+          <span class="iconify footer-container-second-item-icon" data-icon="mdi:twitter"></span>
+          <span class="iconify footer-container-second-item-icon" data-icon="ph:youtube-logo-fill"></span>
+        </div>
+      </div>
+      <div class="footer-container-third">
+        <span class="footer-container-third-text"> Links </span>
+        <div class="footer-line-big"></div>
+        <ul class="footer-container-third-list-links">
+          <li class="footer-container-third-link">
+            <a href="/src/pages/Home.html">HOME</a>
+          </li>
+          <div class="footer-line-small"></div>
+          <li class="footer-container-third-link">
+            <a href="/src/pages/Products.html">PRODUCT</a>
+          </li>
+          <div class="footer-line-small"></div>
+          <li class="footer-container-third-link">
+            <a href="/src/pages/AboutUs.html">ABOUT US</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-container-fourth">
+        <span class="footer-container-fourth-text"> Work Time </span>
+        <div class="footer-line-big"></div>
+        <ul class="footer-container-fourth-list-time">
+          <li class="footer-container-fourth-item">
+            <span class="footer-container-fourth-time-day">
+              Monday -> Friday
             </span>
-            <div class="footer-line-big"></div>
-            <div class="footer-container-second-icon">
-              <span
-                class="iconify footer-container-second-item-icon"
-                data-icon="ic:outline-facebook"
-              ></span>
-              <span
-                class="iconify footer-container-second-item-icon"
-                data-icon="mdi:instagram"
-              ></span>
-              <span
-                class="iconify footer-container-second-item-icon"
-                data-icon="mdi:twitter"
-              ></span>
-              <span
-                class="iconify footer-container-second-item-icon"
-                data-icon="ph:youtube-logo-fill"
-              ></span>
-            </div>
+            <span class="footer-container-fourth-time">
+              7h30 -> 21h00
+            </span>
+          </li>
+          <div class="footer-line-small"></div>
+          <li class="footer-container-fourth-item">
+            <span class="footer-container-fourth-time-day"> Saturday </span>
+            <span class="footer-container-fourth-time">
+              7h30 -> 20h00
+            </span>
+          </li>
+          <div class="footer-line-small"></div>
+          <li class="footer-container-fourth-item">
+            <span class="footer-container-fourth-time-day"> Sunday </span>
+            <span class="footer-container-fourth-time"> Close </span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-container-fifth">
+        <span class="footer-container-fifth-text"> Contact </span>
+        <div class="footer-line-big"></div>
+        <div class="footer-container-fifth-list-contact">
+          <div class="footer-container-fifth-item">
+            <span class="iconify footer-container-fifth-item-icon" data-icon="mdi:map-marker"></span>
+            <span class="footer-container-fifth-item-text">
+              Address: Quarter 6, Linh Trung Ward, City. Thu Duc, HCM
+            </span>
           </div>
-          <div class="footer-container-third">
-            <span class="footer-container-third-text"> Links </span>
-            <div class="footer-line-big"></div>
-            <ul class="footer-container-third-list-links">
-              <li class="footer-container-third-link">
-                <a href="/src/pages/Home.html">HOME</a>
-              </li>
-              <div class="footer-line-small"></div>
-              <li class="footer-container-third-link">
-                <a href="/src/pages/Products.html">PRODUCT</a>
-              </li>
-              <div class="footer-line-small"></div>
-              <li class="footer-container-third-link">
-                <a href="/src/pages/AboutUs.html">ABOUT US</a>
-              </li>
-            </ul>
-          </div>
-          <div class="footer-container-fourth">
-            <span class="footer-container-fourth-text"> Work Time </span>
-            <div class="footer-line-big"></div>
-            <ul class="footer-container-fourth-list-time">
-              <li class="footer-container-fourth-item">
-                <span class="footer-container-fourth-time-day">
-                  Monday -> Friday
-                </span>
-                <span class="footer-container-fourth-time">
-                  7h30 -> 21h00
-                </span>
-              </li>
-              <div class="footer-line-small"></div>
-              <li class="footer-container-fourth-item">
-                <span class="footer-container-fourth-time-day"> Saturday </span>
-                <span class="footer-container-fourth-time">
-                  7h30 -> 20h00
-                </span>
-              </li>
-              <div class="footer-line-small"></div>
-              <li class="footer-container-fourth-item">
-                <span class="footer-container-fourth-time-day"> Sunday </span>
-                <span class="footer-container-fourth-time"> Close </span>
-              </li>
-            </ul>
-          </div>
-          <div class="footer-container-fifth">
-            <span class="footer-container-fifth-text"> Contact </span>
-            <div class="footer-line-big"></div>
-            <div class="footer-container-fifth-list-contact">
-              <div class="footer-container-fifth-item">
-                <span
-                  class="iconify footer-container-fifth-item-icon"
-                  data-icon="mdi:map-marker"
-                ></span>
-                <span class="footer-container-fifth-item-text">
-                  Address: Quarter 6, Linh Trung Ward, City. Thu Duc, HCM
-                </span>
-              </div>
-              <div class="footer-line-small"></div>
-              <div class="footer-container-fifth-item">
-                <span
-                  class="iconify footer-container-fifth-item-icon"
-                  data-icon="ic:baseline-phone-callback"
-                ></span>
-                <span class="footer-container-fifth-item-text">
-                  PhoneNumber: 123456
-                </span>
-              </div>
-            </div>
+          <div class="footer-line-small"></div>
+          <div class="footer-container-fifth-item">
+            <span class="iconify footer-container-fifth-item-icon" data-icon="ic:baseline-phone-callback"></span>
+            <span class="footer-container-fifth-item-text">
+              PhoneNumber: 123456
+            </span>
           </div>
         </div>
-        <div class="footer-container-copyright">
-          <div class="footer-copyright-main">
-            <span>Copyright belongs to Pet Store</span>
-          </div>
-          <div class="footer-copyright-sub">
-            <p>© 2023 All rights reserved</p>
-          </div>
-        </div>
-      </footer>
-    <script src="../scripts/user.js"></script>
-    <script src="../scripts/header.js"></script>
+      </div>
+    </div>
+    <div class="footer-container-copyright">
+      <div class="footer-copyright-main">
+        <span>Copyright belongs to Pet Store</span>
+      </div>
+      <div class="footer-copyright-sub">
+        <p>© 2023 All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../scripts/header.js"></script>
+  <script src="../scripts/profile.js"></script>
 </body>
+
 </html>
