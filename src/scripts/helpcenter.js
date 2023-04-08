@@ -1,9 +1,8 @@
-//If the user has not logged in yet, they cannot access to a helpcenter
-const loggedInUser = localStorage.getItem('loggedInUser');
-const avatar = document.querySelector('.avatar');
-console.log(loggedInUser)
-// set the avatar image
-avatar.src = JSON.parse(loggedInUser).avatar;
+const loggedInUserObj = localStorage.getItem('loggedInUser');
+const user = JSON.parse(loggedInUserObj);
+if(user.avatar === "") {
+    user.avatar = "https://www.w3schools.com/howto/img_avatar.png";
+}
 
 //click submit button to post a question to the help center
 const questionContainer = document.getElementById("question-container");
@@ -13,14 +12,13 @@ const btnSubmit = document.getElementById("btn-submit");
 btnSubmit.addEventListener("click", function (event) {
     event.preventDefault(); //chặn các hành động mặc định khi submit
     const question = document.getElementById("question").value;
-    const user = JSON.parse(loggedInUser);
-    let date = new Date();
-    date = date.toLocaleString();
     const questionObj = {
         id: Date.now(),
         author_id: user._id,
+        author_avatar: user.avatar,
+        author_name: user.username,
         question: question,
-        date: date,
+        date: new Date().getDate() + "/" + (new Date().getMonth() + 1) + "/" + new Date().getFullYear(),
         likes: 0,
         answers: [],
     }
@@ -34,7 +32,7 @@ btnSubmit.addEventListener("click", function (event) {
     <div class="question-header">
         <img src="${user.avatar}" alt="avatar" class="avatar">
         <div class="question-info">
-            <div class="question-user">${user.userName}</div>
+            <div class="question-user">${user.username}</div>
             <div class="question-date">${questionObj.date}</div>
         </div>
     </div>
@@ -46,6 +44,7 @@ btnSubmit.addEventListener("click", function (event) {
         <button class="btn-like">Like</button>
         <button class="btn-answer">Answer</button>
     </div>
+    <div class="divide"></div>
     `;
     // button like
     const btnLike = questionDiv.querySelector(".btn-like");
@@ -77,9 +76,9 @@ btnSubmit.addEventListener("click", function (event) {
                 id: Date.now(),
                 author_id: user._id,
                 author_avatar: user.avatar,
-                author_name: user.userName,
+                author_name: user.username,
                 answer: answer,
-                date: date,
+                date: new Date().getDate() + "/" + (new Date().getMonth() + 1) + "/" + new Date().getFullYear(),
                 likes: 0,
             }
             questionObj.answers.push(answerObj);
@@ -91,7 +90,7 @@ btnSubmit.addEventListener("click", function (event) {
             <div class="answer-header">
                 <img src="${user.avatar}" alt="avatar" class="avatar">
                 <div class="answer-info">
-                    <div class="answer-user">${user.userName}</div>
+                    <div class="answer-user">${user.username}</div>
                     <div class="answer-date">${answerObj.date}</div>
                 </div>
             </div>
@@ -102,6 +101,7 @@ btnSubmit.addEventListener("click", function (event) {
                 <div class="answer-likes">${answerObj.likes} likes</div>
                 <button class="btn-like">Like</button>
             </div>
+            <div class="divide"></div>
             `;
             // button like
             const btnLike = answerDiv.querySelector(".btn-like");
@@ -119,37 +119,40 @@ btnSubmit.addEventListener("click", function (event) {
     document.getElementById("question").value = "";
 });
 
-//display all questions on the help center page
-const questions = JSON.parse(localStorage.getItem('questions')) || [];
-//get users from database
+// lấy dữ liệu từ localStorage
+const questions = JSON.parse(localStorage.getItem('questions'));
 
-questions.forEach(function (questionObj) {
-    const questionDiv = document.createElement("div");
-    questionDiv.className = "question";
-    questionDiv.innerHTML = `
+// tạo các thành phần HTML để hiển thị dữ liệu
+const container = document.createElement('div');
+container.className = 'container';
+questions.forEach(question => {
+  const questionDiv = document.createElement('div');
+    questionDiv.className = 'questionDiv';
+  questionDiv.innerHTML = `
     <div class="question-header">
-        <img src="${questionObj.author_avatar}" alt="avatar" class="avatar">
+        <img src="${question.author_avatar}" alt="avatar" class="avatar">
         <div class="question-info">
-            <div class="question-user">${questionObj.userName}</div>
-            <div class="question-date">${questionObj.date}</div>
+            <div class="question-user">${question.author_name}</div>
+            <div class="question-date">${question.date}</div>
         </div>
     </div>
     <div class="question-body">
-        <div class="question-text">${questionObj.question}</div>
+        <div class="question-text">${question.question}</div>
     </div>
     <div class="question-footer">
-        <div class="question-likes">${questionObj.likes} likes</div>
+        <div class="question-likes">${question.likes} likes</div>
         <button class="btn-like">Like</button>
         <button class="btn-answer">Answer</button>
     </div>
-    `;
-    // button like
+    <div class="divide"></div>
+  `;
+  //button like
     const btnLike = questionDiv.querySelector(".btn-like");
     btnLike.addEventListener("click", function (event) {
         event.preventDefault();
-        questionObj.likes++;
+        question.likes++;
         localStorage.setItem('questions', JSON.stringify(questions));
-        questionDiv.querySelector(".question-likes").innerHTML = questionObj.likes + " likes";
+        questionDiv.querySelector(".question-likes").innerHTML = question.likes + " likes";
     });
     // button answer
     const btnAnswer = questionDiv.querySelector(".btn-answer");
@@ -159,7 +162,7 @@ questions.forEach(function (questionObj) {
         const answerForm = document.createElement("form");
         answerForm.className = "answer-form";
         answerForm.innerHTML = `
-        <img src="${questionObj.author.avatar}" alt="avatar" class="avatar">
+        <img src="${user.avatar}" alt="avatar" class="avatar">
         <input name="answer" id="answer" placeholder="Your answer">
         <button class="btn-submit-answer">Submit</button>
         `;
@@ -167,25 +170,28 @@ questions.forEach(function (questionObj) {
         //save the answer to the database
         const btnSubmitAnswer = answerForm.querySelector(".btn-submit-answer");
         btnSubmitAnswer.addEventListener("click", function (event) {
+            console.log("click");
             event.preventDefault();
             const answer = answerForm.querySelector("#answer").value;
             const answerObj = {
                 id: Date.now(),
-                author_id: questionObj.author._id,
+                author_id: user._id,
+                author_avatar: user.avatar,
+                author_name: user.username,
                 answer: answer,
-                date: date,
+                date: new Date().getDate() + "/" + (new Date().getMonth() + 1) + "/" + new Date().getFullYear(),
                 likes: 0,
             }
-            questionObj.answers.push(answerObj);
+            question.answers.push(answerObj);
             localStorage.setItem('questions', JSON.stringify(questions));
             //display the answer on the help center page
             const answerDiv = document.createElement("div");
             answerDiv.className = "answer";
             answerDiv.innerHTML = `
             <div class="answer-header">
-                <img src="${questionObj.author.avatar}" alt="avatar" class="avatar">
+                <img src="${user.avatar}" alt="avatar" class="avatar">
                 <div class="answer-info">
-                    <div class="answer-user">${questionObj.author.userName}</div>
+                    <div class="answer-user">${user.username}</div>
                     <div class="answer-date">${answerObj.date}</div>
                 </div>
             </div>
@@ -196,6 +202,7 @@ questions.forEach(function (questionObj) {
                 <div class="answer-likes">${answerObj.likes} likes</div>
                 <button class="btn-like">Like</button>
             </div>
+            <div class="divide"></div>
             `;
             // button like
             const btnLike = answerDiv.querySelector(".btn-like");
@@ -209,8 +216,43 @@ questions.forEach(function (questionObj) {
             answerForm.remove();
         });
     });
-})
 
+    const answersDiv = document.createElement('div');
+    answersDiv.className = 'answersDiv';
+    question.answers.forEach(answer => {
+    const answerDiv = document.createElement('div');
+    answerDiv.innerHTML = `
+        <div class="answer-header">
+                <img src="${answer.author_avatar}" alt="avatar" class="avatar">
+                <div class="answer-info">
+                    <div class="answer-user">${answer.author_name}</div>
+                    <div class="answer-date">${answer.date}</div>
+                </div>
+            </div>
+            <div class="answer-body">
+                <div class="answer-text">${answer.answer}</div>
+            </div>
+            <div class="answer-footer">
+                <div class="answer-likes">${answer.likes} likes</div>
+                <button class="btn-like">Like</button>
+            </div>
+            <div class="divide"></div>
+    `;
+    // button like
+    const btnLike = answerDiv.querySelector(".btn-like");
+    btnLike.addEventListener("click", function (event) {
+        event.preventDefault();
+        answer.likes++;
+        localStorage.setItem('questions', JSON.stringify(questions));
+        answerDiv.querySelector(".answer-likes").innerHTML = answer.likes + " likes";
+    });
 
+    answersDiv.appendChild(answerDiv);
+  });
+  questionDiv.appendChild(answersDiv);
+  container.appendChild(questionDiv);
+});
 
+// hiển thị các thành phần HTML
+document.body.appendChild(container);
 
