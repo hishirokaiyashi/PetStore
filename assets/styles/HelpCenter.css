@@ -1,8 +1,11 @@
+body{
+    padding: 2rem;
+}
 .content-heading{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 108px;
     margin-bottom: 2rem;
 }
 .title{
@@ -107,8 +110,8 @@
 }
 
 .btn-submit-answer{
-    width: 10%;
-    height: 50px;
+    width: 15%;
+    height: 40px;
     background-color: var(--primary-background-pink);
     color: white;
     border: none;
@@ -116,6 +119,7 @@
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
+    margin-left: 1rem;
 }
 
 .answer{
@@ -161,4 +165,31 @@
     margin-left: 1rem;
 }
 
+.questionDiv{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.answersDiv{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 3rem;
+}
+
+.answer-form #answer {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+.divide{
+    border-bottom: 1px solid #ccc;
+    margin: 1rem 0;
+}
 
