@@ -119,3 +119,13 @@ btnProfile.addEventListener('click', () => {
     console.log('click')
     window.location.pathname = "/src/pages/profile.html";
 })
+
+//helpcenter is private page 
+const btnHelpCenter = document.getElementById("btn-help-center");
+btnHelpCenter.addEventListener('click', () => {
+    if (!loggedInUser) {
+        window.location.href = "SignIn.html";
+    } else {
+        window.location.href = "HelpCenter.html";
+    }
+})
