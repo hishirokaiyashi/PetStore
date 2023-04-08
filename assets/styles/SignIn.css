@@ -16,7 +16,6 @@
   display: flex;
   width: 50%;
   height: 100%;
-
 }
 .form {
     display: grid;
@@ -137,7 +136,9 @@ input[type="radio"] {
     width: 100%;
     margin-top: 20px;
 }
-
+/* .field:nth-child(2){
+    position: relative;
+} */
 .form-inner form .field input {
     height: 100%;
     width: 100%;
@@ -150,6 +151,14 @@ input[type="radio"] {
     transition: all 0.3s ease;
 }
 
+/* #pwdLogIn{
+    position: relative;
+}
+.checkbox-password{
+    position: absolute;
+    width: 10%;
+    height:10%;
+} */
 .form-inner form .field input:focus {
     border-color: var(--tertiary-background-blue);
     /* box-shadow: inset 0 0 3px #fb6aae; */
@@ -243,4 +252,31 @@ input.invalid {
 .welcome-container{
     font-size: 2rem;
 }
-  
+.field:nth-child(2){
+    position: relative;
+}
+.checkbox-container-show-password{
+    position: absolute;
+    top:15px;
+    right:15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.text-show-password{
+    cursor: pointer;
+}
+.signup .field:nth-child(3){
+    position: relative;
+}
+.checkbox-container-show-password-signup{
+    position: absolute;
+    top:15px;
+    right:15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.text-show-password-signup{
+    cursor: pointer;
+}

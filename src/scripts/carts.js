@@ -1,6 +1,8 @@
 // Define global variables for cart items list and checkout items list
 let listCart = [];
 let checkout = [];
+let appliedCoupon = {};
+let sale = false;
 
 // Get cart items from localstorage
 if (localStorage.getItem("listCart")) {
@@ -41,6 +43,43 @@ const addToCart = (x, event) => {
   updateAmountLengthCart();
   // Save item to localStorage
   localStorage.setItem("listCart", JSON.stringify(listCart));
+
+  // Add list cart to indexedDB
+  const currentUserID = JSON.parse(localStorage.getItem("loggedInUser")).id || null;;
+  if (currentUserID) {
+    updateCartDB(currentUserID, listCart)
+  }
+}
+
+// Update cart in users store with indexedDB according to user id
+
+const updateCartDB = (id, cart) => {
+  const request = indexedDB.open('PetStore');
+
+  request.onsuccess = (event) => {
+    const db = event.target.result;
+
+    // Access the object store containing user data
+    const transaction = db.transaction(['users'], 'readwrite');
+    const objectStore = transaction.objectStore('users');
+
+    // Get the user object with the specified ID
+    const getRequest = objectStore.get(id);
+    getRequest.onsuccess = (event) => {
+      const user = event.target.result;
+
+      // Update the user's cart property
+      user.cart = cart;
+
+      // Put the updated user object back into the object store
+      const putRequest = objectStore.put(user);
+      putRequest.onsuccess = () => {
+        console.log('User cart updated successfully');
+        db.close();
+      };
+    };
+  };
+
 }
 
 // Update amount of product item in list cart
@@ -141,10 +180,31 @@ const decreaseAmountProduct = (item) => {
 const showCart = () => {
   let cart = "";
   let listCart = JSON.parse(localStorage.getItem("listCart")) || [];
-  listCart.forEach((item, index) => {
-    // let total = parseInt(`${item.price}`) * parseInt(`${item.amount}`);
-    let total = item.price * parseInt(`${item.amount}`);
+  let cartBottom = document.querySelector('.Carts-container-second-detail-bottom');
+  let cartTop = document.querySelector('.Carts-container-second-detail-top');
+  if (listCart.length == 0) {
     cart += `
+      <div class="Carts-list-items-container-nothing">
+        <img 
+          src="/assets/images/nothing.gif"
+          alt="Nothing-to-show"
+          class="Cart-img-product-nothing"
+        />
+        <p>Oops...! There is nothing in your cart</p>
+        <button onclick="window.location.href = 'Products.html'">Visit Shop</button>
+      </div>
+    `
+    if(cartBottom && cartTop){
+      cartBottom.remove();
+      cartTop.remove();
+    }
+  }
+  else {
+
+    listCart.forEach((item, index) => {
+      // let total = parseInt(`${item.price}`) * parseInt(`${item.amount}`);
+      let total = item.price * parseInt(`${item.amount}`);
+      cart += `
       <div data-id=${item.id} class="Carts-list-items-container">
         <div class="Carts-container-middle-first">
           <input
@@ -191,7 +251,8 @@ const showCart = () => {
         </div>
       </div>
       `;
-  });
+    });
+  }
   if (document.getElementById("showcart")) {
     document.getElementById("showcart").innerHTML = cart;
   }
@@ -234,6 +295,12 @@ const handleDelete = (item) => {
     checkboxes[0].checked = false;
   }
   updateTotalPriceAll()
+  showCart();
+  // Update cart in users store indexedDB
+  const currentUserID = JSON.parse(localStorage.getItem("loggedInUser")).id || null;;
+  if (currentUserID) {
+    updateCartDB(currentUserID, listCart)
+  }
 }
 
 // Update total price with coupon
@@ -250,12 +317,12 @@ const updateTotalPriceAll = () => {
         totalCheckout = totalCheckout - appliedCoupon.value;
       }
       alertCoupon.innerHTML = "<p style= 'color:green; margin-bottom:0.25rem; font-size:1rem'>Coupon was applied</p>"
+      sale = true;
     }
     else {
-
       alertCoupon.innerHTML = "<p style= 'color:red; margin-bottom:0.25rem; font-size:1rem'>Your order is not suitable for coupon</p>"
+      sale = false;
     }
-
   }
   totalPriceAll.innerText = addDot(totalCheckout);
 }
@@ -308,9 +375,16 @@ const handleBuyNow = async () => {
         alert(`${item.name} chỉ còn ${amountData} trong kho`)
       } else {
         sessionStorage.setItem("checkout-product", JSON.stringify(checkout))
-        if (Object.keys(appliedCoupon).length != 0) {
-          sessionStorage.setItem("coupon-data", JSON.stringify(appliedCoupon))
+        if (sale) {
+          if (Object.keys(appliedCoupon).length != 0) {
+            sessionStorage.setItem("coupon-data", JSON.stringify(appliedCoupon))
+          } else {
+            sessionStorage.removeItem("coupon-data")
+          }
+        } else {
+          sessionStorage.removeItem("coupon-data")
         }
+
         window.location = "/src/pages/Checkout.html"
       }
     })
@@ -336,7 +410,6 @@ if (window.location.pathname.includes("Carts.html")) {
       let suggestions = "";
 
       dataOtherProducts.forEach((item) => {
-        console.log(item.img)
         suggestions += `
       <div data-id=${item._id} class="cart-container-another-product">
                         <div class="container-another-product">
@@ -391,10 +464,6 @@ if (window.location.pathname.includes("Carts.html")) {
 }
 
 /***  COUPON SECTION ***/
-
-// Define variable for applied coupon, default is {}
-let appliedCoupon = {};
-
 // Apply coupon button
 const applyCoupon = () => {
   let idCoupon = document.getElementById("idCoupon").value;
@@ -428,4 +497,9 @@ const applyCoupon = () => {
 
 window.onload = () => {
   showCart();
+  if (sessionStorage.getItem("coupon-data")) {
+    const coupon = JSON.parse(sessionStorage.getItem("coupon-data")).idCoupon || ""
+    document.getElementById("idCoupon").value = coupon
+    applyCoupon()
+  }
 };

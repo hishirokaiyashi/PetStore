@@ -460,3 +460,26 @@ input[type="checkbox"]:checked:after {
 .btn-coupon >label{
   cursor: pointer;
 }
+.Carts-list-items-container-nothing{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Cart-img-product-nothing {
+  height: 300px;
+  object-fit: cover;
+  
+}
+.Carts-list-items-container-nothing p{
+  margin-bottom:1rem;
+}
+.Carts-list-items-container-nothing button{
+  padding:1rem 1.5rem;
+  background-color: var(--primary-background-pink);
+  color:var(--tertiary-text-white);
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+}

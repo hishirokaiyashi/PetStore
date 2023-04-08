@@ -1,15 +1,17 @@
-// save data to json file
+// Global variables
 let products = []
-let listCart = [];
+let listCartProducts = [];
 let filteredProducts = [];
-//check localstorage
+
+// Check localstorage
 if (localStorage.getItem("listCart")) {
-    listCart = JSON.parse(localStorage.getItem("listCart"));
+    listCartProducts = JSON.parse(localStorage.getItem("listCart"));
 }
 
+// Update cart quantity
 const updateAmountLengthCart = () => {
     let amount = 0;
-    listCart.forEach((item) => {
+    listCartProducts.forEach((item) => {
         amount += item.amount;
     })
     document.getElementById("number-cart").innerText = amount;
@@ -120,6 +122,7 @@ function showFilteredProducts() {
     renderProducts();
 }
 
+// Add dot to price
 const addDot = (price) => {
     const formattedPrice =
         price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " đ";
@@ -135,12 +138,93 @@ checkCage.addEventListener("change", showFilteredProducts);
 checkEatingUtensils.addEventListener("change", showFilteredProducts);
 checkCleaningTools.addEventListener("change", showFilteredProducts);
 
+// const renderProducts = () => {
+//     let html = "";
+//     filteredProducts.forEach(product => {
+//         html += `
+//         <div data-id=${product._id
+//         } class="card-product" draggable="false">
+//             <div data-id=${product._id} class="productItem-container">
+//                 <div class="product-sale">
+//                 -
+//                 <p>${product.sale}</p>
+//                 % 
+//                 </div>
+//                 <img
+//               src="${product.img}"
+//               class="product-img-item"
+//               alt="${product.name}"
+//                  />
+//                 <div class="item-info-first">
+//                     <div class="item-price-container">
+//                     <p class="item-title">${product.name}</p>
+//                     <div class="item-sold">
+//                         <div class="item-rating">
+//                             <span class="iconify" data-icon="mdi:star"></span>
+//                             <span class="iconify" data-icon="mdi:star"></span>
+//                             <span class="iconify" data-icon="mdi:star"></span>
+//                             <span class="iconify" data-icon="mdi:star"></span>
+//                             <span class="iconify" data-icon="mdi:star"></span>
+//                         </div>
+//                         <p class="item-sold-number">${product.numOfProductsSold} sold</p>
+//                     </div>
+//                     <div class="item-price-before-container">
+//                         <p class="price-before">${addDot(product.price)}</p>
+//                     </div>
+//                     <div class="item-price-after">
+//                         <p class="price-after">${addDot(
+//                         ((100 - product.sale) / 100) * parseInt(product.price)
+//                         )}</p>
+//                     </div>
+//                 </div>
+
+//                 <div class="item-icon-container">
+//                     <span
+//                         class="iconify footer-container-fifth-item-icon"
+//                         data-icon="icon-park-outline:like"
+//                     >
+//                     </span>
+//                 </div>
+//             </div>
+//             <div class="quick-view-detail">
+//               <button onclick="addToCart(this, event)" class="btn-add-to-card">
+//                 Add To Card
+//               </button>
+//             </div>
+//             </div>
+//         </div>
+//         `;
+//     });
+//     productList.innerHTML = html;
+//     // click vào sản phẩm để xem chi tiết
+//     const cardProduct = document.querySelectorAll(".productItem-container");
+//     cardProduct.forEach(card => {
+//         card.addEventListener("click", () => {
+//             const id = card.getAttribute("data-id");
+//             window.location.href = `./ProductDetail.html?id=${id}`;
+//         });
+//     });
+
+// }
+
+
+/*** PRODUCTS PAGINATION */
+
+const productsPerPage = 6;
+let currentPage = 1;
+const productPagination = document.querySelector(".products-pagination");
+
+// Render products
 const renderProducts = () => {
+    const startIndex = (currentPage - 1) * productsPerPage;
+    const endIndex = startIndex + productsPerPage;
+    const productsPage = filteredProducts.slice(startIndex, endIndex);
+
     let html = "";
-    filteredProducts.forEach(product => {
+    productsPage.forEach(product => {
         html += `
         <div data-id=${product._id
-        } class="card-product" draggable="false">
+            } class="card-product" draggable="false">
             <div data-id=${product._id} class="productItem-container">
                 <div class="product-sale">
                 -
@@ -170,8 +254,8 @@ const renderProducts = () => {
                     </div>
                     <div class="item-price-after">
                         <p class="price-after">${addDot(
-                        ((100 - product.sale) / 100) * parseInt(product.price)
-                        )}</p>
+                ((100 - product.sale) / 100) * parseInt(product.price)
+            )}</p>
                     </div>
                 </div>
               
@@ -194,7 +278,7 @@ const renderProducts = () => {
     });
     productList.innerHTML = html;
     // click vào sản phẩm để xem chi tiết
-    const cardProduct = document.querySelectorAll(".productItem-container");
+    const cardProduct = document.querySelectorAll(".card-product");
     cardProduct.forEach(card => {
         card.addEventListener("click", () => {
             const id = card.getAttribute("data-id");
@@ -202,174 +286,201 @@ const renderProducts = () => {
         });
     });
 
+    renderPagination();
+}
+
+// Remove dot to the price string => number
+const removeDot = (price) => {
+    const unFormattedPrice = price.replace(".", "").replace("đ", "").trim();
+    return parseInt(unFormattedPrice);
 }
 
 
-/*** PRODUCTS PAGINATION */
+// Add to cart button
+const addToCart = (x, event) => {
+    event.stopPropagation();
+    let btn = x.parentElement.parentElement;
+    let img = btn.children[1].src;
+    let name = btn.children[2].children[0].children[0].innerHTML;
+    let price = btn.children[2].children[0].children[2].children[0].innerHTML;
+    let id = x.parentElement.parentElement.parentElement.dataset.id;
+    price = removeDot(price);
+    let amount = 1;
 
-// const productsPerPage = 3;
-// let currentPage = 1;
-// const productPagination = document.querySelector(".products-pagination");
+    // Check product name 
+    if (checkNameProduct(name) >= 0) {
+        updateAmountProduct(checkNameProduct(name));
+    } else {
+        let item = { id, img, name, price, amount };
+        listCartProducts.push(item);
+    }
 
-// const renderProducts = () => {
-//     const startIndex = (currentPage - 1) * productsPerPage;
-//     const endIndex = startIndex + productsPerPage;
-//     const productsPage = filteredProducts.slice(startIndex, endIndex);
+    updateAmountLengthCart();
 
-//     let html = "";
-//     productsPage.forEach(product => {
-//         html += `
-//             <div class="card-product" data-id="${product._id}">
-//                 <div class="card-product-img-top">
-//                     <img src="${product.img}" alt="" class="card-product-img">
-//                     <span class="card-product-name">${product.name}</span>
-//                 </div>
-//                 <div class="card-product-bottom">
-//                     <div class="card-product-price">
-//                         <span class="card-product-price-before-discount">${addDot(product.price)}</span>
-//                         <b class="card-product-price-discount">${addDot(((100 - product.sale) / 100) * product.price)}</b>
-//                     </div>
-//                     <div class="card-product-rate-detail">
-//                         <div class="rating-star">
-//                             <span class="iconify" data-icon="material-symbols:star-rounded"></span>
-//                             <span class="iconify" data-icon="material-symbols:star-rounded"></span>
-//                             <span class="iconify" data-icon="material-symbols:star-rounded"></span>
-//                             <span class="iconify" data-icon="material-symbols:star-rounded"></span>
-//                             <span class="iconify" data-icon="material-symbols:star-rounded"></span>
-//                         </div>
-//                     </div>
-//                     <div class="card-product-sold">
-//                         <span class="card-product-sold-number">${product.numOfProductsSold}</span>
-//                         <span class="card-product-sold-text">Sold</span>
-//                     </div>
-//                 </div>
-//                 <div class="card-product-discount">
-//                     <img src="../../assets/imgs/Bookmark.png" alt="sale discount" class="product-discount-bookmark">
-//                     <span class="card-product-discount-text">-${product.sale}%</span>
-//                 </div>
-//                 <div class="card-product-buy-now">
-//                     <button class="card-product-buy-now-btn">
-//                         View Detail <iconify-icon icon="material-symbols:shopping-cart-rounded"></iconify-icon>
-//                     </button>
-//                 </div>
-//             </div>
-//         `;
-//     });
-//     productList.innerHTML = html;
-//     // click vào sản phẩm để xem chi tiết
-//     const cardProduct = document.querySelectorAll(".card-product");
-//     cardProduct.forEach(card => {
-//         card.addEventListener("click", () => {
-//             const id = card.getAttribute("data-id");
-//             window.location.href = `./ProductDetail.html?id=${id}`;
-//         });
-//     });
+    // Save item to localStorage
+    localStorage.setItem("listCart", JSON.stringify(listCartProducts));
 
-//     renderPagination();
-// }
+    // Add list cart to indexedDB
+    const currentUserID = JSON.parse(localStorage.getItem("loggedInUser")).id || null;;
+    if (currentUserID) {
+        updateCartDB(currentUserID, listCartProducts)
+    }
+}
 
-// const renderPagination = () => {
-//     productPagination.innerHTML = "";
-//     const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
-//     const linksToShow = [];
-//     const maxLinks = 6;
-//     const halfMaxLinks = Math.floor(maxLinks / 2);
-//     let firstLink = 1;
-//     let lastLink = totalPages;
+// Check name of product whether it is similar to any item in list cart
+const checkNameProduct = (name) => {
+    let location = -1;
+    listCartProducts.forEach((item, index) => {
+        if (item.name == name) {
+            location = index;
+            return;
+        }
+    });
+    return location;
+};
 
+// Update amount of product item in list cart
+const updateAmountProduct = (location) => {
+    listCartProducts.forEach((item, index) => {
+        if (index == location) {
+            item.amount += 1;
+            return;
+        }
+    });
+};
 
-//     if (totalPages <= 1) {
-//         return
-//     }
+// Update cart in users store with indexedDB according to user id
+const updateCartDB = (id, cart) => {
+    const request = indexedDB.open('PetStore');
 
-//     if (totalPages > maxLinks) {
-//         firstLink = Math.max(currentPage - halfMaxLinks, 1);
-//         lastLink = Math.min(currentPage + halfMaxLinks, totalPages);
+    request.onsuccess = (event) => {
+        const db = event.target.result;
 
-//         if (lastLink - firstLink < maxLinks - 2) {
-//             if (currentPage < totalPages / 2) {
-//                 lastLink = Math.min(lastLink + (maxLinks - (lastLink - firstLink + 1)), totalPages)
-//             } else {
-//                 firstLink = Math.max(firstLink - (maxLinks - (lastLink - firstLink + 1)), 1);
-//             }
-//         }
+        // Access the object store containing user data
+        const transaction = db.transaction(['users'], 'readwrite');
+        const objectStore = transaction.objectStore('users');
 
-//         if (firstLink > 1) {
-//             linksToShow.push(1);
-//             if (firstLink > 2) {
-//                 linksToShow.push("...");
-//             }
-//         }
-//     }
+        // Get the user object with the specified ID
+        const getRequest = objectStore.get(id);
+        getRequest.onsuccess = (event) => {
+            const user = event.target.result;
 
-//     for (let i = firstLink; i <= lastLink; i++) {
-//         linksToShow.push(i);
-//     }
+            // Update the user's cart property
+            user.cart = cart;
 
-//     if (lastLink < totalPages) {
-//         if (lastLink < totalPages - 1) {
-//             linksToShow.push("...");
-//         }
-//         linksToShow.push(totalPages);
-//     }
+            // Put the updated user object back into the object store
+            const putRequest = objectStore.put(user);
+            putRequest.onsuccess = () => {
+                console.log('User cart updated successfully');
+                db.close();
+            };
+        };
+    };
 
-//     for (const link in linksToShow) {
-//         const pageLink = document.createproduct("a");
-//         pageLink.href = "#";
-//         pageLink.textContent = linksToShow[link];
-
-//         if (linksToShow[link] === currentPage) {
-//             pageLink.classList.add("active-page");
-//         }
-
-//         if (linksToShow[link] !== "...") {
-//             pageLink.addEventListener("click", (e) => {
-//                 e.preventDefault();
-//                 currentPage = linksToShow[link];
-//                 renderProducts();
-//             })
-//         } else {
-//             pageLink.addEventListener("click", (e) => {
-//                 e.preventDefault();
-//                 currentPage = parseInt(linksToShow[parseInt(link)-1]) + 1
-//                 renderProducts();
-//             })
-//         }
-
-//         productPagination.appendChild(pageLink);
-//     }
-
-//     if (currentPage > 1 && currentPage < totalPages) {
-//         document.getElementById("first-page").style.display = "flex";
-//         document.getElementById("last-page").style.display = "flex";
-//     } else if (currentPage === 1) {
-//         document.getElementById("first-page").style.display = "none";
-//         document.getElementById("last-page").style.display = "flex";
-
-//     } else {
-//         document.getElementById("last-page").style.display = "none";
-//         document.getElementById("first-page").style.display = "flex";
+}
+// Render the pagination
+const renderPagination = () => {
+    productPagination.innerHTML = "";
+    const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+    const linksToShow = [];
+    const maxLinks = 6;
+    const halfMaxLinks = Math.floor(maxLinks / 2);
+    let firstLink = 1;
+    let lastLink = totalPages;
 
 
+    if (totalPages <= 1) {
+        return
+    }
 
-//     }
+    if (totalPages > maxLinks) {
+        firstLink = Math.max(currentPage - halfMaxLinks, 1);
+        lastLink = Math.min(currentPage + halfMaxLinks, totalPages);
 
-// }
+        if (lastLink - firstLink < maxLinks - 2) {
+            if (currentPage < totalPages / 2) {
+                lastLink = Math.min(lastLink + (maxLinks - (lastLink - firstLink + 1)), totalPages)
+            } else {
+                firstLink = Math.max(firstLink - (maxLinks - (lastLink - firstLink + 1)), 1);
+            }
+        }
 
-// // Go to the very first page
-// const goToFirstPage = () => {
-//     currentPage = 1;
-//     renderProducts();
-// }
+        if (firstLink > 1) {
+            linksToShow.push(1);
+            if (firstLink > 2) {
+                linksToShow.push("...");
+            }
+        }
+    }
 
-// // Go to the last page
-// const goToLastPage = () => {
-//     currentPage = Math.ceil(filteredProducts.length / productsPerPage);
-//     renderProducts();
-// }
+    for (let i = firstLink; i <= lastLink; i++) {
+        linksToShow.push(i);
+    }
 
-// document.querySelector("#first-page").addEventListener("click", goToFirstPage)
-// document.querySelector("#last-page").addEventListener("click", goToLastPage)
+    if (lastLink < totalPages) {
+        if (lastLink < totalPages - 1) {
+            linksToShow.push("...");
+        }
+        linksToShow.push(totalPages);
+    }
+
+    for (const link in linksToShow) {
+        const pageLink = document.createElement("a");
+        pageLink.href = "#";
+        pageLink.textContent = linksToShow[link];
+
+        if (linksToShow[link] === currentPage) {
+            pageLink.classList.add("active-page");
+        }
+
+        if (linksToShow[link] !== "...") {
+            pageLink.addEventListener("click", (e) => {
+                e.preventDefault();
+                currentPage = linksToShow[link];
+                renderProducts();
+            })
+        } else {
+            pageLink.addEventListener("click", (e) => {
+                e.preventDefault();
+                currentPage = parseInt(linksToShow[parseInt(link) - 1]) + 1
+                renderProducts();
+            })
+        }
+
+        productPagination.appendChild(pageLink);
+    }
+
+    if (currentPage > 1 && currentPage < totalPages) {
+        document.getElementById("first-page").style.display = "flex";
+        document.getElementById("last-page").style.display = "flex";
+    } else if (currentPage === 1) {
+        document.getElementById("first-page").style.display = "none";
+        document.getElementById("last-page").style.display = "flex";
+
+    } else {
+        document.getElementById("last-page").style.display = "none";
+        document.getElementById("first-page").style.display = "flex";
+
+
+
+    }
+
+}
+
+// Go to the very first page
+const goToFirstPage = () => {
+    currentPage = 1;
+    renderProducts();
+}
+
+// Go to the last page
+const goToLastPage = () => {
+    currentPage = Math.ceil(filteredProducts.length / productsPerPage);
+    renderProducts();
+}
+
+document.querySelector("#first-page").addEventListener("click", goToFirstPage)
+document.querySelector("#last-page").addEventListener("click", goToLastPage)
 
 
 
