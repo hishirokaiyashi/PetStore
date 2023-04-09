@@ -240,25 +240,28 @@ function loginHandle() {
               fullName: currentFullname
             }
             setLoggedInUser(currentUser, currentCart);
-            console.log("Login successfully! 🎉")
-            window.location.href = "Home.html";
-            
+            // console.log("Login successfully! 🎉")
+            toast({
+              title: "Success!",
+              message: "Login successfully! Please wait for 2 seconds 😎",
+              type: "success",
+              duration: 3000
+            });
+            setTimeout(()=>{
+              window.location.href = "Home.html";
+            },2000)
+
           } else {
-            console.log("Wrong password, try again! 🥵")
-            // toast({
-            //   title: "Thất Bại!",
-            //   message: "Wrong password, try again! 🥵",
-            //   type: "error",
-            //   duration: 5000
-            // });
+            // console.log("Wrong password, try again! 🥵")
+
             loginPassword.classList.add("invalid");
             const errorMessage = document.createElement('div');
             errorMessage.classList.add('error-message');
-            errorMessage.textContent = 'Wrong Password Try Again!';
+            errorMessage.textContent = 'Wrong Password Try Again! 🥵';
             loginPassword.parentNode.insertBefore(errorMessage, loginPassword.nextSibling);
           }
         } else {
-          console.log("Wrong email, try again! 🥵")
+          // console.log("Wrong email, try again! 🥵")
           loginEmail.classList.add("invalid");
           const errorMessage = document.createElement('div');
           errorMessage.classList.add('error-message');
@@ -292,6 +295,12 @@ function loginHandle() {
 }
 
 loginButton.addEventListener("click", loginHandle);
+// loginButton.addEventListener("keydown", loginHandle);
+document.querySelector("#pwdLogIn").addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    loginHandle();
+  }
+})
 
 // check sign up start
 const usernameSignUp = document.getElementById("usernameSignUp");
@@ -451,7 +460,7 @@ function signUpHandle() {
           errorMessage.textContent = 'Email already exists 😣 !';
           emailSignUp.parentNode.insertBefore(errorMessage, emailSignUp.nextSibling);
           toast({
-            title: "Thất bại!",
+            title: "Fail!",
             message: "Email already exists 😣 !",
             type: "error",
             duration: 5000
@@ -470,8 +479,8 @@ function signUpHandle() {
           addRequest.onsuccess = function () {
             turnLogin()
             toast({
-              title: "Thành công!",
-              message: "SignUp sucessfully 😎 !",
+              title: "Success!",
+              message: "Sign up sucessfully 😎 !",
               type: "success",
               duration: 5000
             });
@@ -546,7 +555,11 @@ function signUpHandle() {
 }
 
 signupButton.addEventListener("click", signUpHandle);
-
+document.querySelector("#pwdSignUp").addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    signUpHandle();
+  }
+})
 // check sign up end
 
 

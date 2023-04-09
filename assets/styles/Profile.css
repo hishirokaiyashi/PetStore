@@ -72,6 +72,8 @@
 .profile-input {
   padding: 1rem;
   font-size: 1rem;
+  font-family: Montserrat, sans-serif;
+
 }
 .profile-btn-container-submit {
   display: flex;
@@ -122,7 +124,7 @@
   display: none;
 }
 #tab-2 {
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
 }
 .profile-second-form {
@@ -300,4 +302,14 @@
 }
 .btn-order-nothing:hover{
   opacity: .7;
+}
+.profile-content-second-left,
+.profile-content-second-right{
+  width: 50%;
+}
+.profile-content-second-left{
+  text-align: center;
+}
+.profile-content-second-left img {
+  border-radius: 10px;
 }

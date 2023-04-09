@@ -34,7 +34,7 @@ if (localStorage.getItem("loggedInUser")) {
   avatarElement.src = userInfo.avatar ? userInfo.avatar : "/assets/images/avatar-default.jpg";
   // password.value = userInfo.password ? userInfo.password : "";
 } else {
-  document.body.remove();
+  window.location.href="NotFound.html";
 }
 
 fileInput.addEventListener('change', () => {

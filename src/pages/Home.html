@@ -19,7 +19,8 @@
     <header class="header-container">
       <div class="header-container-detail">
         <div class="header-logo">
-          <a href="/src/pages/Home.html"> <img src="../../assets/images/PetStore_Logo.png" alt="PetStore_Logo" width="100px"> </a>
+          <a href="/src/pages/Home.html"> <img src="../../assets/images/PetStore_Logo.png" alt="PetStore_Logo"
+              width="100px"> </a>
         </div>
         <div class="header-container-items">
           <ul class="header-list">
@@ -42,8 +43,22 @@
         </div>
         <div class="header-container-buttons">
           <div class="header-container-button-list-icons">
-            <div class="header-container-button-icon">
+            <div class="header-container-button-icon" id="icon-search-btn">
               <span class="iconify header-button-icon" data-icon="material-symbols:search"></span>
+              <div class="search-container-box search-inactive">
+                <p class="search-top">Searching</p>
+                <div class="search-content">
+                  <div class="search-input-container">
+                    <input type="text" placeholder="Searching Products ....." id="search-input" class="search-input">
+                    <button class="searching-icon-container">
+                      <span class="iconify search-icon" data-icon="material-symbols:search"></span>
+                    </button>
+                  </div>
+                  <div class="search-products-container">
+                    
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="header-container-button-icon">
               <a href="/src/pages/Carts.html" class="shopping-cart-link">
@@ -443,7 +458,7 @@
 
 
   </div>
-  
+
   <script src="/src/scripts/toast.js"></script>
   <script src="/src/scripts/header.js"></script>
   <script src="/src/scripts/home.js"></script>

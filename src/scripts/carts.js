@@ -183,6 +183,7 @@ const showCart = () => {
   let cartBottom = document.querySelector('.Carts-container-second-detail-bottom');
   let cartTop = document.querySelector('.Carts-container-second-detail-top');
   if (listCart.length == 0) {
+    document.getElementById("showcart").style.overflowY="hidden";
     cart += `
       <div class="Carts-list-items-container-nothing">
         <img 
@@ -200,10 +201,11 @@ const showCart = () => {
     }
   }
   else {
-
+    document.getElementById("showcart").style.overflowY="scroll";
     listCart.forEach((item, index) => {
       // let total = parseInt(`${item.price}`) * parseInt(`${item.amount}`);
       let total = item.price * parseInt(`${item.amount}`);
+
       cart += `
       <div data-id=${item.id} class="Carts-list-items-container">
         <div class="Carts-container-middle-first">
@@ -258,18 +260,18 @@ const showCart = () => {
   }
 }
 
-// Add dot to the price number => string
-const addDot = (price) => {
-  const formattedPrice =
-    price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " đ";
-  return formattedPrice;
-}
+// // Add dot to the price number => string
+// const addDot = (price) => {
+//   const formattedPrice =
+//     price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " đ";
+//   return formattedPrice;
+// }
 
 // Remove dot to the price string => number
-const removeDot = (price) => {
-  const unFormattedPrice = price.replace(".", "").replace("đ", "").trim();
-  return parseInt(unFormattedPrice);
-}
+// const removeDot = (price) => {
+//   const unFormattedPrice = price.replace(".", "").replace("đ", "").trim();
+//   return parseInt(unFormattedPrice);
+// }
 
 // Delete item button
 const handleDelete = (item) => {
@@ -496,7 +498,7 @@ const applyCoupon = () => {
 
 
 window.onload = () => {
-  showCart();
+  // showCart();
   if (sessionStorage.getItem("coupon-data")) {
     const coupon = JSON.parse(sessionStorage.getItem("coupon-data")).idCoupon || ""
     document.getElementById("idCoupon").value = coupon

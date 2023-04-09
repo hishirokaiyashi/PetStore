@@ -123,11 +123,11 @@ function showFilteredProducts() {
 }
 
 // Add dot to price
-const addDot = (price) => {
-    const formattedPrice =
-        price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " đ";
-    return formattedPrice;
-}
+// const addDot = (price) => {
+//     const formattedPrice =
+//         price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " đ";
+//     return formattedPrice;
+// }
 
 // Lắng nghe sự kiện click vào các checkbox
 checkAll.addEventListener("change", showFilteredProducts);
@@ -290,10 +290,10 @@ const renderProducts = () => {
 }
 
 // Remove dot to the price string => number
-const removeDot = (price) => {
-    const unFormattedPrice = price.replace(".", "").replace("đ", "").trim();
-    return parseInt(unFormattedPrice);
-}
+// const removeDot = (price) => {
+//     const unFormattedPrice = price.replace(".", "").replace("đ", "").trim();
+//     return parseInt(unFormattedPrice);
+// }
 
 
 // Add to cart button

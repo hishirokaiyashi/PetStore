@@ -12,6 +12,7 @@ let listCart = JSON.parse(localStorage.getItem("listCart")) || [];
 
 if (dataProduct.length == 0) {
     document.body.remove();
+    window.location.href="NotFound.html";
 } else {
     // provinces
     let provinceId = document.getElementById("province-id");
@@ -39,22 +40,23 @@ if (dataProduct.length == 0) {
         document.getElementById("number-cart").innerText = amount;
     }
     updateAmountLengthCart()
-    function addDot(price) {
-        const formattedPrice =
-            price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " đ";
-        return formattedPrice;
-    }
+    // function addDot(price) {
+    //     const formattedPrice =
+    //         price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " đ";
+    //     return formattedPrice;
+    // }
 
-    function removeDot(price) {
-        const unFormattedPrice = price.replace(".", "").replace("đ", "").trim();
-        return parseInt(unFormattedPrice);
-    }
+    // function removeDot(price) {
+    //     const unFormattedPrice = price.replace(".", "").replace("đ", "").trim();
+    //     return parseInt(unFormattedPrice);
+    // }
 
     // data
+
     let dataCarts = ""
     dataProduct.forEach((item) => {
         dataCarts += `
-        <div class="Checkout-payment-product-middle-detail">
+        <div class="Checkout-payment-product-middle-detail" title="${item.name}">
         <img
           src="${item.img}"
           class="product-img-item"
@@ -78,7 +80,12 @@ if (dataProduct.length == 0) {
         `
     })
     document.querySelector(".Checkout-payment-product-middle").innerHTML = dataCarts;
+    if(dataProduct.length<3){
+        document.querySelector(".Checkout-payment-product-middle").style.overflowY="hidden";
+    }else{
+        document.querySelector(".Checkout-payment-product-middle").style.overflowY="scroll";
 
+    }
     let total = 0;
     let coupon;
     let shipping = 30000;
@@ -172,10 +179,10 @@ if (dataProduct.length == 0) {
 
 // Checkout orders save in db
 
-const removeDot = (price) => {
-    const unFormattedPrice = price.replace(".", "").replace("đ", "").trim();
-    return parseInt(unFormattedPrice);
-}
+// const removeDot = (price) => {
+//     const unFormattedPrice = price.replace(".", "").replace("đ", "").trim();
+//     return parseInt(unFormattedPrice);
+// }
 
 const handleOrder = (e) => {
     e.preventDefault();

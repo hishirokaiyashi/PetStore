@@ -21,7 +21,8 @@
   <header class="header-container">
     <div class="header-container-detail">
       <div class="header-logo">
-        <a href="/src/pages/Home.html"> <img src="../../assets/images/PetStore_Logo.png" alt="PetStore_Logo" width="100px"> </a>
+        <a href="/src/pages/Home.html"> <img src="../../assets/images/PetStore_Logo.png" alt="PetStore_Logo"
+            width="100px"> </a>
       </div>
       <div class="header-container-items">
         <ul class="header-list">
@@ -44,8 +45,37 @@
       </div>
       <div class="header-container-buttons">
         <div class="header-container-button-list-icons">
-          <div class="header-container-button-icon">
+          <div class="header-container-button-icon" id="icon-search-btn">
             <span class="iconify header-button-icon" data-icon="material-symbols:search"></span>
+            <div class="search-container-box search-inactive">
+              <p class="search-top">Searching</p>
+              <div class="search-content">
+                <div class="search-input-container">
+                  <input type="text" placeholder="Searching Products ....." id="search-input" class="search-input">
+                  <button class="searching-icon-container">
+                    <span class="iconify search-icon" data-icon="material-symbols:search"></span>
+                  </button>
+                </div>
+                <div class="search-products-container">
+                  <!-- <div class="search-product-item-container">
+                    <div class="search-product-item-container-left">
+                      <p class="search-product-item-name">
+                        ABCDEFGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                      </p>
+                      <div class="search-product-item-price">
+                        <p class="price-after-searching">
+                          100.000d
+                        </p>
+                        <p class="price-before-searching">
+                          100.000d
+                        </p>
+                      </div>
+                    </div>
+                    <img src="/assets/images/products-1.png" alt="products-1" class="search-product-img">
+                  </div> -->
+                </div>
+              </div>
+            </div>
           </div>
           <div class="header-container-button-icon">
             <a href="/src/pages/Carts.html" class="shopping-cart-link">
@@ -59,7 +89,10 @@
         <img class="header-button-avatar" src="" alt="">
         <div id="dropdownUser" class="dropdown-content">
           <a href="/src/pages/Profile.html" class="dropdown-btn" id="profileDropdown">Profile</a>
-          <a href="/src/pages/Home.html" class="dropdown-btn" id="logoutDropdown">Logout</a>
+          <a href="/src/pages/SignIn.html" class="dropdown-btn" id="logoutDropdown">Logout</a>
+        </div>
+        <div class="help-center">
+          <button id="btn-help-center">Help Center</button>
         </div>
       </div>
     </div>
@@ -68,7 +101,7 @@
   <div class="profile-container">
     <div class="profile-container-detail">
       <h1 class="profile-title">
-        Edit Profile User
+        Profile User
       </h1>
       <div class="profile-tabs-container">
         <div class="profile-tab-container-left">
@@ -106,7 +139,8 @@
             <input type="text" id="profile-email-input" class="profile-input">
 
             <label for="profile-phoneNumber-input" class="profile-label">Your Phone Number</label>
-            <input type="text"  placeholder="Update Your Phone Number (start with 0)..." id="profile-phoneNumber-input" class="profile-input">
+            <input type="text" placeholder="Update Your Phone Number (start with 0)..." id="profile-phoneNumber-input"
+              class="profile-input">
 
 
           </form>
@@ -116,18 +150,23 @@
         </div>
       </div>
       <div class="profile-content profile-inActive-class" id="tab-2">
-        <form action="" class="profile-second-form">
-          <label for="profile-password-input" class="profile-label">Your Password</label>
-          <input type="password" id="profile-password-input" class="profile-input">
+        <div class="profile-content-second-left">
+          <img src="/assets/images/change-password.gif" alt="change-password" class="change-password-img">
+        </div>
+        <div class="profile-content-second-right">
+          <form action="" class="profile-second-form">
+            <label for="profile-password-input" class="profile-label">Your Password</label>
+            <input type="password" id="profile-password-input" class="profile-input">
 
-          <label for="profile-password-input" class="profile-label">Your New Password</label>
-          <input type="password" id="profile-newpassword-input" class="profile-input">
+            <label for="profile-password-input" class="profile-label">Your New Password</label>
+            <input type="password" id="profile-newpassword-input" class="profile-input">
 
-          <label for="profile-password-input" class="profile-label">Confirm New Password</label>
-          <input type="password" id="profile-confirm-newpassword-input" class="profile-input">
-        </form>
-        <div class="profile-btn-change-password">
-          <button class="profile-btn-submit" type="submit" onclick="handleChangePassword()">Change Password</button>
+            <label for="profile-password-input" class="profile-label">Confirm New Password</label>
+            <input type="password" id="profile-confirm-newpassword-input" class="profile-input">
+          </form>
+          <div class="profile-btn-change-password">
+            <button class="profile-btn-submit" type="submit" onclick="handleChangePassword()">Change Password</button>
+          </div>
         </div>
       </div>
       <div class="profile-content profile-inActive-class" id="tab-3">

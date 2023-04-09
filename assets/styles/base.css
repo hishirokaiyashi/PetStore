@@ -56,6 +56,11 @@ body {
   --text-h7: 1.28rem;
 }
 
+a{
+  text-decoration: none;
+  color: var(--primary-text-black);
+}
+
 .text-danger{
   color: red;
   font-size: small;
