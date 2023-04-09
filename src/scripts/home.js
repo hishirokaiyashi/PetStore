@@ -150,11 +150,13 @@ fetch("/src/data/products.json")
       const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
 
       // const maxScrollLeft = 6300 - 1260
-      console.log(carousel.scrollWidth)
-      console.log(carousel.clientWidth)
-      console.log(firstImg.clientWidth)
+      // console.log(carousel.scrollWidth)
+      // console.log(carousel.clientWidth)
+      // console.log(firstImg.clientWidth)
       // const firstImgWidth = firstImg.clientWidth;
-      const firstImgWidth = 340;
+      const firstImgWidth = firstImg.getBoundingClientRect().width;
+
+      // const firstImgWidth = 340;
       // const showHideIcons = () => {
       //   // showing and hiding prev/next icon according to carousel scroll left value
       //   let scrollWidth = carousel.scrollWidth - carousel.clientWidth; // getting max scrollable width
