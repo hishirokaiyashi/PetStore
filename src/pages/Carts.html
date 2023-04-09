@@ -150,6 +150,79 @@
                   <span class="btn-checkout">
                     Buy Now
                   </span>
+                  <span class="badge" id="number-cart">0</span>
+                </a>
+              </div>
+              <div class="help-center">
+                <button id="btn-help-center">
+                  <span 
+                      id="icon-help-center"
+                      class="iconify header-button-icon"
+                      data-icon="material-symbols:contact-support"
+                    >
+                    </span>
+                </button>
+              </div>
+            </div>
+            <button class="header-button-login" id="header-button-login">Login</button>
+            <img class="header-button-avatar" src="" alt="">
+            <div id="dropdownUser" class="dropdown-content">
+              <a href="/src/pages/Profile.html" class="dropdown-btn" id="profileDropdown">Profile</a>
+              <a href="" class="dropdown-btn" id="logoutDropdown">Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="Carts-container">
+        <div class="Carts-container-first">
+          <div class="Carts-container-first-detail">
+            <div class="Carts-container-first-content">
+              <span
+                class="iconify cart-button-icon"
+                data-icon="material-symbols:shopping-cart-outline"
+              ></span>
+              <span class="Cart-Title">Cart</span>
+            </div>
+          </div>
+        </div>
+        <div class="Carts-container-second">
+          <div class="Carts-container-second-detail">
+            <div class="Carts-container-second-detail-top">
+              <div class="Carts-container-top-first">
+                <input
+                  type="checkbox"
+                  id="Carts-checkbox-all"
+                  class="shopping-cart-checkbox"
+                  onchange="handleCheckBoxAll()"
+                />
+                <span class="Cart-product-title-top">Product</span>
+              </div>
+              <div class="Carts-container-top-second">
+                <span class="Cart-product-price-top">Price</span>
+              </div>
+              <div class="Carts-container-top-third">
+                <span class="Cart-product-number-top"
+                  >The number of product</span
+                >
+              </div>
+              <div class="Carts-container-top-fourth">
+                <span class="Cart-product-total-top">Total</span>
+                <span class="Cart-product-delete-top">Delete</span>
+              </div>
+            </div>
+            <div id="showcart" class="Carts-container-second-detail-middle">
+              
+            </div>
+            <div class="Carts-container-second-detail-bottom">
+              <div class="Carts-container-second-detail-bottom-left">
+                <input
+                  type="text"
+                  id="idCoupon"
+                  class="shopping-cart-coupon"
+                  placeholder="Coupon Code"
+                />
+                <button onclick="applyCoupon()" class="btn-coupon">
+                  <label for="Carts-coupon">Apply Coupon</label>
                 </button>
               </div>
             </div>

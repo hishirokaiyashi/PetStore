@@ -430,6 +430,17 @@
   background-color: #ddd;
 }
 
-.show {
-  display: block;
+.show {display: block;}
+
+#btn-help-center{
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 3rem;
+  margin-left: 1rem;
+}
+#icon-help-center{
+  font-size: 2rem;
+  color: var(--other-text-pink);
+  cursor: pointer;
 }

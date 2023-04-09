@@ -27,22 +27,22 @@ body{
 .product-detail-description-container{
     background-color: #fff;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 10px;
     padding: 15px;
 
 }
 
 .product-detail-img{
-    width: 50%;
+    width: 40%;
 }
 
-.product-img{
+.product-detail-img img{
     width: 75%;
 }
 
 .product-detail-description{
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -51,7 +51,7 @@ body{
 
 .product-name{
     color: var(--primary-background-pink);
-    font-weight: 600;
+    font-weight: bold;
     margin-bottom: 10px;
     font-size: 1.75rem;
 }
@@ -100,7 +100,7 @@ body{
 }
 
 .product-price{
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: row;
     font-size: 1.25rem;
@@ -141,7 +141,7 @@ body{
 }
 
 .product-order-amount{
-    width: 75%;
+    width: 55%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -203,21 +203,22 @@ body{
 }
 
 .product-order-button{
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .product-order-button-add-to-cart{
     background-color: var(--secondary-background-grey);
     border: 1px solid var(--primary-background-pink);
     color: var(--primary-background-pink);
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 600;
-    padding: 10px 20px;
+    padding: 10px 5px;
     border-radius: 5px;
-    width: 45%;
+    width: 30%;
+    cursor: pointer;
 }
 
 .product-order-button-add-to-cart:hover{
@@ -229,11 +230,12 @@ body{
     background-color: var(--primary-background-pink);
     border: 1 px solid var(--primary-background-pink);
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 600;
-    padding: 10px 20px;
+    padding: 10px 5px;
     border-radius: 5px;
-    width: 45%;
+    width: 30%;
+    cursor: pointer;
 }
 
 .product-order-button-buy-now:hover{

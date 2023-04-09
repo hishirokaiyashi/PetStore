@@ -7,22 +7,202 @@
     <title>Help Center</title>
     <link rel="stylesheet" href="../../assets/styles/HelpCenter.css">
     <link rel="stylesheet" href="../../assets/styles/base.css">
+    <link rel="stylesheet" href="../../assets/styles/header.css">
+    <link rel="stylesheet" href="../../assets/styles/footer.css">
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
 </head>
 <body>
-    <div class="content-heading">
-        <h1 class="title">Help Center</h1>
-        <p>Here you can find answers to your questions.</p>
-    </div>
-    <!-- post question -->
-    <form class="post-question">
-        <img src="" alt="" class="avatar">
-        <input type="text" id="question" name="question" placeholder="Enter your question">
-        <input id="btn-submit" type="submit" value="Submit">
-    </form>
-    <!-- question -->
-    <div id="question-container">
-
-    </div>
+    <header class="header-container">
+        <div class="header-container-detail">
+          <div class="header-logo">
+            <a href="/src/pages/Home.html"> <img src="../../assets/images/PetStore_Logo.png" alt="" width="100px"> </a>
+          </div>
+          <div class="header-container-items">
+            <ul class="header-list">
+              <li class="header-list-detail header-list-detail-tab-active">
+                <a href="/src/pages/Home.html">Home</a>
+              </li>
+              <li class="header-list-detail">
+                <a href="/src/pages/Products.html">Product</a>
+              </li>
+              <li class="header-list-detail">
+                <a href="/src/pages/AboutUs.html">About us</a>
+              </li>
+              <li class="header-list-detail">
+                <button class="header-button-login-mobile">Login</button>
+              </li>
+            </ul>
+          </div>
+          <div class="header-container-menu-icon">
+            <span
+              class="iconify header-button-icon-first"
+              data-icon="material-symbols:menu"
+            ></span>
+          </div>
+          <div class="header-container-buttons">
+            <div class="header-container-button-list-icons">
+              <div class="header-container-button-icon">
+                <span
+                  class="iconify header-button-icon"
+                  data-icon="material-symbols:search"
+                ></span>
+              </div>
+              <div class="header-container-button-icon">
+                <a href="/src/pages/Carts.html" class="shopping-cart-link">
+                  <span
+                    class="iconify header-button-icon"
+                    data-icon="material-symbols:shopping-cart-outline"
+                  >
+                  </span>
+                  <span class="badge" id="number-cart">0</span>
+                </a>
+              </div>
+              <div class="help-center">
+                <button id="btn-help-center">
+                  <span 
+                      id="icon-help-center"
+                      class="iconify header-button-icon"
+                      data-icon="material-symbols:contact-support"
+                    >
+                    </span>
+                </button>
+              </div>
+            </div>
+            <button class="header-button-login" id="header-button-login">Login</button>
+            <img class="header-button-avatar" src="" alt="">
+            <div id="dropdownUser" class="dropdown-content">
+              <a href="/src/pages/Profile.html" class="dropdown-btn" id="profileDropdown">Profile</a>
+              <a href="/src/pages/SignIn.html" class="dropdown-btn" id="logoutDropdown">Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="content-biggest">
+        <div class="content-heading">
+            <h1 class="title">Help Center</h1>
+            <p>Here you can find answers to your questions.</p>
+        </div>
+        <!-- post question -->
+        <form class="post-question">
+            <img src="../../assets/images/avatar-default.jpg" alt="" class="avatar" id="userAvatar">
+            <input type="text" id="question" name="question" placeholder="Enter your question">
+            <input id="btn-submit" type="submit" value="Submit">
+        </form>
+        <!-- question -->
+        <div id="question-container">
+    
+        </div>
+      </div>
+    
+    <!-- <footer class="footer-container">
+        <div class="footer-container-detail">
+          <div class="footer-container-logo">
+            <a href="/"> <img src="../../assets/images/PetStore_Logo.png" alt="PetStore" width="200px"> </a>
+          </div>
+          <div class="footer-container-second">
+            <span class="footer-container-second-text">
+              Our mission is to keep pets healthy
+            </span>
+            <div class="footer-line-big"></div>
+            <div class="footer-container-second-icon">
+              <span
+                class="iconify footer-container-second-item-icon"
+                data-icon="ic:outline-facebook"
+              ></span>
+              <span
+                class="iconify footer-container-second-item-icon"
+                data-icon="mdi:instagram"
+              ></span>
+              <span
+                class="iconify footer-container-second-item-icon"
+                data-icon="mdi:twitter"
+              ></span>
+              <span
+                class="iconify footer-container-second-item-icon"
+                data-icon="ph:youtube-logo-fill"
+              ></span>
+            </div>
+          </div>
+          <div class="footer-container-third">
+            <span class="footer-container-third-text"> Links </span>
+            <div class="footer-line-big"></div>
+            <ul class="footer-container-third-list-links">
+              <li class="footer-container-third-link">
+                <a href="/src/pages/Home.html">HOME</a>
+              </li>
+              <div class="footer-line-small"></div>
+              <li class="footer-container-third-link">
+                <a href="/src/pages/Products.html">PRODUCT</a>
+              </li>
+              <div class="footer-line-small"></div>
+              <li class="footer-container-third-link">
+                <a href="/src/pages/AboutUs.html">ABOUT US</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-container-fourth">
+            <span class="footer-container-fourth-text"> Work Time </span>
+            <div class="footer-line-big"></div>
+            <ul class="footer-container-fourth-list-time">
+              <li class="footer-container-fourth-item">
+                <span class="footer-container-fourth-time-day">
+                  Monday -> Friday
+                </span>
+                <span class="footer-container-fourth-time">
+                  7h30 -> 21h00
+                </span>
+              </li>
+              <div class="footer-line-small"></div>
+              <li class="footer-container-fourth-item">
+                <span class="footer-container-fourth-time-day"> Saturday </span>
+                <span class="footer-container-fourth-time">
+                  7h30 -> 20h00
+                </span>
+              </li>
+              <div class="footer-line-small"></div>
+              <li class="footer-container-fourth-item">
+                <span class="footer-container-fourth-time-day"> Sunday </span>
+                <span class="footer-container-fourth-time"> Close </span>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-container-fifth">
+            <span class="footer-container-fifth-text"> Contact </span>
+            <div class="footer-line-big"></div>
+            <div class="footer-container-fifth-list-contact">
+              <div class="footer-container-fifth-item">
+                <span
+                  class="iconify footer-container-fifth-item-icon"
+                  data-icon="mdi:map-marker"
+                ></span>
+                <span class="footer-container-fifth-item-text">
+                  Address: Quarter 6, Linh Trung Ward, City. Thu Duc, HCM
+                </span>
+              </div>
+              <div class="footer-line-small"></div>
+              <div class="footer-container-fifth-item">
+                <span
+                  class="iconify footer-container-fifth-item-icon"
+                  data-icon="ic:baseline-phone-callback"
+                ></span>
+                <span class="footer-container-fifth-item-text">
+                  PhoneNumber: 123456
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-container-copyright">
+          <div class="footer-copyright-main">
+            <span>Copyright belongs to Pet Store</span>
+          </div>
+          <div class="footer-copyright-sub">
+            <p>© 2023 All rights reserved</p>
+          </div>
+        </div>
+      </footer> -->
+    <script src="/src/scripts/header.js"></script>
 </body>
 <script src="../scripts/helpcenter.js"></script>
 </html>
