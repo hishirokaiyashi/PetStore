@@ -9,10 +9,10 @@ let dataProduct = JSON.parse(sessionStorage.getItem("checkout-product")) || [];
 let dataCounpon = JSON.parse(sessionStorage.getItem("coupon-data")) || null;
 let listCart = JSON.parse(localStorage.getItem("listCart")) || [];
 
-
-if (dataProduct.length == 0) {
+// Check if there is a user logged in or there are any product item in checkout
+if (dataProduct.length == 0 ) {
     document.body.remove();
-    window.location.href="NotFound.html";
+    window.location.href = "NotFound.html";
 } else {
     // provinces
     let provinceId = document.getElementById("province-id");
@@ -29,6 +29,7 @@ if (dataProduct.length == 0) {
         provinceId.innerHTML = provinceItem;
 
     }
+
     fetchDataProvinces();
 
     // Cart    
@@ -39,7 +40,9 @@ if (dataProduct.length == 0) {
         })
         document.getElementById("number-cart").innerText = amount;
     }
+
     updateAmountLengthCart()
+
     // function addDot(price) {
     //     const formattedPrice =
     //         price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " đ";
@@ -52,7 +55,6 @@ if (dataProduct.length == 0) {
     // }
 
     // data
-
     let dataCarts = ""
     dataProduct.forEach((item) => {
         dataCarts += `
@@ -79,11 +81,12 @@ if (dataProduct.length == 0) {
       </div>
         `
     })
+
     document.querySelector(".Checkout-payment-product-middle").innerHTML = dataCarts;
-    if(dataProduct.length<3){
-        document.querySelector(".Checkout-payment-product-middle").style.overflowY="hidden";
-    }else{
-        document.querySelector(".Checkout-payment-product-middle").style.overflowY="scroll";
+    if (dataProduct.length < 3) {
+        document.querySelector(".Checkout-payment-product-middle").style.overflowY = "hidden";
+    } else {
+        document.querySelector(".Checkout-payment-product-middle").style.overflowY = "scroll";
 
     }
     let total = 0;
@@ -104,10 +107,10 @@ if (dataProduct.length == 0) {
     } else {
         coupon = 0;
     }
-    discountFee.innerHTML = addDot(coupon);
-    totalPricefeeAll.innerHTML = addDot(totalCheckout + shipping - coupon);
+    discountFee.innerHTML = addDot(coupon > 1 ? coupon: totalCheckout * coupon); // Chả đậu
+    totalPricefeeAll.innerHTML = addDot(coupon > 1 ? totalCheckout + shipping - coupon : totalCheckout - totalCheckout * coupon + shipping);
 
-    // form
+    // Create form - Chả đậu
     let form = {
         fullName: "",
         province: "",
@@ -184,6 +187,7 @@ if (dataProduct.length == 0) {
 //     return parseInt(unFormattedPrice);
 // }
 
+// Handle order || Thèm chả đậu
 const handleOrder = (e) => {
     e.preventDefault();
 
@@ -212,7 +216,7 @@ const handleOrder = (e) => {
         const objectStore = transaction.objectStore(storeName);
 
         const order = {
-            customerId: loggedInUser.id,
+            customerId: loggedInUser ? loggedInUser.id : generateId(6)  ,
             customerName: document.getElementById("fullName").value.trim(),
             customerAddress: document.getElementById("Address").value,
             customerProvince: document.getElementById("province-id").value,
@@ -236,23 +240,48 @@ const handleOrder = (e) => {
 
             listCart = result;
             localStorage.setItem("listCart", JSON.stringify(result))
-            const currentUserID = JSON.parse(localStorage.getItem("loggedInUser")).id || null;
-            console.log(currentUserID)
-            if (currentUserID) {
-                updateCartDB(currentUserID, result)
+
+            if (localStorage.getItem("loggedInUser")) {
+
+                const currentUserID = JSON.parse(localStorage.getItem("loggedInUser")).id || null;
+                
+                if (currentUserID) {
+                    updateCartDB(currentUserID, result)
+                }
             }
         }
         addRequest.onerror = (event) =>
             console.log(`Error adding order to IndexedDB: ${event.target.error}`);
 
-        transaction.oncomplete = () => db.close();
+        transaction.oncomplete = () => {
+            toast({
+                title: "Success!",
+                message: "Order successfully! Please wait for 2 seconds 😎",
+                type: "success",
+                duration: 3000
+            });
+            setTimeout(()=>{
+                window.location.href="Home.html"
+            },2000)
+            db.close()
+        };
     };
 };
 
+// Generate an Id for guest users
+function generateId(length) {
+  let result = '';
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const charactersLength = characters.length;
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
 
+// Write order data into orders store in indexedDB
 const updateCartDB = (id, cart) => {
     const request = indexedDB.open('PetStore');
-    console.log(id, cart)
 
     request.onsuccess = (event) => {
         const db = event.target.result;
@@ -273,12 +302,15 @@ const updateCartDB = (id, cart) => {
             const putRequest = objectStore.put(user);
             putRequest.onsuccess = () => {
                 console.log('User cart updated successfully');
+
+                // setTimeout(()=>{
+                //     window.location.href="Home.html"
+                // },1000)
                 db.close();
             };
         };
     };
 
 }
-
 
 buttonCheckout.addEventListener("click", handleOrder);

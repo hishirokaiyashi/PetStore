@@ -34,7 +34,6 @@ fetch("/src/data/products.json")
     .then(response => response.json())
     .then(data => {
         searchProducts = data;
-        console.log(searchProducts)
     });
 
 searchInput.addEventListener('input', (e) => {

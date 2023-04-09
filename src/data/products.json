@@ -43,7 +43,7 @@
     "sale": 10,
     "rate": 0,
     "numOfProductsSold": 3,
-    "numOfProductsInStock": 200,
+    "numOfProductsInStock": 10,
     "img": "https://firebasestorage.googleapis.com/v0/b/petcare-ac6c0.appspot.com/o/images%2F1671551231865-e40390b8ab2f23e8d2c511e3d3862bf4.jpg?alt=media&token=3e7a0835-349d-4f5c-9a44-022499ac4f2d",
     "category":"toys",
     "createdAt": {

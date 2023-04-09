@@ -183,7 +183,10 @@ const showCart = () => {
   let cartBottom = document.querySelector('.Carts-container-second-detail-bottom');
   let cartTop = document.querySelector('.Carts-container-second-detail-top');
   if (listCart.length == 0) {
-    document.getElementById("showcart").style.overflowY="hidden";
+    if (document.getElementById("showcart")) {
+
+      document.getElementById("showcart").style.overflowY = "hidden";
+    }
     cart += `
       <div class="Carts-list-items-container-nothing">
         <img 
@@ -195,13 +198,16 @@ const showCart = () => {
         <button onclick="window.location.href = 'Products.html'">Visit Shop</button>
       </div>
     `
-    if(cartBottom && cartTop){
+    if (cartBottom && cartTop) {
       cartBottom.remove();
       cartTop.remove();
     }
   }
   else {
-    document.getElementById("showcart").style.overflowY="scroll";
+    if (document.getElementById("showcart")) {
+
+      document.getElementById("showcart").style.overflowY = "scroll";
+    }
     listCart.forEach((item, index) => {
       // let total = parseInt(`${item.price}`) * parseInt(`${item.amount}`);
       let total = item.price * parseInt(`${item.amount}`);
@@ -371,10 +377,15 @@ const handleBuyNow = async () => {
   if (checkout.length > 0) {
     const response = await fetch("/src/data/products.json")
     let dataProduct = await response.json()
+
+    let goAhead = true;
+    let neverEnough = [];
+
     checkout.forEach((item) => {
       let amountData = dataProduct.find((product) => product._id == item.id).numOfProductsInStock;
       if (item.amount > amountData) {
-        alert(`${item.name} chỉ còn ${amountData} trong kho`)
+        neverEnough.push(`Only ${amountData} of ${item.name} item(s) in stock \n`);
+        goAhead = false;
       } else {
         sessionStorage.setItem("checkout-product", JSON.stringify(checkout))
         if (sale) {
@@ -386,12 +397,15 @@ const handleBuyNow = async () => {
         } else {
           sessionStorage.removeItem("coupon-data")
         }
-
-        window.location = "/src/pages/Checkout.html"
       }
     })
+    if (goAhead) {
+      window.location = "/src/pages/Checkout.html"
+    } else {
+      alert(neverEnough.map((err) => err))
+    }
   } else {
-    alert("please select product")
+    alert("Please select a product at least!")
   }
 }
 
@@ -452,8 +466,8 @@ if (window.location.pathname.includes("Carts.html")) {
                     </div>
       `
       })
-      // Link to product detail
 
+      // Link to product detail
       document.querySelector('.Carts-container-another-list-products').innerHTML = suggestions;
       let idOtherProducts = document.querySelectorAll('.cart-container-another-product');
       idOtherProducts.forEach((product) => {
@@ -466,6 +480,7 @@ if (window.location.pathname.includes("Carts.html")) {
 }
 
 /***  COUPON SECTION ***/
+
 // Apply coupon button
 const applyCoupon = () => {
   let idCoupon = document.getElementById("idCoupon").value;
@@ -498,10 +513,13 @@ const applyCoupon = () => {
 
 
 window.onload = () => {
-  // showCart();
-  if (sessionStorage.getItem("coupon-data")) {
-    const coupon = JSON.parse(sessionStorage.getItem("coupon-data")).idCoupon || ""
-    document.getElementById("idCoupon").value = coupon
-    applyCoupon()
+  if (window.location.pathname.includes("Carts.html")) {
+    showCart();
+    if (sessionStorage.getItem("coupon-data")) {
+      const coupon = JSON.parse(sessionStorage.getItem("coupon-data")).idCoupon || ""
+      document.getElementById("idCoupon").value = coupon
+      applyCoupon()
+    }
   }
+
 };

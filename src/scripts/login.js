@@ -1,4 +1,5 @@
 let listCart = [];
+
 // Lấy thông tin người dùng đăng nhập hiện tại (nếu có)
 function getLoggedInUser() {
   const user = localStorage.getItem("loggedInUser");
@@ -21,7 +22,7 @@ if (signedInUser) {
 // dbName in indexedDB eg. .env 
 const dbName = "PetStore";
 
-//slide
+// slide
 const loginText = document.querySelector(".title-text .login");
 const loginForm = document.querySelector("form.login");
 const loginBtn = document.querySelector("label.login");
@@ -249,7 +250,7 @@ function loginHandle() {
             });
             setTimeout(()=>{
               window.location.href = "Home.html";
-            },2000)
+            }, 2000)
 
           } else {
             // console.log("Wrong password, try again! 🥵")
@@ -295,7 +296,7 @@ function loginHandle() {
 }
 
 loginButton.addEventListener("click", loginHandle);
-// loginButton.addEventListener("keydown", loginHandle);
+
 document.querySelector("#pwdLogIn").addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     loginHandle();
@@ -482,7 +483,7 @@ function signUpHandle() {
               title: "Success!",
               message: "Sign up sucessfully 😎 !",
               type: "success",
-              duration: 5000
+              duration: 3000
             });
             console.log("User added successfully");
           };
