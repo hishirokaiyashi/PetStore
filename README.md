@@ -10,4 +10,32 @@
 */
 /* CHECK-LIST
   Set-up Project 22/03/2023
+  This is an pet shop website designed for users to order and buy products online. 
+  Pages:
+  - Home
+  - Product
+  - Product Details
+  - About us
+  - Cart
+  - Checkout
+  - Login - SignUp
+  - Profile
+  - Help center (private page)
+  Users can:
+  - Create an account, login, edit profile.
+  - View list products and product details.
+  - Add products to their cart, edit cart. 
+  - Complete transactions securely.
+  Features:
+  - User authentication.
+  - Product search and filtering.
+  - Shopping cart functionality.
+  - Customer support.
+  Technologies Used:
+  - HTML, CSS 
+  - Javascript
+  Database:
+  - JSON file.
+  - LocalStorage.
+  - IndexDB.
 */
