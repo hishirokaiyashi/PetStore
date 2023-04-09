@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <link rel="stylesheet" href="/assets/styles/base.css" />
+    <link rel="stylesheet" href="/assets/styles/Header.css" />
+    <link rel="stylesheet" href="/assets/styles/NotFound.css" />
+    <link rel="stylesheet" href="/assets/styles/Footer.css" />
+    <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header-container">
+        <div class="header-container-detail">
+            <div class="header-logo">
+                <a href="/src/pages/Home.html"> <img src="../../assets/images/PetStore_Logo.png" alt="PetStore_Logo"
+                        width="100px"> </a>
+            </div>
+            <div class="header-container-items">
+                <ul class="header-list">
+                    <li class="header-list-detail header-list-detail-tab-active">
+                        <a href="/src/pages/Home.html">Home</a>
+                    </li>
+                    <li class="header-list-detail">
+                        <a href="/src/pages/Products.html">Product</a>
+                    </li>
+                    <li class="header-list-detail">
+                        <a href="/src/pages/AboutUs.html">About us</a>
+                    </li>
+                    <li class="header-list-detail">
+                        <button class="header-button-login-mobile">Login</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="header-container-menu-icon">
+                <span class="iconify header-button-icon-first" data-icon="material-symbols:menu"></span>
+            </div>
+            <div class="header-container-buttons">
+                <div class="header-container-button-list-icons">
+                    <div class="header-container-button-icon" id="icon-search-btn">
+                        <span class="iconify header-button-icon" data-icon="material-symbols:search"></span>
+                        <div class="search-container-box search-inactive">
+                            <p class="search-top">Searching</p>
+                            <div class="search-content">
+                                <div class="search-input-container">
+                                    <input type="text" placeholder="Searching Products ....." id="search-input"
+                                        class="search-input">
+                                    <button class="searching-icon-container">
+                                        <span class="iconify search-icon" data-icon="material-symbols:search"></span>
+                                    </button>
+                                </div>
+                                <div class="search-products-container">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-container-button-icon">
+                        <a href="/src/pages/Carts.html" class="shopping-cart-link">
+                            <span class="iconify header-button-icon" data-icon="material-symbols:shopping-cart-outline">
+                            </span>
+                            <span class="badge" id="number-cart">0</span>
+                        </a>
+                    </div>
+                </div>
+                <button class="header-button-login" id="header-button-login">Login</button>
+                <img class="header-button-avatar" src="" alt="">
+                <div id="dropdownUser" class="dropdown-content">
+                    <a href="/src/pages/Profile.html" class="dropdown-btn" id="profileDropdown">Profile</a>
+                    <a href="/src/pages/SignIn.html" class="dropdown-btn" id="logoutDropdown">Logout</a>
+                </div>
+                <div class="help-center">
+                    <button id="btn-help-center">Help Center</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="NotFound-container">
+        <div class="error-container">
+            <div class="first-section">
+                <div class="error-left">
+                    <h2 class="error-title">🫢 Oops ! Page not found.</h2>
+                    <p class="error-content"> Sorry, the page you were looking for doesn't exist or
+                        has been moved. We're working on it. </p>
+                </div>
+                <div class="error-right"><img src="/assets/images/404-notfound.png"
+                        alt="404-image" class="404-img"></div>
+            </div>
+            <div class="second-section">
+                <div class="back-tab-container">
+                    <p class="error-notif"> Oops, why you are here? Looks like you took a wrong turn.
+                        Let's get you back on track. </p>
+                    <div class="back-link"><a href="/src/pages/Home.html" class="back-route router-link-active"> ← Go back to home page
+                        </a></div>
+                </div>
+                <div class="back-tab-container">
+                    <p class="error-notif"> Oops, why you are here? Looks like you took a wrong turn.
+                        Let's get you back on track. </p>
+                    <div class="back-link"><a href="/src/pages/Products.html" class="back-route router-link-active"> ← Go back to shop </a>
+                    </div>
+                </div>
+                <div class="back-tab-container">
+                    <p class="error-notif"> Oops, why you are here? Looks like you took a wrong turn.
+                        Let's get you back on track. </p>
+                    <div class="back-link"><a href="/src/pages/AboutUs.html" class="back-route router-link-active"> ← Go back to about us </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer-container">
+        <div class="footer-container-detail">
+            <div class="footer-container-logo">
+                <a href="/"> <img src="../../assets/images/PetStore_Logo.png" alt="PetStore" width="200px"> </a>
+            </div>
+            <div class="footer-container-second">
+                <span class="footer-container-second-text">
+                    Our mission is to keep pets healthy
+                </span>
+                <div class="footer-line-big"></div>
+                <div class="footer-container-second-icon">
+                    <span class="iconify footer-container-second-item-icon" data-icon="ic:outline-facebook"></span>
+                    <span class="iconify footer-container-second-item-icon" data-icon="mdi:instagram"></span>
+                    <span class="iconify footer-container-second-item-icon" data-icon="mdi:twitter"></span>
+                    <span class="iconify footer-container-second-item-icon" data-icon="ph:youtube-logo-fill"></span>
+                </div>
+            </div>
+            <div class="footer-container-third">
+                <span class="footer-container-third-text"> Links </span>
+                <div class="footer-line-big"></div>
+                <ul class="footer-container-third-list-links">
+                    <li class="footer-container-third-link">
+                        <a href="/src/pages/Home.html">HOME</a>
+                    </li>
+                    <div class="footer-line-small"></div>
+                    <li class="footer-container-third-link">
+                        <a href="/src/pages/Products.html">PRODUCT</a>
+                    </li>
+                    <div class="footer-line-small"></div>
+                    <li class="footer-container-third-link">
+                        <a href="/src/pages/AboutUs.html">ABOUT US</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-container-fourth">
+                <span class="footer-container-fourth-text"> Work Time </span>
+                <div class="footer-line-big"></div>
+                <ul class="footer-container-fourth-list-time">
+                    <li class="footer-container-fourth-item">
+                        <span class="footer-container-fourth-time-day">
+                            Monday -> Friday
+                        </span>
+                        <span class="footer-container-fourth-time">
+                            7h30 -> 21h00
+                        </span>
+                    </li>
+                    <div class="footer-line-small"></div>
+                    <li class="footer-container-fourth-item">
+                        <span class="footer-container-fourth-time-day"> Saturday </span>
+                        <span class="footer-container-fourth-time">
+                            7h30 -> 20h00
+                        </span>
+                    </li>
+                    <div class="footer-line-small"></div>
+                    <li class="footer-container-fourth-item">
+                        <span class="footer-container-fourth-time-day"> Sunday </span>
+                        <span class="footer-container-fourth-time"> Close </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-container-fifth">
+                <span class="footer-container-fifth-text"> Contact </span>
+                <div class="footer-line-big"></div>
+                <div class="footer-container-fifth-list-contact">
+                    <div class="footer-container-fifth-item">
+                        <span class="iconify footer-container-fifth-item-icon" data-icon="mdi:map-marker"></span>
+                        <span class="footer-container-fifth-item-text">
+                            Address: Quarter 6, Linh Trung Ward, City. Thu Duc, HCM
+                        </span>
+                    </div>
+                    <div class="footer-line-small"></div>
+                    <div class="footer-container-fifth-item">
+                        <span class="iconify footer-container-fifth-item-icon"
+                            data-icon="ic:baseline-phone-callback"></span>
+                        <span class="footer-container-fifth-item-text">
+                            PhoneNumber: 123456
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-container-copyright">
+            <div class="footer-copyright-main">
+                <span>Copyright belongs to Pet Store</span>
+            </div>
+            <div class="footer-copyright-sub">
+                <p>© 2023 All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+    <!-- <script src="/src/scripts/home.js"></script> -->
+    <script src="../scripts/header.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+.NotFound-container {
+    margin-top: 108px;
+    width: 100%;
+}
+.error-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.error-left {
+    text-align: center;
+}
+.error-title {
+    margin-bottom: 0.5rem;
+}
+.error-right {
+    display: flex;
+    justify-content: center;
+}   
+.second-section {
+    margin: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 15px;
+}
+.back-tab-container {
+    border: 2px solid var(--secondary-background-grey);
+    padding: 15px;
+    font-weight: 500;
+    font-size: 15px;
+    text-align: justify;
+}
+.error-notif {
+    margin-bottom: 1rem;
+}
+.back-link a{
+    color: var(--tertiary-background-blue);
+    transition: .3s ease;
+}
+.back-link a:hover{
+    opacity: .7;
+}

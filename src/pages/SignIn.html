@@ -6,21 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pet Store - Sign In</title>
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
   <link rel="stylesheet" href="/assets/styles/base.css">
   <link rel="stylesheet" href="/assets/styles/SignIn.css">
   <link rel="stylesheet" href="/assets/styles/Header.css" />
   <link rel="stylesheet" href="/assets/styles/Footer.css" />
+  <link rel="stylesheet" href="/assets/styles/Toast.css" />
+
   <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
 </head>
-
 <body>
   <!-- header -->
+  <div id="toast"></div>
   <header class="header-container">
     <div class="header-container-detail">
       <div class="header-logo">
-        <a href="/src/pages/Home.html"> <img src="../../assets/images/PetStore_Logo.png" alt="" width="100px"> </a>
+        <a href="/src/pages/Home.html"> <img src="../../assets/images/PetStore_Logo.png" alt="PetStore_Logo"
+            width="100px"> </a>
       </div>
       <div class="header-container-items">
         <ul class="header-list">
@@ -34,7 +38,7 @@
             <a href="/src/pages/AboutUs.html">About us</a>
           </li>
           <li class="header-list-detail">
-            <button class="header-button-login-mobile">Log in</button>
+            <button class="header-button-login-mobile">Login</button>
           </li>
         </ul>
       </div>
@@ -43,8 +47,37 @@
       </div>
       <div class="header-container-buttons">
         <div class="header-container-button-list-icons">
-          <div class="header-container-button-icon">
+          <div class="header-container-button-icon" id="icon-search-btn">
             <span class="iconify header-button-icon" data-icon="material-symbols:search"></span>
+            <div class="search-container-box search-inactive">
+              <p class="search-top">Searching</p>
+              <div class="search-content">
+                <div class="search-input-container">
+                  <input type="text" placeholder="Searching Products ....." id="search-input" class="search-input">
+                  <button class="searching-icon-container">
+                    <span class="iconify search-icon" data-icon="material-symbols:search"></span>
+                  </button>
+                </div>
+                <div class="search-products-container">
+                  <!-- <div class="search-product-item-container">
+                    <div class="search-product-item-container-left">
+                      <p class="search-product-item-name">
+                        ABCDEFGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                      </p>
+                      <div class="search-product-item-price">
+                        <p class="price-after-searching">
+                          100.000d
+                        </p>
+                        <p class="price-before-searching">
+                          100.000d
+                        </p>
+                      </div>
+                    </div>
+                    <img src="/assets/images/products-1.png" alt="products-1" class="search-product-img">
+                  </div> -->
+                </div>
+              </div>
+            </div>
           </div>
           <div class="header-container-button-icon">
             <a href="/src/pages/Carts.html" class="shopping-cart-link">
@@ -67,13 +100,22 @@
         <button class="header-button-login" id="header-button-login">Login</button>
         <img class="header-button-avatar" src="" alt="">
         <div id="dropdownUser" class="dropdown-content">
-          <a href="" class="dropdown-btn" id="profileDropdown">Profile</a>
-          <a href="" class="dropdown-btn" id="logoutDropdown">Logout</a>
+          <a href="/src/pages/Profile.html" class="dropdown-btn" id="profileDropdown">Profile</a>
+          <a href="/src/pages/SignIn.html" class="dropdown-btn" id="logoutDropdown">Logout</a>
+        </div>
+        <div class="help-center">
+          <button id="btn-help-center">Help Center</button>
         </div>
       </div>
     </div>
   </header>
   <section class="user">
+    <img src="/assets/images/Paw-1.png" alt="Paw-1" class="user-decoration">
+    <img src="/assets/images/Paw-2.png" alt="Paw-2" class="user-decoration-two">
+    <img src="/assets/images/Paw.png" alt="Paw" class="user-decoration-three">
+    <img src="/assets/images/Paw.png" alt="Paw" class="user-decoration-four">
+    <img src="/assets/images/Paw-1.png" alt="Paw-1" class="user-decoration-fifth">
+    <img src="/assets/images/Paw-2.png" alt="Paw-2" class="user-decoration-sixth">
     <div class="container">
       <div class="form">
         <div class="wrapper">
@@ -143,7 +185,9 @@
         </div>
       </div>
       <div class="welcome-container">
-        Welcome to PetStore
+        <h1 class="text-overlay">Welcome to Pet Store</h1>
+        <!-- <img src="/assets/images/banner-login.png" alt="banner-login" class="welcome-img"> -->
+        <!-- Pet Store -->
       </div>
     </div>
 
@@ -239,6 +283,7 @@
   </footer>
   <script src="../scripts/header.js"></script>
   <script src="../scripts/login.js"></script>
+  <script src="../scripts/toast.js"></script>
   <!-- <script src="../scripts/home.js"></script> -->
 </body>
 

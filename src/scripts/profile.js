@@ -18,13 +18,15 @@ const formDetail = document.querySelector("#profile-form");
 const oldPassword = document.querySelector("#profile-password-input");
 const newPassword = document.querySelector("#profile-newpassword-input");
 const confirmedNewPassword = document.querySelector("#profile-confirm-newpassword-input");
-
 /**  EMPTY WHEN THERE IS NO LOGGED-IN USER **/
 /* Get current user infor from localstorage */
 if (localStorage.getItem("loggedInUser")) {
   userInfo = JSON.parse(localStorage.getItem("loggedInUser"));
 
   newUserInfo = { ...userInfo };
+
+  document.title = newUserInfo.fullname ? newUserInfo.fullname + " | PetStore" : newUserInfo.username ? newUserInfo.username + " | PetStore" : "My Profile | PetStore"
+
   fullname.value = userInfo.fullname ? userInfo.fullname : "";
   address.value = userInfo.address ? userInfo.address : "";
   email.value = userInfo.email ? userInfo.email : "";
@@ -32,7 +34,7 @@ if (localStorage.getItem("loggedInUser")) {
   avatarElement.src = userInfo.avatar ? userInfo.avatar : "/assets/images/avatar-default.jpg";
   // password.value = userInfo.password ? userInfo.password : "";
 } else {
-  document.body.remove();
+  window.location.href="NotFound.html";
 }
 
 fileInput.addEventListener('change', () => {
@@ -149,6 +151,12 @@ function handleEditProfile() {
           const putRequest = store.put(user);
           putRequest.onsuccess = () => {
             console.log("User updated successfully");
+            toast({
+              title: "Thành công!",
+              message: "Update Profile User sucessfully 😎 !",
+              type: "success",
+              duration: 5000
+            });
             localStorage.setItem("loggedInUser", JSON.stringify(newUserInfo));
             userInfo = JSON.parse(localStorage.getItem("loggedInUser"));
           };
@@ -280,6 +288,12 @@ function handleChangePassword() {
 
             putRequest.onsuccess = () => {
               console.log("Password updated successfully");
+              toast({
+                title: "Thành công!",
+                message: "Update Password sucessfully 😎 !",
+                type: "success",
+                duration: 5000
+              });
             };
 
             putRequest.onerror = (event) => {
@@ -296,6 +310,7 @@ function handleChangePassword() {
           }
         } else {
           console.log("Wrong email, try again! 🥵")
+
         }
       }
 
@@ -414,7 +429,19 @@ window.onload = function () {
 
           document.querySelector(".profile-content-three-middle").innerHTML = orderHTML;
         } else {
-          document.querySelector(".profile-content-three-middle").innerHTML = "<p style='text-align: center;'>You have not ordered anything yet! </p>"
+          let orderHTML = "";
+          orderHTML += `
+            <div class="Orders-nothing-container">
+              <img 
+              src="/assets/images/nothing.gif"
+              alt="Nothing-to-show"
+              class="Cart-img-product-nothing"
+              />
+              <p style='text-align: center;'>You have not ordered anything yet! </p>
+              <button class="btn-order-nothing" onclick="window.location.href ='Products.html'">Visit Shop</button>
+            </div>
+          `
+          document.querySelector(".profile-content-three-middle").innerHTML = orderHTML;
         }
       }
     };

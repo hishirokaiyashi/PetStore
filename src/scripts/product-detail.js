@@ -29,7 +29,8 @@ if (productId) {
       if (product) {
         // console.log(product);
         // nếu sản phẩm tồn tại, hiển thị thông tin sản phẩm
-        
+        document.title = product.name + " | PetStore"
+
         const productImage = document.querySelector(".product-img");
         productImage.src = product.img;
         productImage.alt = product.name;
@@ -51,7 +52,7 @@ if (productId) {
         productCategory.textContent = product.category;
       } else {
         // nếu sản phẩm không tồn tại, hiển thị thông báo lỗi
-        console.error(`Không tìm thấy sản phẩm có id là ${productId}`);
+          window.location.href="NotFound.html";
       }
       // Get related products
       while (relatedProducts.length < 4) {
@@ -62,7 +63,7 @@ if (productId) {
         }
       }
 
-          if (relatedProducts) {
+      if (relatedProducts) {
         // If related products do exist, display them in html div tag
         const relatedProductsContainer = document.querySelector(".related-product");
         relatedProductsContainer.innerHTML = relatedProducts.map(product => {
@@ -97,9 +98,9 @@ if (productId) {
       `
         }).join("");
 
-        document.querySelectorAll(".card-product").forEach((item) => item.addEventListener("click",() => {
-const id = item.getAttribute("data-id");
-        window.location.href = `./ProductDetail.html?id=${id}`;
+        document.querySelectorAll(".card-product").forEach((item) => item.addEventListener("click", () => {
+          const id = item.getAttribute("data-id");
+          window.location.href = `./ProductDetail.html?id=${id}`;
         }))
       } else {
         // nếu sản phẩm không tồn tại, hiển thị thông báo lỗi
@@ -232,15 +233,15 @@ const id = item.getAttribute("data-id");
     quantity.value = quantityValue;
   });
 
-  function removeDot(price) {
-    const unFormattedPrice = price.replace(".", "").replace("đ", "").trim();
-    return parseInt(unFormattedPrice);
-  }
-  function addDot(price) {
-    const formattedPrice =
-      price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " đ";
-    return formattedPrice;
-  }
+  // function removeDot(price) {
+  //   const unFormattedPrice = price.replace(".", "").replace("đ", "").trim();
+  //   return parseInt(unFormattedPrice);
+  // }
+  // function addDot(price) {
+  //   const formattedPrice =
+  //     price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " đ";
+  //   return formattedPrice;
+  // }
 
   function addToCart(x) {
     let id = productId;
@@ -263,41 +264,41 @@ const id = item.getAttribute("data-id");
     localStorage.setItem("listCart", JSON.stringify(listCart));
 
     // Add list cart to indexedDB
-  const currentUserID = JSON.parse(localStorage.getItem("loggedInUser")).id || null;;
-  if(currentUserID) {
-    updateCartDB(currentUserID, listCart)
+    const currentUserID = JSON.parse(localStorage.getItem("loggedInUser")).id || null;;
+    if (currentUserID) {
+      updateCartDB(currentUserID, listCart)
+    }
   }
-  }
 
-// Update cart in users store with indexedDB according to user id
-  const updateCartDB =  (id, cart) => {
-  const request = indexedDB.open('PetStore');
+  // Update cart in users store with indexedDB according to user id
+  const updateCartDB = (id, cart) => {
+    const request = indexedDB.open('PetStore');
 
-request.onsuccess = (event) => {
-  const db = event.target.result;
+    request.onsuccess = (event) => {
+      const db = event.target.result;
 
-  // Access the object store containing user data
-  const transaction = db.transaction(['users'], 'readwrite');
-  const objectStore = transaction.objectStore('users');
+      // Access the object store containing user data
+      const transaction = db.transaction(['users'], 'readwrite');
+      const objectStore = transaction.objectStore('users');
 
-  // Get the user object with the specified ID
-  const getRequest = objectStore.get(id);
-  getRequest.onsuccess = (event) => {
-    const user = event.target.result;
+      // Get the user object with the specified ID
+      const getRequest = objectStore.get(id);
+      getRequest.onsuccess = (event) => {
+        const user = event.target.result;
 
-    // Update the user's cart property
-    user.cart = cart;
+        // Update the user's cart property
+        user.cart = cart;
 
-    // Put the updated user object back into the object store
-    const putRequest = objectStore.put(user);
-    putRequest.onsuccess = () => {
-      console.log('User cart updated successfully');
-      db.close();
+        // Put the updated user object back into the object store
+        const putRequest = objectStore.put(user);
+        putRequest.onsuccess = () => {
+          console.log('User cart updated successfully');
+          db.close();
+        };
+      };
     };
-  };
-};
-  
-}
+
+  }
 
   // BuyNow
   const handleBuyNow = () => {
@@ -313,41 +314,41 @@ request.onsuccess = (event) => {
   }
   document.querySelector('.product-order-button-buy-now').addEventListener("click", handleBuyNow)
 }
-    // price = removeDot(price);
+// price = removeDot(price);
 
-    // let sale = btn.children[0].children[0].innerHTML;
-    //check name
-    //Check item
-    //check item duplicate
-    // if (checkNameProduct(name) >= 0) {
-    //   updateAmountProduct(checkNameProduct(name));
-    // } else {
-    //   let item = { id, img, name, price, amount };
-    //   listCart.push(item);
-    // }
-    // // document.getElementById("number-cart").innerText = listCart.length;
-    // updateAmountLengthCart();
-    // //save session
-    // localStorage.setItem("listCart", JSON.stringify(listCart));
+// let sale = btn.children[0].children[0].innerHTML;
+//check name
+//Check item
+//check item duplicate
+// if (checkNameProduct(name) >= 0) {
+//   updateAmountProduct(checkNameProduct(name));
+// } else {
+//   let item = { id, img, name, price, amount };
+//   listCart.push(item);
+// }
+// // document.getElementById("number-cart").innerText = listCart.length;
+// updateAmountLengthCart();
+// //save session
+// localStorage.setItem("listCart", JSON.stringify(listCart));
 
-    function openDetails(evt, detailsName) {
-      // Declare all variables
-      var i, tabcontent, tablinks;
-    
-      // Get all elements with class="tabcontent" and hide them
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-    
-      // Get all elements with class="tablinks" and remove the class "active"
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-    
-      // Show the current tab, and add an "active" class to the button that opened the tab
-      document.getElementById(detailsName).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-    document.getElementById("defaultOpen").click();
+function openDetails(evt, detailsName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(detailsName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();

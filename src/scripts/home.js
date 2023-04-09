@@ -132,11 +132,11 @@ fetch("/src/data/products.json")
       })
     })
 
-    function addDot(price) {
-      const formattedPrice =
-        price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " đ";
-      return formattedPrice;
-    }
+    // function addDot(price) {
+    //   const formattedPrice =
+    //     price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " đ";
+    //   return formattedPrice;
+    // }
 
     const carousel = document.querySelector(".carousel");
     if (carousel) {
@@ -148,7 +148,15 @@ fetch("/src/data/products.json")
         prevScrollLeft,
         positionDiff;
       const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-      const firstImgWidth = firstImg.clientWidth;
+
+      // const maxScrollLeft = 6300 - 1260
+      // console.log(carousel.scrollWidth)
+      // console.log(carousel.clientWidth)
+      // console.log(firstImg.clientWidth)
+      // const firstImgWidth = firstImg.clientWidth;
+      const firstImgWidth = firstImg.getBoundingClientRect().width;
+
+      // const firstImgWidth = 340;
       // const showHideIcons = () => {
       //   // showing and hiding prev/next icon according to carousel scroll left value
       //   let scrollWidth = carousel.scrollWidth - carousel.clientWidth; // getting max scrollable width
@@ -168,6 +176,8 @@ fetch("/src/data/products.json")
 
       arrowIcons.forEach((icon) => {
         icon.addEventListener("click", (e) => {
+      console.log(carousel.scrollLeft)
+
           e.preventDefault(); // Add this line to prevent the default behavior of the click event
           carousel.scrollLeft +=
             icon.id == "left" ? -firstImgWidth : firstImgWidth;
@@ -176,11 +186,12 @@ fetch("/src/data/products.json")
             icon.id == "right" && check(carousel.scrollLeft, maxScrollLeft - firstImgWidth)
           ) {
             arrowIcons[1].style.display = "none";
+            // console.log(firstImgWidth)
           } else if (icon.id == "left" && check(carousel.scrollLeft, maxScrollLeft)) {
             arrowIcons[1].style.display = "block";
-
           } else {
             arrowIcons[1].style.display = check(carousel.scrollLeft, maxScrollLeft) ? "none" : "block"
+            console.log("haha3")
 
           }
         });

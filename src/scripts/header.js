@@ -9,6 +9,77 @@ const listLi = document.querySelectorAll('.header-list-detail')
 const homeContainer = document.querySelector('body')
 const avatar = document.querySelector(".header-button-avatar");
 
+// Search section
+const search = document.getElementById("icon-search-btn");
+const searchBox = document.querySelector(".search-container-box");
+const searchInput = document.getElementById('search-input');
+const searchProductsContainer = document.querySelector('.search-products-container');
+
+// Open || Close search popup
+search.addEventListener('click', (e) => {
+    if (!searchBox.contains(e.target)) {
+        if (searchBox.classList.contains('search-inactive')) {
+            searchBox.classList.remove('search-inactive');
+        } else {
+            searchBox.classList.add('search-inactive');
+        }
+    }
+})
+
+let searchKeys;
+let searchProducts;
+
+// Tải dữ liệu sản phẩm từ tệp JSON
+fetch("/src/data/products.json")
+    .then(response => response.json())
+    .then(data => {
+        searchProducts = data;
+        console.log(searchProducts)
+    });
+
+searchInput.addEventListener('input', (e) => {
+    document.querySelector(".search-products-container").innerHTML = "";
+    searchKeys = e.target.value.toLowerCase().trim();
+    if (searchKeys !== "") {
+        let searchItems = searchProducts.filter((product) => product.name.toLowerCase().includes(searchKeys))
+        if (searchItems.length > 0) {
+            let searchHTML = "";
+            searchProductsContainer.style.overflowY="scroll";
+            searchItems.forEach((item) => {
+                searchHTML += `
+                <a href="${'./ProductDetail.html?id=' + item._id}" class="search-product-item-container" title="${item.name}">
+                    <div class="search-product-item-container-left">
+                        <p class="search-product-item-name">
+                            ${item.name}
+                        </p>
+                        <div class="search-product-item-price">
+                            <p class="price-after-searching">
+                                ${addDot(parseInt(item.price) - parseInt(item.price) * item.sale / 100)}
+                            </p>
+                            <p class="price-before-searching">
+                                ${addDot(item.price)}
+                            </p>
+                        </div>
+                    </div>
+                    <img src="${item.img}" alt="${item.name}" class="search-product-img">
+                </a>
+                `;
+            })
+            document.querySelector(".search-products-container").innerHTML = searchHTML;
+        } else {
+            document.querySelector(".search-products-container").innerHTML = "";
+            let searchHTML = "";
+            searchHTML += `
+                <p class="search-nothing">There is no product matching your keywords...</p>
+            `
+            searchProductsContainer.style.overflowY="hidden";
+            document.querySelector(".search-products-container").innerHTML = searchHTML;
+
+        }
+    }
+})
+
+// Mobile icon
 menuIcon.addEventListener('click', () => {
     const menu = document.querySelector('[data-icon="material-symbols:menu"]');
     const close = document.querySelector('[data-icon="mdi:alpha-x"]');
@@ -28,6 +99,7 @@ menuIcon.addEventListener('click', () => {
     }
 });
 
+// Display active navigation
 const currentUrl = window.location.href;
 
 window.onload = () => {
@@ -47,7 +119,9 @@ window.onload = () => {
         listLi[2].classList.add("header-list-detail-tab-active");
     }
 };
-// change when scroll
+
+
+// Change size of navigation bar when scrolling
 const changeBackground = () => {
     if (window.scrollY >= 66) {
         headerContainer.classList.add('header-active')
@@ -58,28 +132,25 @@ const changeBackground = () => {
 
 window.addEventListener("scroll", changeBackground)
 
+// Handle login button click
 const btnLogin = document.querySelector('.header-button-login');
 btnLogin.addEventListener('click', () => {
     console.log('click')
     window.location.href = "SignIn.html";
 })
 
-//display none login when have loggedInUser
+// Hide login button when having user logged in
 const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-// if (loggedInUser) {
-//     btnLogin.style.display = 'none';
-// }
 
-//show avatar when have loggedInUser
 if (loggedInUser) {
     btnLogin.style.display = 'none';
     const userHeader = JSON.parse(localStorage.getItem("loggedInUser"));
-    avatar.src = userHeader.avatar ? userHeader.avatar : "/assets/images/avatar-default.jpg" ;
-} else{
+    avatar.src = userHeader.avatar ? userHeader.avatar : "/assets/images/avatar-default.jpg";
+} else {
     avatar.style.display = 'none';
 }
-//dropdown avatar
 
+// User menu dropdown
 function dropdownFunction() {
     console.log('click')
     document.getElementById("dropdownUser").classList.toggle("show");
@@ -87,7 +158,7 @@ function dropdownFunction() {
 
 avatar.addEventListener('click', dropdownFunction)
 
-//close dropdown when click outside
+// Hide dropdown menu when clicking outside
 window.onclick = function (event) {
     if (!event.target.matches('.header-button-avatar')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -101,7 +172,7 @@ window.onclick = function (event) {
     }
 }
 
-//logout
+// Handle logout
 const btnLogout = document.getElementById("logoutDropdown");
 btnLogout.addEventListener('click', () => {
     localStorage.removeItem('loggedInUser');
@@ -109,18 +180,16 @@ btnLogout.addEventListener('click', () => {
     window.location.href = "Home.html";
 })
 
-//profile
+// Handle profile edit
 const btnProfile = document.getElementById("profileDropdown");
 btnProfile.addEventListener('click', () => {
     console.log('click')
     window.location.href = "Profile.html";
-
-    // window.location.pathname = "/src/pages/Profile.html";
 })
 
-//helpcenter is private page 
+// Display helpcenter section when having user logged in 
 const btnHelpCenter = document.getElementById("btn-help-center");
-if(btnHelpCenter){
+if (btnHelpCenter) {
     btnHelpCenter.addEventListener('click', () => {
         if (!loggedInUser) {
             window.location.href = "SignIn.html";
@@ -129,3 +198,15 @@ if(btnHelpCenter){
         }
     })
 }
+// Add dot to the price number => string
+const addDot = (price) => {
+    const formattedPrice =
+      price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " đ";
+    return formattedPrice;
+  }
+  
+  // Remove dot to the price string => number
+  const removeDot = (price) => {
+    const unFormattedPrice = price.replace(".", "").replace("đ", "").trim();
+    return parseInt(unFormattedPrice);
+  }
