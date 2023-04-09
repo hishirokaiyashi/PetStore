@@ -1,269 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carts</title>
-    <link rel="stylesheet" href="/assets/styles/base.css" />
-    <link rel="stylesheet" href="/assets/styles/Header.css" />
-    <link rel="stylesheet" href="/assets/styles/Carts.css" />
-    <link rel="stylesheet" href="/assets/styles/Footer.css" />
-    <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
-  </head>
-  <body onload="showCart()">
-    <div class="Carts-container-biggest">
-      <header class="header-container">
-        <div class="header-container-detail">
-          <div class="header-logo">
-            <a href="/src/pages/Home.html"> <img src="../../assets/images/PetStore_Logo.png" alt="" width="100px"> </a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Cart | PetStore</title>
+ <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="/assets/styles/base.css" />
+  <link rel="stylesheet" href="/assets/styles/Header.css" />
+  <link rel="stylesheet" href="/assets/styles/Carts.css" />
+  <link rel="stylesheet" href="/assets/styles/Footer.css" />
+  <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
+</head>
+
+<body onload="showCart()">
+  <div class="Carts-container-biggest">
+    <header class="header-container">
+      <div class="header-container-detail">
+        <div class="header-logo">
+          <a href="/src/pages/Home.html"> <img src="../../assets/images/PetStore_Logo.png" alt="PetStore_Logo" width="100px"> </a>
+        </div>
+        <div class="header-container-items">
+          <ul class="header-list">
+            <li class="header-list-detail header-list-detail-tab-active">
+              <a href="/src/pages/Home.html">Home</a>
+            </li>
+            <li class="header-list-detail">
+              <a href="/src/pages/Products.html">Product</a>
+            </li>
+            <li class="header-list-detail">
+              <a href="/src/pages/AboutUs.html">About us</a>
+            </li>
+            <li class="header-list-detail">
+              <button class="header-button-login-mobile">Login</button>
+            </li>
+          </ul>
+        </div>
+        <div class="header-container-menu-icon">
+          <span class="iconify header-button-icon-first" data-icon="material-symbols:menu"></span>
+        </div>
+        <div class="header-container-buttons">
+          <div class="header-container-button-list-icons">
+            <div class="header-container-button-icon">
+              <span class="iconify header-button-icon" data-icon="material-symbols:search"></span>
+            </div>
+            <div class="header-container-button-icon">
+              <a href="/src/pages/Carts.html" class="shopping-cart-link">
+                <span class="iconify header-button-icon" data-icon="material-symbols:shopping-cart-outline">
+                </span>
+                <span class="badge" id="number-cart">0</span>
+              </a>
+            </div>
           </div>
-          <div class="header-container-items">
-            <ul class="header-list">
-              <li class="header-list-detail header-list-detail-tab-active">
-                <a href="/src/pages/Home.html">Home</a>
-              </li>
-              <li class="header-list-detail">
-                <a href="/src/pages/Products.html">Product</a>
-              </li>
-              <li class="header-list-detail">
-                <a href="/src/pages/AboutUs.html">About us</a>
-              </li>
-              <li class="header-list-detail">
-                <button class="header-button-login-mobile">Login</button>
-              </li>
-            </ul>
+          <button class="header-button-login" id="header-button-login">Login</button>
+          <img class="header-button-avatar" src="" alt="">
+          <div id="dropdownUser" class="dropdown-content">
+            <a href="/src/pages/Profile.html" class="dropdown-btn" id="profileDropdown">Profile</a>
+            <a href="" class="dropdown-btn" id="logoutDropdown">Logout</a>
           </div>
-          <div class="header-container-menu-icon">
-            <span
-              class="iconify header-button-icon-first"
-              data-icon="material-symbols:menu"
-            ></span>
+        </div>
+      </div>
+    </header>
+    <section class="Carts-container">
+      <div class="Carts-container-first">
+        <div class="Carts-container-first-detail">
+          <div class="Carts-container-first-content">
+            <span class="iconify cart-button-icon" data-icon="material-symbols:shopping-cart-outline"></span>
+            <span class="Cart-Title">Cart</span>
           </div>
-          <div class="header-container-buttons">
-            <div class="header-container-button-list-icons">
-              <div class="header-container-button-icon">
-                <span
-                  class="iconify header-button-icon"
-                  data-icon="material-symbols:search"
-                ></span>
+        </div>
+      </div>
+      <div class="Carts-container-second">
+        <div class="Carts-container-second-detail">
+          <div class="Carts-container-second-detail-top">
+            <div class="Carts-container-top-first">
+              <input type="checkbox" id="Carts-checkbox-all" class="shopping-cart-checkbox"
+                onchange="handleCheckBoxAll()" />
+              <span class="Cart-product-title-top">Product</span>
+            </div>
+            <div class="Carts-container-top-second">
+              <span class="Cart-product-price-top">Price</span>
+            </div>
+            <div class="Carts-container-top-third">
+              <span class="Cart-product-number-top">The number of product</span>
+            </div>
+            <div class="Carts-container-top-fourth">
+              <span class="Cart-product-total-top">Total</span>
+              <span class="Cart-product-delete-top">Delete</span>
+            </div>
+          </div>
+          <div id="showcart" class="Carts-container-second-detail-middle">
+
+          </div>
+          <div class="Carts-container-second-detail-bottom">
+            <div class="Carts-container-second-detail-bottom-left">
+              <input type="text" id="idCoupon" class="shopping-cart-coupon" placeholder="Coupon Code" />
+              <button onclick="applyCoupon()" class="btn-coupon">
+                <label for="Carts-coupon">Apply Coupon</label>
+              </button>
+            </div>
+            <div class="Carts-container-second-detail-bottom-right">
+              <div class="Cart-total-coupon-decrease">
+                <p>Coupon: <span id="total-coupon">0</span></p>
               </div>
-              <div class="header-container-button-icon">
-                <a href="/src/pages/Carts.html" class="shopping-cart-link">
-                  <span
-                    class="iconify header-button-icon"
-                    data-icon="material-symbols:shopping-cart-outline"
-                  >
+              <div class="total-price-lastes">
+                <span>Total payment:</span>
+                <span id="total-price">0</span>
+
+              </div>
+              <div class="Carts-alert-coupon">
+
+              </div>
+              <div class="link-to-checkout">
+                <button onclick="handleBuyNow()" class="btn-container-checkout">
+                  <span class="btn-checkout">
+                    Buy Now
                   </span>
-                  <span class="badge" id="number-cart">0</span>
-                </a>
-              </div>
-            </div>
-            <button class="header-button-login" id="header-button-login">Login</button>
-            <img class="header-button-avatar" src="" alt="">
-            <div id="dropdownUser" class="dropdown-content">
-              <a href="/src/pages/Profile.html" class="dropdown-btn" id="profileDropdown">Profile</a>
-              <a href="" class="dropdown-btn" id="logoutDropdown">Logout</a>
-            </div>
-          </div>
-        </div>
-      </header>
-      <section class="Carts-container">
-        <div class="Carts-container-first">
-          <div class="Carts-container-first-detail">
-            <div class="Carts-container-first-content">
-              <span
-                class="iconify cart-button-icon"
-                data-icon="material-symbols:shopping-cart-outline"
-              ></span>
-              <span class="Cart-Title">Cart</span>
-            </div>
-          </div>
-        </div>
-        <div class="Carts-container-second">
-          <div class="Carts-container-second-detail">
-            <div class="Carts-container-second-detail-top">
-              <div class="Carts-container-top-first">
-                <input
-                  type="checkbox"
-                  id="Carts-checkbox-all"
-                  class="shopping-cart-checkbox"
-                  onchange="handleCheckBoxAll()"
-                />
-                <span class="Cart-product-title-top">Product</span>
-              </div>
-              <div class="Carts-container-top-second">
-                <span class="Cart-product-price-top">Price</span>
-              </div>
-              <div class="Carts-container-top-third">
-                <span class="Cart-product-number-top"
-                  >The number of product</span
-                >
-              </div>
-              <div class="Carts-container-top-fourth">
-                <span class="Cart-product-total-top">Total</span>
-                <span class="Cart-product-delete-top">Delete</span>
-              </div>
-            </div>
-            <div id="showcart" class="Carts-container-second-detail-middle">
-              
-            </div>
-            <div class="Carts-container-second-detail-bottom">
-              <div class="Carts-container-second-detail-bottom-left">
-                <input
-                  type="text"
-                  id="idCoupon"
-                  class="shopping-cart-coupon"
-                  placeholder="Coupon Code"
-                />
-                <button onclick="applyCoupon()" class="btn-coupon">
-                  <label for="Carts-coupon">Apply Coupon</label>
                 </button>
               </div>
-              <div class="Carts-container-second-detail-bottom-right">
-                <div class="Cart-total-coupon-decrease">
-                  <p>Coupon: <span id="total-coupon">0</span></p>
-                </div>
-                <div class="total-price-lastes">
-                    <span>Total payment:</span>
-                    <span id="total-price">0</span>
-                    
-                </div>
-                <div class="Carts-alert-coupon">
-                  
-                </div>
-                <div class="link-to-checkout">
-                    <button onclick="handleBuyNow()" class="btn-container-checkout">
-                        <span class="btn-checkout">
-                            Buy Now
-                        </span>
-                    </button>
-                </div>
-              </div>
             </div>
-            <div class="Carts-container-second-detail-another">
-                <div class="Carts-container-title">
-                    <hr class="Carts-title-divide">
-                    <h3 class="Carts-another-title">
-                        Suggestions for you
-                    </h3>
-                    <hr class="Carts-title-divide">
-                </div>
-                <div class="Carts-container-another-list-products">
-                </div>
+          </div>
+          <div class="Carts-container-second-detail-another">
+            <div class="Carts-container-title">
+              <hr class="Carts-title-divide">
+              <h3 class="Carts-another-title">
+                Suggestions for you
+              </h3>
+              <hr class="Carts-title-divide">
+            </div>
+            <div class="Carts-container-another-list-products">
             </div>
           </div>
         </div>
-      </section>
-      <footer class="footer-container">
-        <div class="footer-container-detail">
-          <div class="footer-container-logo">
-            <a href="/"> <img src="../../assets/images/PetStore_Logo.png" alt="PetStore" width="200px"> </a>
+      </div>
+    </section>
+    <footer class="footer-container">
+      <div class="footer-container-detail">
+        <div class="footer-container-logo">
+          <a href="/"> <img src="../../assets/images/PetStore_Logo.png" alt="PetStore" width="200px"> </a>
+        </div>
+        <div class="footer-container-second">
+          <span class="footer-container-second-text">
+            Our mission is to keep pets healthy
+          </span>
+          <div class="footer-line-big"></div>
+          <div class="footer-container-second-icon">
+            <span class="iconify footer-container-second-item-icon" data-icon="ic:outline-facebook"></span>
+            <span class="iconify footer-container-second-item-icon" data-icon="mdi:instagram"></span>
+            <span class="iconify footer-container-second-item-icon" data-icon="mdi:twitter"></span>
+            <span class="iconify footer-container-second-item-icon" data-icon="ph:youtube-logo-fill"></span>
           </div>
-          <div class="footer-container-second">
-            <span class="footer-container-second-text">
-              Our mission is to keep pets healthy
-            </span>
-            <div class="footer-line-big"></div>
-            <div class="footer-container-second-icon">
-              <span
-                class="iconify footer-container-second-item-icon"
-                data-icon="ic:outline-facebook"
-              ></span>
-              <span
-                class="iconify footer-container-second-item-icon"
-                data-icon="mdi:instagram"
-              ></span>
-              <span
-                class="iconify footer-container-second-item-icon"
-                data-icon="mdi:twitter"
-              ></span>
-              <span
-                class="iconify footer-container-second-item-icon"
-                data-icon="ph:youtube-logo-fill"
-              ></span>
+        </div>
+        <div class="footer-container-third">
+          <span class="footer-container-third-text"> Links </span>
+          <div class="footer-line-big"></div>
+          <ul class="footer-container-third-list-links">
+            <li class="footer-container-third-link">
+              <a href="/src/pages/Home.html">HOME</a>
+            </li>
+            <div class="footer-line-small"></div>
+            <li class="footer-container-third-link">
+              <a href="/src/pages/Products.html">PRODUCT</a>
+            </li>
+            <div class="footer-line-small"></div>
+            <li class="footer-container-third-link">
+              <a href="/src/pages/AboutUs.html">ABOUT US</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-container-fourth">
+          <span class="footer-container-fourth-text"> Work Time </span>
+          <div class="footer-line-big"></div>
+          <ul class="footer-container-fourth-list-time">
+            <li class="footer-container-fourth-item">
+              <span class="footer-container-fourth-time-day">
+                Monday -> Friday
+              </span>
+              <span class="footer-container-fourth-time">
+                7h30 -> 21h00
+              </span>
+            </li>
+            <div class="footer-line-small"></div>
+            <li class="footer-container-fourth-item">
+              <span class="footer-container-fourth-time-day"> Saturday </span>
+              <span class="footer-container-fourth-time">
+                7h30 -> 20h00
+              </span>
+            </li>
+            <div class="footer-line-small"></div>
+            <li class="footer-container-fourth-item">
+              <span class="footer-container-fourth-time-day"> Sunday </span>
+              <span class="footer-container-fourth-time"> Close </span>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-container-fifth">
+          <span class="footer-container-fifth-text"> Contact </span>
+          <div class="footer-line-big"></div>
+          <div class="footer-container-fifth-list-contact">
+            <div class="footer-container-fifth-item">
+              <span class="iconify footer-container-fifth-item-icon" data-icon="mdi:map-marker"></span>
+              <span class="footer-container-fifth-item-text">
+                Address: Quarter 6, Linh Trung Ward, City. Thu Duc, HCM
+              </span>
             </div>
-          </div>
-          <div class="footer-container-third">
-            <span class="footer-container-third-text"> Links </span>
-            <div class="footer-line-big"></div>
-            <ul class="footer-container-third-list-links">
-              <li class="footer-container-third-link">
-                <a href="/src/pages/Home.html">HOME</a>
-              </li>
-              <div class="footer-line-small"></div>
-              <li class="footer-container-third-link">
-                <a href="/src/pages/Products.html">PRODUCT</a>
-              </li>
-              <div class="footer-line-small"></div>
-              <li class="footer-container-third-link">
-                <a href="/src/pages/AboutUs.html">ABOUT US</a>
-              </li>
-            </ul>
-          </div>
-          <div class="footer-container-fourth">
-            <span class="footer-container-fourth-text"> Work Time </span>
-            <div class="footer-line-big"></div>
-            <ul class="footer-container-fourth-list-time">
-              <li class="footer-container-fourth-item">
-                <span class="footer-container-fourth-time-day">
-                  Monday -> Friday
-                </span>
-                <span class="footer-container-fourth-time">
-                  7h30 -> 21h00
-                </span>
-              </li>
-              <div class="footer-line-small"></div>
-              <li class="footer-container-fourth-item">
-                <span class="footer-container-fourth-time-day"> Saturday </span>
-                <span class="footer-container-fourth-time">
-                  7h30 -> 20h00
-                </span>
-              </li>
-              <div class="footer-line-small"></div>
-              <li class="footer-container-fourth-item">
-                <span class="footer-container-fourth-time-day"> Sunday </span>
-                <span class="footer-container-fourth-time"> Close </span>
-              </li>
-            </ul>
-          </div>
-          <div class="footer-container-fifth">
-            <span class="footer-container-fifth-text"> Contact </span>
-            <div class="footer-line-big"></div>
-            <div class="footer-container-fifth-list-contact">
-              <div class="footer-container-fifth-item">
-                <span
-                  class="iconify footer-container-fifth-item-icon"
-                  data-icon="mdi:map-marker"
-                ></span>
-                <span class="footer-container-fifth-item-text">
-                  Address: Quarter 6, Linh Trung Ward, City. Thu Duc, HCM
-                </span>
-              </div>
-              <div class="footer-line-small"></div>
-              <div class="footer-container-fifth-item">
-                <span
-                  class="iconify footer-container-fifth-item-icon"
-                  data-icon="ic:baseline-phone-callback"
-                ></span>
-                <span class="footer-container-fifth-item-text">
-                  PhoneNumber: 123456
-                </span>
-              </div>
+            <div class="footer-line-small"></div>
+            <div class="footer-container-fifth-item">
+              <span class="iconify footer-container-fifth-item-icon" data-icon="ic:baseline-phone-callback"></span>
+              <span class="footer-container-fifth-item-text">
+                PhoneNumber: 123456
+              </span>
             </div>
           </div>
         </div>
-        <div class="footer-container-copyright">
-          <div class="footer-copyright-main">
-            <span>Copyright belongs to Pet Store</span>
-          </div>
-          <div class="footer-copyright-sub">
-            <p>© 2023 All rights reserved</p>
-          </div>
+      </div>
+      <div class="footer-container-copyright">
+        <div class="footer-copyright-main">
+          <span>Copyright belongs to Pet Store</span>
         </div>
-      </footer>
-    </div>
-    <script src="/src/scripts/header.js"></script>
-    <script src="/src/scripts/carts.js"></script>
-  </body>
+        <div class="footer-copyright-sub">
+          <p>© 2023 All rights reserved</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="/src/scripts/header.js"></script>
+  <script src="/src/scripts/carts.js"></script>
+</body>
+
 </html>

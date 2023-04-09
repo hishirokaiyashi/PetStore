@@ -29,6 +29,7 @@ if (productId) {
       if (product) {
         // console.log(product);
         // nếu sản phẩm tồn tại, hiển thị thông tin sản phẩm
+        document.title = product.name + " | PetStore"
         
         const productImage = document.querySelector(".product-img");
         productImage.src = product.img;

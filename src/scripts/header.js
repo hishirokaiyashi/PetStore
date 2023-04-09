@@ -30,7 +30,7 @@ menuIcon.addEventListener('click', () => {
 
 const currentUrl = window.location.href;
 
-window.onload = () => {
+document.addEventListener("DOMContentLoaded",  () => {
     listLi.forEach((item) => {
         item.classList.remove("header-list-detail-tab-active");
     })
@@ -46,7 +46,7 @@ window.onload = () => {
     if (currentUrl.includes("AboutUs.html")) {
         listLi[2].classList.add("header-list-detail-tab-active");
     }
-};
+});
 // change when scroll
 const changeBackground = () => {
     if (window.scrollY >= 66) {
@@ -120,10 +120,13 @@ btnProfile.addEventListener('click', () => {
 
 //helpcenter is private page 
 const btnHelpCenter = document.getElementById("btn-help-center");
-btnHelpCenter.addEventListener('click', () => {
-    if (!loggedInUser) {
-        window.location.href = "SignIn.html";
-    } else {
-        window.location.href = "HelpCenter.html";
-    }
-})
+if(btnHelpCenter){
+
+    btnHelpCenter.addEventListener('click', () => {
+        if (!loggedInUser) {
+            window.location.href = "SignIn.html";
+        } else {
+            window.location.href = "HelpCenter.html";
+        }
+    })
+}

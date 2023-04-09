@@ -6,21 +6,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pet Store - Sign In</title>
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
   <link rel="stylesheet" href="/assets/styles/base.css">
   <link rel="stylesheet" href="/assets/styles/SignIn.css">
   <link rel="stylesheet" href="/assets/styles/Header.css" />
   <link rel="stylesheet" href="/assets/styles/Footer.css" />
+  <link rel="stylesheet" href="/assets/styles/Toast.css" />
+
   <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
 </head>
-
 <body>
   <!-- header -->
+  <div id="toast"></div>
   <header class="header-container">
     <div class="header-container-detail">
       <div class="header-logo">
-        <a href="/src/pages/Home.html"> <img src="../../assets/images/PetStore_Logo.png" alt="" width="100px"> </a>
+        <a href="/src/pages/Home.html"> <img src="../../assets/images/PetStore_Logo.png" alt="PetStore_Logo" width="100px"> </a>
       </div>
       <div class="header-container-items">
         <ul class="header-list">
@@ -64,6 +67,12 @@
     </div>
   </header>
   <section class="user">
+    <img src="/assets/images/Paw-1.png" alt="Paw-1" class="user-decoration">
+    <img src="/assets/images/Paw-2.png" alt="Paw-2" class="user-decoration-two">
+    <img src="/assets/images/Paw.png" alt="Paw" class="user-decoration-three">
+    <img src="/assets/images/Paw.png" alt="Paw" class="user-decoration-four">
+    <img src="/assets/images/Paw-1.png" alt="Paw-1" class="user-decoration-fifth">
+    <img src="/assets/images/Paw-2.png" alt="Paw-2" class="user-decoration-sixth">
     <div class="container">
       <div class="form">
         <div class="wrapper">
@@ -133,7 +142,9 @@
         </div>
       </div>
       <div class="welcome-container">
-        Welcome to PetStore
+        <h1 class="text-overlay">Welcome to Pet Store</h1>
+        <!-- <img src="/assets/images/banner-login.png" alt="banner-login" class="welcome-img"> -->
+        <!-- Pet Store -->
       </div>
     </div>
 
@@ -229,6 +240,7 @@
   </footer>
   <script src="../scripts/header.js"></script>
   <script src="../scripts/login.js"></script>
+  <script src="../scripts/toast.js"></script>
   <!-- <script src="../scripts/home.js"></script> -->
 </body>
 

@@ -240,7 +240,7 @@ const showCart = () => {
           <div onclick="increaseAmountProduct(this)" class="btn-increase-number">+</div>
         </div>
         <div class="Carts-container-middle-fourth">
-          $
+          
           <span class="Cart-product-total-middle">${addDot(total)}</span>
           <span onclick="handleDelete(this)" class="Cart-product-delete-middle">
             <span

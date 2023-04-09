@@ -6,19 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Users</title>
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
   <link rel="stylesheet" href="/assets/styles/base.css">
   <link rel="stylesheet" href="/assets/styles/Profile.css">
   <link rel="stylesheet" href="/assets/styles/header.css">
   <link rel="stylesheet" href="/assets/styles/footer.css">
+  <link rel="stylesheet" href="/assets/styles/Toast.css">
   <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
 </head>
 
 <body>
+  <div id="toast"></div>
   <!-- header -->
   <header class="header-container">
     <div class="header-container-detail">
       <div class="header-logo">
-        <a href="/src/pages/Home.html"> <img src="../../assets/images/PetStore_Logo.png" alt="" width="100px"> </a>
+        <a href="/src/pages/Home.html"> <img src="../../assets/images/PetStore_Logo.png" alt="PetStore_Logo" width="100px"> </a>
       </div>
       <div class="header-container-items">
         <ul class="header-list">
@@ -56,7 +59,7 @@
         <img class="header-button-avatar" src="" alt="">
         <div id="dropdownUser" class="dropdown-content">
           <a href="/src/pages/Profile.html" class="dropdown-btn" id="profileDropdown">Profile</a>
-          <a href="" class="dropdown-btn" id="logoutDropdown">Logout</a>
+          <a href="/src/pages/Home.html" class="dropdown-btn" id="logoutDropdown">Logout</a>
         </div>
       </div>
     </div>
@@ -91,19 +94,19 @@
           <form action="" id="profile-form" class="profile-form-container">
 
             <label for="profile-fullname-input" class="profile-label">Your Full Name</label>
-            <input type="text" id="profile-fullname-input" class="profile-input">
+            <input type="text" placeholder="Update Your Full Name..." id="profile-fullname-input" class="profile-input">
 
             <!-- <label for="profile-password-input" class="profile-label">Your Password</label>
                 <input type="password" id="profile-password-input" class="profile-input"> -->
 
             <label for="profile-address-input" class="profile-label">Your Address</label>
-            <textarea placeholder="Address" name="address" id="Address" required class="profile-input"
+            <textarea placeholder="Update Your Address..." name="address" id="Address" required class="profile-input"
               minlength="10"></textarea>
             <label for="profile-email-input" class="profile-label">Your Email</label>
             <input type="text" id="profile-email-input" class="profile-input">
 
             <label for="profile-phoneNumber-input" class="profile-label">Your Phone Number</label>
-            <input type="text" id="profile-phoneNumber-input" class="profile-input">
+            <input type="text"  placeholder="Update Your Phone Number (start with 0)..." id="profile-phoneNumber-input" class="profile-input">
 
 
           </form>
@@ -266,6 +269,7 @@
   </footer>
   <script src="../scripts/header.js"></script>
   <script src="../scripts/profile.js"></script>
+  <script src="../scripts/toast.js"></script>
 </body>
 
 </html>

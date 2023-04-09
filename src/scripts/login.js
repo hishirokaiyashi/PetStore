@@ -1,10 +1,14 @@
-
+let listCart = [];
 // Lấy thông tin người dùng đăng nhập hiện tại (nếu có)
 function getLoggedInUser() {
   const user = localStorage.getItem("loggedInUser");
   if (user) {
     return JSON.parse(user);
   }
+}
+// Get cart items from localstorage
+if (localStorage.getItem("listCart")) {
+  listCart = JSON.parse(localStorage.getItem("listCart"));
 }
 
 // tạo 1 cái biến global để lưu trữ thông tin người dùng đăng nhập hiện tại 
@@ -87,7 +91,7 @@ function validateLogin(email, password) {
     loginPassword.parentNode.insertBefore(errorMessage, loginPassword.nextSibling);
     check = false;
   }
- 
+
   // Kiểm tra email có hợp lệ hay không
   if (email !== "" && password !== "") {
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3}|\.\w{2,3}\.\w{2,3})$/;
@@ -111,7 +115,17 @@ function validateLogin(email, password) {
   }
   return check;
 }
+// Update cart quantity
+const updateAmountLengthCart = () => {
+  let amount = 0;
+  listCart.forEach((item) => {
+    amount += item.amount;
+  })
+  document.getElementById("number-cart").innerText = amount;
+}
 
+// Call update quantity 
+updateAmountLengthCart();
 // get user data from localStorage
 // function getUserData(email) {
 //   const users = JSON.parse(localStorage.getItem("users"));
@@ -228,11 +242,29 @@ function loginHandle() {
             setLoggedInUser(currentUser, currentCart);
             console.log("Login successfully! 🎉")
             window.location.href = "Home.html";
+            
           } else {
             console.log("Wrong password, try again! 🥵")
+            // toast({
+            //   title: "Thất Bại!",
+            //   message: "Wrong password, try again! 🥵",
+            //   type: "error",
+            //   duration: 5000
+            // });
+            loginPassword.classList.add("invalid");
+            const errorMessage = document.createElement('div');
+            errorMessage.classList.add('error-message');
+            errorMessage.textContent = 'Wrong Password Try Again!';
+            loginPassword.parentNode.insertBefore(errorMessage, loginPassword.nextSibling);
           }
         } else {
           console.log("Wrong email, try again! 🥵")
+          loginEmail.classList.add("invalid");
+          const errorMessage = document.createElement('div');
+          errorMessage.classList.add('error-message');
+          errorMessage.textContent = 'Wrong email, try again! 🥵';
+          loginEmail.parentNode.insertBefore(errorMessage, loginEmail.nextSibling);
+          return;
         }
       }
 
@@ -413,6 +445,17 @@ function signUpHandle() {
         const result = event.target.result;
         if (result) {
           console.log("Email already exists");
+          emailSignUp.classList.add("invalid");
+          const errorMessage = document.createElement('div');
+          errorMessage.classList.add('error-message');
+          errorMessage.textContent = 'Email already exists 😣 !';
+          emailSignUp.parentNode.insertBefore(errorMessage, emailSignUp.nextSibling);
+          toast({
+            title: "Thất bại!",
+            message: "Email already exists 😣 !",
+            type: "error",
+            duration: 5000
+          });
         } else {
           const newUser = {
             username,
@@ -426,6 +469,12 @@ function signUpHandle() {
           const addRequest = store.add(newUser);
           addRequest.onsuccess = function () {
             turnLogin()
+            toast({
+              title: "Thành công!",
+              message: "SignUp sucessfully 😎 !",
+              type: "success",
+              duration: 5000
+            });
             console.log("User added successfully");
           };
           addRequest.onerror = function () {
