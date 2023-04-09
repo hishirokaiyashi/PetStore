@@ -9,12 +9,14 @@
   <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
   <link rel="stylesheet" href="/assets/styles/base.css" />
   <link rel="stylesheet" href="/assets/styles/Home.css" />
+  <link rel="stylesheet" href="/assets/styles/Toast.css" />
   <link rel="stylesheet" href="/assets/styles/Header.css" />
   <link rel="stylesheet" href="/assets/styles/Footer.css" />
   <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
 </head>
 
-<body onload="showCart()">
+<body>
+  <div id="toast"></div>
   <div class="home-container-biggest">
     <header class="header-container">
       <div class="header-container-detail">
@@ -68,14 +70,21 @@
               </a>
             </div>
           </div>
+          <div class="help-center">
+            <button id="btn-help-center">
+              <span 
+                  id="icon-help-center"
+                  class="iconify header-button-icon"
+                  data-icon="material-symbols:contact-support"
+                >
+                </span>
+            </button>
+          </div>
           <button class="header-button-login" id="header-button-login">Login</button>
           <img class="header-button-avatar" src="" alt="">
           <div id="dropdownUser" class="dropdown-content">
             <a href="/src/pages/Profile.html" class="dropdown-btn" id="profileDropdown">Profile</a>
             <a href="/src/pages/SignIn.html" class="dropdown-btn" id="logoutDropdown">Logout</a>
-          </div>
-          <div class="help-center">
-            <button id="btn-help-center">Help Center</button>
           </div>
         </div>
       </div>

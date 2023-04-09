@@ -52,7 +52,7 @@ if (productId) {
         productCategory.textContent = product.category;
       } else {
         // nếu sản phẩm không tồn tại, hiển thị thông báo lỗi
-          window.location.href="NotFound.html";
+        window.location.href = "NotFound.html";
       }
       // Get related products
       while (relatedProducts.length < 4) {
@@ -264,9 +264,11 @@ if (productId) {
     localStorage.setItem("listCart", JSON.stringify(listCart));
 
     // Add list cart to indexedDB
-    const currentUserID = JSON.parse(localStorage.getItem("loggedInUser")).id || null;;
-    if (currentUserID) {
-      updateCartDB(currentUserID, listCart)
+    if (localStorage.getItem("loggedInUser")) {
+      const currentUserID = JSON.parse(localStorage.getItem("loggedInUser")).id || null;;
+      if (currentUserID) {
+        updateCartDB(currentUserID, listCart)
+      }
     }
   }
 

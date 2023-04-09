@@ -154,7 +154,7 @@ fetch("/src/data/products.json")
       // console.log(carousel.clientWidth)
       // console.log(firstImg.clientWidth)
       // const firstImgWidth = firstImg.clientWidth;
-      const firstImgWidth = firstImg.getBoundingClientRect().width;
+      const firstImgWidth = firstImg.getBoundingClientRect().width + 10;
 
       // const firstImgWidth = 340;
       // const showHideIcons = () => {
@@ -176,7 +176,6 @@ fetch("/src/data/products.json")
 
       arrowIcons.forEach((icon) => {
         icon.addEventListener("click", (e) => {
-      console.log(carousel.scrollLeft)
 
           e.preventDefault(); // Add this line to prevent the default behavior of the click event
           carousel.scrollLeft +=
@@ -186,7 +185,6 @@ fetch("/src/data/products.json")
             icon.id == "right" && check(carousel.scrollLeft, maxScrollLeft - firstImgWidth)
           ) {
             arrowIcons[1].style.display = "none";
-            // console.log(firstImgWidth)
           } else if (icon.id == "left" && check(carousel.scrollLeft, maxScrollLeft)) {
             arrowIcons[1].style.display = "block";
           } else {

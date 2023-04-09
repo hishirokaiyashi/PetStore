@@ -437,7 +437,7 @@
   border: none;
   cursor: pointer;
   font-size: 3rem;
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
 }
 #icon-help-center{
   font-size: 2rem;

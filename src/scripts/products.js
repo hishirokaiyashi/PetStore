@@ -321,9 +321,12 @@ const addToCart = (x, event) => {
     localStorage.setItem("listCart", JSON.stringify(listCartProducts));
 
     // Add list cart to indexedDB
-    const currentUserID = JSON.parse(localStorage.getItem("loggedInUser")).id || null;;
-    if (currentUserID) {
-        updateCartDB(currentUserID, listCartProducts)
+    if(localStorage.getItem("loggedInUser")){
+
+        const currentUserID = JSON.parse(localStorage.getItem("loggedInUser")).id || null;;
+        if (currentUserID) {
+            updateCartDB(currentUserID, listCartProducts)
+        }
     }
 }
 
